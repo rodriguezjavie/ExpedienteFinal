@@ -1,0 +1,650 @@
+﻿@model ExpedienteIDON.ViewModels.HistoryRecordViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <h4>Paciente</h4>
+        <hr />
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Name, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.LastName, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Patient.PatientGender, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Patient.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Phone, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Cellphone, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Patient.Cellphone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Cellphone, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Birthday, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EditorFor(model => model.Patient.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Birthday, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Email, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EditorFor(model => model.Patient.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Photo, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EditorFor(model => model.Patient.Photo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Photo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Ocupation, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EditorFor(model => model.Patient.Ocupation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Ocupation, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.PatientStudies, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EnumDropDownListFor(model => model.Patient.PatientStudies, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Patient.PatientStudies, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.PatientCivilStatus, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EnumDropDownListFor(model => model.Patient.PatientCivilStatus, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Patient.PatientCivilStatus, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Patient.Address, htmlAttributes: new { @class = "control-label col-md-6" })
+                @Html.EditorFor(model => model.Patient.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Patient.Address, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+    </div>
+    <div class="form-horizontal">
+        <h4>Antecedentes Heredofamiliares</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <a class="btn btn-primary" data-toggle="collapse" href="#diabetes" role="button" aria-expanded="false" aria-controls="diabetes">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusDiabetes)
+
+        </a>
+        <div class="collapse" id="diabetes">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusDiabetes, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentDiabetes, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingDiabetes, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildDiabetes, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#hipertension" role="button" aria-expanded="false" aria-controls="hipertension">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusHypertension)
+        </a>
+        <div class="collapse" id="hipertension">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusHypertension, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentHypertension, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingHypertension, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildHypertension, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Thyroid" role="button" aria-expanded="false" aria-controls="Thyroid">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusThyroid)
+        </a>
+        <div class="collapse" id="Thyroid">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusThyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusThyroid, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentThyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentThyroid, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingThyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingThyroid, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildThyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildThyroid, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Hipertrigliceridemia" role="button" aria-expanded="false" aria-controls="Hipertrigliceridemia">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusHypertriglyceridemia)
+        </a>
+        <div class="collapse" id="Hipertrigliceridemia">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusHypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusHypertriglyceridemia, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentHypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentThyroid, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingHypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingHypertriglyceridemia, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildHypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildHypertriglyceridemia, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Hipercolesterolemia" role="button" aria-expanded="false" aria-controls="Hipercolesterolemia">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusHypercholesterolemia)
+        </a>
+        <div class="collapse" id="Hipercolesterolemia">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusHypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusHypercholesterolemia, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentHypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentHypercholesterolemia, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingHypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingHypercholesterolemia, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildHypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildHypercholesterolemia, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Ataque" role="button" aria-expanded="false" aria-controls="Ataque">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusHeartAttack)
+        </a>
+        <div class="collapse" id="Ataque">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusHeartAttack, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusHeartAttack, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentHeartAttack, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentHeartAttack, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingHeartAttack, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingHeartAttack, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildHeartAttack, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildHeartAttack, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+
+        <a class="btn btn-primary" data-toggle="collapse" href="#Ataque2" role="button" aria-expanded="false" aria-controls="Ataque2">
+            @Html.DisplayNameFor(model => model.FamilyRecord.StatusHeartAttackTwo)
+        </a>
+        <div class="collapse" id="Ataque2">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.FamilyRecord.StatusHeartAttackTwo, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.StatusHeartAttackTwo, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ParentHeartAttackTwo, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ParentHeartAttackTwo, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.SiblingHeartAttackTwo, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.SiblingHeartAttackTwo, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.FamilyRecord.ChildHeartAttackTwo, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EnumDropDownListFor(model => model.FamilyRecord.ChildHeartAttackTwo, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Otro" role="button" aria-expanded="false" aria-controls="Otro">
+            @Html.DisplayNameFor(model => model.OtherFamilyRecord.Name)
+        </a>
+        <div class="collapse multi-collapse" id="Otro">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.OtherFamilyRecord.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.OtherFamilyRecord.Name, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.OtherFamilyRecord.Parents, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.OtherFamilyRecord.Parents, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.OtherFamilyRecord.Sibilings, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.OtherFamilyRecord.Sibilings, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.OtherFamilyRecord.Childs, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.OtherFamilyRecord.Childs, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <h4>Antecedentes Personales No Patologicos</h4>
+        <hr />
+        <a class="btn btn-primary" data-toggle="collapse" href="#noPath" role="button" aria-expanded="false" aria-controls="noPath">
+            Antecedentes Personales No Patologicos
+        </a>
+        <div class="collapse" id="noPath">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.NonPathologicalRecord.BloodTypeId, "BloodTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(m => m.NonPathologicalRecord.BloodTypeId, new SelectList(Model.BloodTypes, "Id", "Name"), "Tipo de Sangre", new { @class = "form-control input-height col-md-5" })
+                @Html.LabelFor(model => model.NonPathologicalRecord.Smoking, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.Smoking)
+                @Html.LabelFor(model => model.NonPathologicalRecord.SmokingCigars, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.SmokingCigars, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.SmokingStarted, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.SmokingStarted, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.ExSmoking, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.ExSmoking)
+                @Html.LabelFor(model => model.NonPathologicalRecord.ExSmokingHowLong, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.ExSmokingHowLong, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.ExSmokingWhenStopped, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.ExSmokingWhenStopped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.ExSmokingCigars, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.ExSmokingCigars, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.Alcohol, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.Alcohol)
+                @Html.LabelFor(model => model.NonPathologicalRecord.AlcoholLiters, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.NonPathologicalRecord.AlcoholLiters, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.NonPathologicalRecord.DrugsType, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.NonPathologicalRecord.DrugsType, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.NonPathologicalRecord.DietType, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.NonPathologicalRecord.DietType, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.NonPathologicalRecord.ExerciseType, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.NonPathologicalRecord.ExerciseType, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.NonPathologicalRecord.Hygiene, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.NonPathologicalRecord.Hygiene, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="form-horizontal">
+        <h4>Gineco Antecedentes</h4>
+        <hr />
+        <a class="btn btn-primary" data-toggle="collapse" href="#Gineco" role="button" aria-expanded="false" aria-controls="Gineco">
+            Antecedentes Ginec-obsteticos
+        </a>
+        <div class="collapse" id="Gineco">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.GynecoRecord.Menarca, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Menarca, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Gesta, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Gesta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Para, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Para, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Cesarea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Cesarea, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Aborto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Aborto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Obitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Obitos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.SexualLifeStart, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.SexualLifeStart, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.RegularMenstrualCycle, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.RegularMenstrualCycle)
+                @Html.LabelFor(model => model.GynecoRecord.LastMenstruationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.LastMenstruationDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.Amenorrea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.Amenorrea)
+                @Html.LabelFor(model => model.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.GynecoRecord.PregnancyHypertensionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.PregnancyHypertensionDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.GynecoRecord.PregnancyDiabetesDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.PregnancyDiabetesDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EnumDropDownListFor(model => model.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "form-control" })
+                @Html.LabelFor(model => model.GynecoRecord.ChildrenPlus4KgDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+            <h4>Antecedentes Personales Patologicos</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT1" role="button" aria-expanded="false" aria-controls="diabetesT1">
+                @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType1)
+            </a>
+            <div class="collapse" id="diabetesT1">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.DiabetesType1, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.DiabetesType1)
+                    @Html.LabelFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.Diabetes1Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Diabetes1Comment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT2" role="button" aria-expanded="false" aria-controls="diabetesT2">
+                @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType2)
+            </a>
+            <div class="collapse" id="diabetesT2">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.DiabetesType2, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.DiabetesType2)
+                    @Html.LabelFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.Diabetes2Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Diabetes2Comment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Obesity" role="button" aria-expanded="false" aria-controls="Obesity">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Obesity)
+            </a>
+            <div class="collapse" id="Obesity">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Obesity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Obesity)
+                    @Html.LabelFor(model => model.PathologicRecord.ObesityDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ObesityDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.ObesityComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ObesityComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#MaxW" role="button" aria-expanded="false" aria-controls="MaxW">
+                @Html.DisplayNameFor(model => model.PathologicRecord.MaxWeight)
+            </a>
+            <div class="collapse" id="MaxW">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.MaxWeight, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.MaxWeight, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.WeightDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.WeightDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.WeightComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.WeightComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Hypertension" role="button" aria-expanded="false" aria-controls="Hypertension">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Hypertension)
+            </a>
+            <div class="collapse" id="Hypertension">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Hypertension, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.Hypertension)
+                    @Html.LabelFor(model => model.PathologicRecord.HypertensionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypertensionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.HypertensionComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypertensionComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#IschemicHeartDisease" role="button" aria-expanded="false" aria-controls="IschemicHeartDisease">
+                @Html.DisplayNameFor(model => model.PathologicRecord.IschemicHeartDisease)
+            </a>
+            <div class="collapse" id="IschemicHeartDisease">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDisease)
+                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <hr />
+            <a class="btn btn-primary" data-toggle="collapse" href="#NoIschemicHeartDisease" role="button" aria-expanded="false" aria-controls="NoIschemicHeartDisease">
+                @Html.DisplayNameFor(model => model.PathologicRecord.NoIschemicHeartDisease)
+            </a>
+            <div class="collapse" id="NoIschemicHeartDisease">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDisease)
+                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#CerebralDisease" role="button" aria-expanded="false" aria-controls="CerebralDisease">
+                EVC
+            </a>
+            <div class="collapse" id="CerebralDisease">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.CerebralDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.CerebralDisease)
+                    @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#Epilepsy" role="button" aria-expanded="false" aria-controls="Epilepsy">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Epilepsy)
+            </a>
+            <div class="collapse" id="Epilepsy">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Epilepsy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Epilepsy)
+                    @Html.LabelFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.EpilepsyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.EpilepsyComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Thyroid" role="button" aria-expanded="false" aria-controls="Thyroid">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Thyroid)
+            </a>
+            <div class="collapse" id="Thyroid">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Thyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Thyroid)
+                    @Html.LabelFor(model => model.PathologicRecord.ThyroidDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ThyroidDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.ThyroidComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ThyroidComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#LungDisease" role="button" aria-expanded="false" aria-controls="LungDisease">
+                EPOC
+            </a>
+            <div class="collapse" id="LungDisease">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.LungDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LungDisease)
+                    @Html.LabelFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.LungDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LungDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#LiverDisease" role="button" aria-expanded="false" aria-controls="LiverDisease">
+                @Html.DisplayNameFor(model => model.PathologicRecord.LiverDisease)
+            </a>
+            <div class="collapse" id="LiverDisease">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.LiverDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LiverDisease)
+                    @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Colon" role="button" aria-expanded="false" aria-controls="Colon">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Colon)
+            </a>
+            <div class="collapse" id="Colon">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Colon, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.Colon)
+                    @Html.LabelFor(model => model.PathologicRecord.ColonDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ColonDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.ColonComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.ColonComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Cancer" role="button" aria-expanded="false" aria-controls="Cancer">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Cancer)
+            </a>
+            <div class="collapse" id="Cancer">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Cancer, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Cancer)
+                    @Html.LabelFor(model => model.PathologicRecord.CancerDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.CancerDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.CancerComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.CancerComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <hr />
+            <a class="btn btn-primary" data-toggle="collapse" href="#Hypertriglyceridemia" role="button" aria-expanded="false" aria-controls="Hypertriglyceridemia">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Hypertriglyceridemia)
+            </a>
+            <div class="collapse" id="Hypertriglyceridemia">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Hypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Hypertriglyceridemia)
+                    @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#Hypercholesterolemia" role="button" aria-expanded="false" aria-controls="Hypercholesterolemia">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Hypercholesterolemia)
+            </a>
+            <div class="collapse" id="Hypercholesterolemia">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Hypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Hypercholesterolemia)
+                    @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Necropathy" role="button" aria-expanded="false" aria-controls="Necropathy">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Necropathy)
+            </a>
+            <div class="collapse" id="Necropathy">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Necropathy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Necropathy)
+                    @Html.LabelFor(model => model.PathologicRecord.NecropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NecropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.NecropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NecropathyComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Retinopathy" role="button" aria-expanded="false" aria-controls="Retinopathy">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Retinopathy)
+            </a>
+            <div class="collapse" id="Retinopathy">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Retinopathy, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.Retinopathy)
+                    @Html.LabelFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.RetinopathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.RetinopathyComment, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Ophthalmological" role="button" aria-expanded="false" aria-controls="Ophthalmological">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Ophthalmological)
+            </a>
+            <div class="collapse" id="Ophthalmological">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Ophthalmological, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.Ophthalmological)
+                    @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalComment, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <hr />
+            <a class="btn btn-primary" data-toggle="collapse" href="#Neuropathy" role="button" aria-expanded="false" aria-controls="Neuropathy">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Neuropathy)
+            </a>
+            <div class="collapse" id="Neuropathy">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Neuropathy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Neuropathy)
+                    @Html.LabelFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.NeuropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.NeuropathyComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#BloodTransfusion" role="button" aria-expanded="false" aria-controls="BloodTransfusion">
+                @Html.DisplayNameFor(model => model.PathologicRecord.BloodTransfusion)
+            </a>
+            <div class="collapse" id="BloodTransfusion">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusion, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusion)
+                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Allergy" role="button" aria-expanded="false" aria-controls="Allergy">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Allergy)
+            </a>
+            <div class="collapse" id="Allergy">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Allergy, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.PathologicRecord.Allergy)
+                    @Html.LabelFor(model => model.PathologicRecord.AllergyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.AllergyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.AllergyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.AllergyComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#Surgery" role="button" aria-expanded="false" aria-controls="Surgery">
+                @Html.DisplayNameFor(model => model.PathologicRecord.Surgery)
+            </a>
+            <div class="collapse" id="Surgery">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.PathologicRecord.Surgery, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.Surgery)
+                    @Html.LabelFor(model => model.PathologicRecord.SurgeryDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.SurgeryDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.PathologicRecord.SurgeryComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.PathologicRecord.SurgeryComment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <a class="btn btn-primary" data-toggle="collapse" href="#OtherPathologicRecord" role="button" aria-expanded="false" aria-controls="OtherPathologicRecord">
+                @Html.DisplayNameFor(model => model.OtherPathologicRecord.Name)
+            </a>
+            <div class="collapse" id="OtherPathologicRecord">
+                <div class="card card-body">
+                    @Html.LabelFor(model => model.OtherPathologicRecord.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.OtherPathologicRecord.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.OtherPathologicRecord.DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.OtherPathologicRecord.DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.OtherPathologicRecord.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.OtherPathologicRecord.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -30,6 +30,21 @@ namespace ExpedienteIDON.Models
         public DbSet<PathologicRecord> PathologicRecords { get; set; }
         public DbSet<OtherPathologicRecord> OtherPathologicRecords { get; set; }
         public DbSet<MedicalRecord> MedicalRecords { get; set; }
+        public DbSet<Symptom> Symptoms { get; set; }
+        public DbSet<VitalSigns> VitalSigns { get; set; }
+        public DbSet<PhysicalExploration> PhysicalExplorations { get; set; }
+        public DbSet<MedicalTest> MedicalTests { get; set; }
+        public DbSet<LabsTest> LabsTests { get; set; }
+        public DbSet<Others> Others { get; set; }
+        public DbSet<BiometriaHematica> BiometriaHematicas { get; set; }
+        public DbSet<PerfilHepatico> PerfilHepaticos { get; set; }
+        public DbSet<QuimicaSanguinea> QuimicaSanguineas { get; set; }
+        public DbSet<PerfilTiroideo> PerfilTiroideos { get; set; }
+        public DbSet<Hormonas> Hormonas { get; set; }
+        public DbSet<GeneralOrina> GeneralOrinas { get; set; }
+        public DbSet<OtrosLabs> OtrosLabs { get; set; }
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

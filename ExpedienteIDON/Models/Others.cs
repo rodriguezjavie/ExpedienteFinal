@@ -10,7 +10,7 @@ namespace ExpedienteIDON.Models
         public int Id { get; set; }
         public string Reason { get; set; }
         public string Diagnosis { get; set; }
-        public string Prognosis { get; set; }
+        public Prognosis Prognosis { get; set; }
 
     }
 }

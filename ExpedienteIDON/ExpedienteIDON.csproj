@@ -214,6 +214,7 @@
     <Compile Include="Models\PerfilHepatico.cs" />
     <Compile Include="Models\PerfilTiroideo.cs" />
     <Compile Include="Models\PhysicalExploration.cs" />
+    <Compile Include="Models\Prognosis.cs" />
     <Compile Include="Models\QuimicaSanguinea.cs" />
     <Compile Include="Models\Studies.cs" />
     <Compile Include="Models\Symptom.cs" />

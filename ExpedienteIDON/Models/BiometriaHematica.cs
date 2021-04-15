@@ -8,13 +8,13 @@ namespace ExpedienteIDON.Models
     public class BiometriaHematica
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public string Eritrocitos { get; set; }
-        public string Hemoglobina { get; set; }
-        public string Leucocitos { get; set; }
-        public string Linfocitos { get; set; }
-        public string Monocitos { get; set; }
-        public string Plaquetas { get; set; }
+        public DateTime? Date { get; set; }
+        public double? Eritrocitos { get; set; }
+        public double? Hemoglobina { get; set; }
+        public double? Leucocitos { get; set; }
+        public double? Linfocitos { get; set; }
+        public double? Monocitos { get; set; }
+        public double ?Plaquetas { get; set; }
 
     }
 }

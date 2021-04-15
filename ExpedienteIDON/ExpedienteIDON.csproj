@@ -195,6 +195,7 @@
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GenderDependency.cs" />
     <Compile Include="Models\GeneralOrina.cs" />
+    <Compile Include="Models\GradoAfectación.cs" />
     <Compile Include="Models\GynecoRecord.cs" />
     <Compile Include="Models\Hormonas.cs" />
     <Compile Include="Models\HygieneRange.cs" />

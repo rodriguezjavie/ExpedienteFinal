@@ -8,15 +8,15 @@ namespace ExpedienteIDON.Models
     public class OtrosLabs
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public string VitaminaD { get; set; }
-        public string Calcio { get; set; }
-        public string Fosforo { get; set; }
-        public string Magnesio { get; set; }
-        public string Sodio { get; set; }
-        public string Potasio { get; set; }
-        public string Cloro { get; set; }
-        public string Hemoglobina { get; set; }
+        public DateTime? Date { get; set; }
+        public double? VitaminaD { get; set; }
+        public double? Calcio { get; set; }
+        public double? Fosforo { get; set; }
+        public double? Magnesio { get; set; }
+        public double? Sodio { get; set; }
+        public double? Potasio { get; set; }
+        public double? Cloro { get; set; }
+        public double? HemoglobinaGlugosilada { get; set; }
 
     }
 }

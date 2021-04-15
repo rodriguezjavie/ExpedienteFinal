@@ -8,12 +8,12 @@ namespace ExpedienteIDON.Models
     public class PerfilTiroideo
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public string TSH { get; set; }
-        public string T3Total { get; set; }
-        public string T3Libre { get; set; }
-        public string T4Total { get; set; }
-        public string T4Libre { get; set; }
+        public DateTime? Date { get; set; }
+        public double? TSH { get; set; }
+        public double? T3Total { get; set; }
+        public double? T3Libre { get; set; }
+        public double? T4Total { get; set; }
+        public double? T4Libre { get; set; }
 
 
     }

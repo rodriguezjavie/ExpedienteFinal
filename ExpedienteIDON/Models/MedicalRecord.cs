@@ -29,7 +29,7 @@ namespace ExpedienteIDON.Models
         public int PathologicRecordId { get; set; }
         public PathologicRecord PathologicRecord { get; set; }
         public DateTime Created { get; set; }
-        public int? VitalSignsId { get; set; }
+        public int VitalSignsId { get; set; }
         public VitalSigns VitalSigns { get; set; }
         public int? MedicalTestId { get; set; }
         public MedicalTest MedicalTest { get; set; }

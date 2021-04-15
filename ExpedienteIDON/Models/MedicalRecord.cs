@@ -31,7 +31,7 @@ namespace ExpedienteIDON.Models
         public DateTime Created { get; set; }
         public int VitalSignsId { get; set; }
         public VitalSigns VitalSigns { get; set; }
-        public int? MedicalTestId { get; set; }
+        public int MedicalTestId { get; set; }
         public MedicalTest MedicalTest { get; set; }
         public int? BiometriaHematicaId { get; set; }
         public BiometriaHematica BiometriaHematica { get; set; }

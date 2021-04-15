@@ -1,0 +1,42 @@
+﻿@model ExpedienteIDON.Models.Others
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Others</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diagnosis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diagnosis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prognosis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prognosis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

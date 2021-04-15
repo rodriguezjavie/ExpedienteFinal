@@ -1,0 +1,66 @@
+﻿@model ExpedienteIDON.Models.LabsTest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LabsTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalRecord.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalRecord.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HemoglobinaGlucosilada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HemoglobinaGlucosilada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlucosaSerica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlucosaSerica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlucosaAyuno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlucosaAyuno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlucosaCasual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlucosaCasual)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

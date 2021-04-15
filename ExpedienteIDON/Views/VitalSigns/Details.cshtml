@@ -1,0 +1,98 @@
+﻿@model ExpedienteIDON.Models.VitalSigns
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VitalSigns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TABD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TABD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TABI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TABI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Waist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Waist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OxygenSaturation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OxygenSaturation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

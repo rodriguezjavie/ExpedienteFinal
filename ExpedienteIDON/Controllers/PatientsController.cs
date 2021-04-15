@@ -50,7 +50,20 @@ namespace ExpedienteIDON.Controllers
                 OtherFamilyRecord = new OtherFamilyRecord(),
                 OtherPathologicRecord = new OtherPathologicRecord(),
                 PathologicRecord = new PathologicRecord(),
-                Patient = new Patient()
+                Patient = new Patient(),
+                Symptom=new Symptom(),
+                VitalSigns=new VitalSigns(),
+                PhysicalExploration=new PhysicalExploration(),
+                MedicalTest=new MedicalTest(),
+                LabsTest=new LabsTest(),
+                Others= new Others(),
+                BiometriaHematica=new BiometriaHematica(),
+                PerfilHepatico=new PerfilHepatico(),
+                QuimicaSanguinea=new QuimicaSanguinea(),
+                PerfilTiroideo=new PerfilTiroideo(),
+                Hormonas=new Hormonas(),
+                GeneralOrina=new GeneralOrina(),
+                OtrosLabs=new OtrosLabs()
 
             };
             return View(historyRecord);
@@ -61,7 +74,13 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,LastName,Birthday,PatientGender,Phone,Cellphone,Email,Photo,Ocupation,PatientStudies,PatientCivilStatus,Address")] FamilyRecord familyRecord, OtherFamilyRecord otherFamilyRecord, GynecoRecord gynecoRecord, NonPathologicalRecord nonPathologicalRecord, Patient patient, PathologicRecord pathologicRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord)
+        public ActionResult Create
+            ([Bind(Include = "Id,Name,LastName,Birthday,PatientGender,Phone,Cellphone,Email,Photo,Ocupation,PatientStudies,PatientCivilStatus,Address")]
+        FamilyRecord familyRecord, OtherFamilyRecord otherFamilyRecord, GynecoRecord gynecoRecord, NonPathologicalRecord nonPathologicalRecord
+            , Patient patient, PathologicRecord pathologicRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord
+            ,Symptom symptom, VitalSigns vitalSigns, PhysicalExploration physicalExploration, MedicalTest medicalTest, LabsTest labsTest
+            , Others others, BiometriaHematica biometriaHematica, QuimicaSanguinea quimicaSanguinea, Hormonas hormonas, PerfilHepatico perfilHepatico
+            , PerfilTiroideo perfilTiroideo, GeneralOrina generalOrina, OtrosLabs otrosLabs)
         {
             var historyRecord = new HistoryRecordViewModel
             {
@@ -74,7 +93,20 @@ namespace ExpedienteIDON.Controllers
                 OtherFamilyRecord = otherFamilyRecord,
                 OtherPathologicRecord = otherPathologicRecord,
                 PathologicRecord = pathologicRecord,
-                Patient = patient
+                Patient = patient,
+                Symptom = symptom,
+                VitalSigns = vitalSigns,
+                PhysicalExploration = physicalExploration,
+                MedicalTest = medicalTest,
+                LabsTest = labsTest,
+                Others = others,
+                BiometriaHematica = biometriaHematica,
+                PerfilHepatico = perfilHepatico,
+                QuimicaSanguinea = quimicaSanguinea,
+                PerfilTiroideo = perfilTiroideo,
+                Hormonas = hormonas,
+                GeneralOrina = generalOrina,
+                OtrosLabs = otrosLabs
 
             };
             if (ModelState.IsValid)

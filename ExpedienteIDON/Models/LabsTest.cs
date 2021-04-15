@@ -13,6 +13,8 @@ namespace ExpedienteIDON.Models
         public string GS { get; set; }
         public string GCA { get; set; }
         public string GCC { get; set; }
+        public int MedicalRecordId { get; set; }
+        public MedicalRecord MedicalRecord { get; set; }
 
     }
 }

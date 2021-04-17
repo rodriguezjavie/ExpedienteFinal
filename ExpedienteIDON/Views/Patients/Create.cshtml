@@ -292,7 +292,7 @@
                 @Html.EditorFor(model => model.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control" } })
 
 
-
+                </div>
             </div>
         </div>
 
@@ -396,6 +396,7 @@
                     @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
 
                 </div>
+            </div>
             </div>
 
             <a class="btn btn-primary" data-toggle="collapse" href="#CerebralDisease" role="button" aria-expanded="false" aria-controls="CerebralDisease">
@@ -629,22 +630,574 @@
                     @Html.EditorFor(model => model.OtherPathologicRecord.Comment, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
-        </div>
-        <hr />
+            <div class="form-horizontal">
+                <h4>Interrogarorio por Aparatos y sistemas</h4>
+                <hr />
+                <a class="btn btn-primary" data-toggle="collapse" href="#Symptom" role="button" aria-expanded="false" aria-controls="Symptom">
+                    Interrogarorio por Aparatos y sistemas
+                </a>
+                <div class="collapse" id="Symptom">
+                    <div class="card card-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Symptom.Name, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.EditorFor(model => model.Symptom.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Symptom.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Symptom.Severity, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.EnumDropDownListFor(model => model.Symptom.Severity, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Symptom.StartDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.EditorFor(model => model.Symptom.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Symptom.StartDate, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-info" />
-            </div>
-        </div>
-    </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Symptom.EndDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.EditorFor(model => model.Symptom.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Symptom.EndDate, "", new { @class = "text-danger" })
 
-}
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                        <hr />
+                        <div class="form-horizontal">
+                            <h4>Somatometria y signos vitales</h4>
+                            <hr />
+                            <a class="btn btn-primary" data-toggle="collapse" href="#VitalSigns" role="button" aria-expanded="false" aria-controls="VitalSigns">
+                                Somatometria y signos vitales
+                            </a>
+                            <div class="collapse" id="VitalSigns">
+                                <div class="card card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.Size, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.Size, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.Size, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.Weight, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.Weight, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.IMC, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.TABD, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.TABD, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.TABD, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.TABI, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.TABI, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.TABI, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.FC, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.FC, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.FC, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.FR, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.FR, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.FR, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.Waist, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.Waist, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.Waist, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.Hip, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.Hip, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.Hip, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.VitalSigns.OxygenSaturation, htmlAttributes: new { @class = "control-label col-md-4" })
+                                            @Html.EditorFor(model => model.VitalSigns.OxygenSaturation, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VitalSigns.OxygenSaturation, "", new { @class = "text-danger" })
+                                        </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal">
+                                <h4>Exploración Física</h4>
+                                <hr />
+                                <a class="btn btn-primary" data-toggle="collapse" href="#PhysicalExploration" role="button" aria-expanded="false" aria-controls="PhysicalExploration">
+                                    Exploración Física
+                                </a>
+                                <div class="collapse" id="PhysicalExploration">
+                                    <div class="card card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.Habitus, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.Habitus, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.Habitus, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.Cabeza, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.Cabeza, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.Cabeza, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.CuelloBocio, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.CuelloBocio)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.CuelloBocio, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.SoploCarotideo, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.SoploCarotideo)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.SoploCarotideo, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.CuelloAcantosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.CuelloAcantosis)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.CuelloAcantosis, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.AcanosisAfectacion, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EnumDropDownListFor(model => model.PhysicalExploration.AcanosisAfectacion, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.AcanosisAfectacion, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.CuelloComments, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.CuelloComments, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.CuelloComments, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToraxComments, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.ToraxComments, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.ToraxComments, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.AbdomenComments, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.AbdomenComments, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.AbdomenComments, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosSimetricos, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.ToracicosSimetricos)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosSimetricos, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosSensibilidad, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.ToracicosSensibilidad)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosSensibilidad, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosFuerza, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.ToracicosFuerza)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosFuerza, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosSinovitis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.ToracicosSinovitis)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosSinovitis, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosROT, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.ToracicosROT, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosROT, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.ToracicosComments, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.ToracicosComments, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.ToracicosComments, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoSimetrico, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoSimetrico)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoSimetrico, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoFuerza, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoFuerza)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoFuerza, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoSensibilidad, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoSensibilidad)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoSensibilidad, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoVarices, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoVarices)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoVarices, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoROTAquileo, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoROTAquileo)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoROTAquileo, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoOnicomicosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoOnicomicosis)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoOnicomicosis, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoPulsos, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoPulsos)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoPulsos, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoEdema, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.PhysicalExploration.PelvicoEdema)
+                                                    @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoEdema, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.PelvicoOtros, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.PelvicoOtros, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.PelvicoOtros, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.PhysicalExploration.Genitales, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.PhysicalExploration.Genitales, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PhysicalExploration.Genitales, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal">
+                                <h4>Estudios de Gabinete</h4>
+                                <hr />
+                                <a class="btn btn-primary" data-toggle="collapse" href="#MedicalTest" role="button" aria-expanded="false" aria-controls="MedicalTest">
+                                    Estudios de Gabinete
+                                </a>
+                                <div class="collapse" id="MedicalTest">
+                                    <div class="card card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.RadiographTorax, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.MedicalTest.RadiographTorax)
+                                                    @Html.ValidationMessageFor(model => model.MedicalTest.RadiographTorax, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.RadiographToraxDate, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.RadiographToraxDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.RadiographToraxDate, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.RadiographToraxNormal, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.MedicalTest.RadiographToraxNormal)
+                                                    @Html.ValidationMessageFor(model => model.MedicalTest.RadiographToraxNormal, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.Ultrasound, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.MedicalTest.Ultrasound)
+                                                    @Html.ValidationMessageFor(model => model.MedicalTest.Ultrasound, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.UltrasoundDate, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.UltrasoundDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.UltrasoundDate, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.UltrasoundType, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.UltrasoundType, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.UltrasoundType, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.Observations, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.Observations, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.Observations, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.Electrocardiography, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.MedicalTest.Electrocardiography)
+                                                    @Html.ValidationMessageFor(model => model.MedicalTest.Electrocardiography, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.ElectrocardiographyDate, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.ElectrocardiographyDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.ElectrocardiographyDate, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.ElectrocardiographyNormal, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="checkbox">
+                                                    @Html.EditorFor(model => model.MedicalTest.ElectrocardiographyNormal)
+                                                    @Html.ValidationMessageFor(model => model.MedicalTest.ElectrocardiographyNormal, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.ElectrocardiographyObservations, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.ElectrocardiographyObservations, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.ElectrocardiographyObservations, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                @Html.LabelFor(model => model.MedicalTest.Others, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.EditorFor(model => model.MedicalTest.Others, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.MedicalTest.Others, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-horizontal">
+                                <h4>Examenes de Laboratorio</h4>
+                                <hr />
+                                <a class="btn btn-primary" data-toggle="collapse" href="#BiometriaHematica" role="button" aria-expanded="false" aria-controls="BiometriaHematica">
+                                    Biometria Hematica
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                                </a>
+                                <div class="collapse" id="BiometriaHematica">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.BiometriaHematica.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Eritrocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Eritrocitos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Hemoglobina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Hemoglobina, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Leucocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Leucocitos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Linfocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Linfocitos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Monocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Monocitos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.BiometriaHematica.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Plaquetas, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#GeneralOrina" role="button" aria-expanded="false" aria-controls="GeneralOrina">
+                                    General de Orina 
+
+                                </a>
+                                <div class="collapse" id="GeneralOrina">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.GeneralOrina.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Aspecto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Aspecto, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Densidad, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Densidad, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Ph, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Ph, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Glucosa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Glucosa, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Proteinas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Proteinas, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Sangre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Sangre, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Cetonas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Cetonas, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Nitritos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Nitritos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Esterasa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Esterasa, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Leucocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Leucocitos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.GeneralOrina.Bacterias, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.GeneralOrina.Bacterias, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#Hormonas" role="button" aria-expanded="false" aria-controls="Hormonas">
+                                    Hormonas
+
+                                </a>
+                                <div class="collapse" id="Hormonas">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.Hormonas.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.LH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.LH, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.FSH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.FSH, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.Prolactina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.Prolactina, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.Progesterona, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.Progesterona, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.Estrogenos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.Estrogenos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.Hormonas.Cortisol, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Hormonas.Cortisol, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#PerfilHepatico" role="button" aria-expanded="false" aria-controls="PerfilHepatico">
+                                    Perfil Hepatico
+
+                                </a>
+                                <div class="collapse" id="PerfilHepatico">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.PerfilHepatico.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.BilirrubinaTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.BilirrubinaTotal, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.BilirrubinaDirecta, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.BilirrubinaDirecta, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.BilirrubinaIndirecta, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.BilirrubinaIndirecta, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.FosfatasaAlcalina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.FosfatasaAlcalina, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.TGO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.TGO, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.TGP, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.TGP, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilHepatico.GGT, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilHepatico.GGT, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#PerfilTiroideo" role="button" aria-expanded="false" aria-controls="PerfilTiroideo">
+                                    Perfil Tiroideo
+
+                                </a>
+                                <div class="collapse" id="PerfilTiroideo">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.PerfilTiroideo.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilTiroideo.TSH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.TSH, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilTiroideo.T3Total, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.T3Total, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilTiroideo.T3Libre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.T3Libre, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilTiroideo.T4Total, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.T4Total, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.PerfilTiroideo.T4Libre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.T4Libre, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#QuimicaSanguinea" role="button" aria-expanded="false" aria-controls="QuimicaSanguinea">
+                                    Química Sanguinea
+
+                                </a>
+                                <div class="collapse" id="QuimicaSanguinea">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.Glucosa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Glucosa, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.Creatinina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Creatinina, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.AcidoUrico, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.AcidoUrico, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.Colesterol, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Colesterol, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.Trigliceridos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Trigliceridos, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.HDL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.HDL, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.QuimicaSanguinea.LDL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.LDL, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#OtrosLabs" role="button" aria-expanded="false" aria-controls="OtrosLabs">
+                                    Otros Laboratorios
+
+                                </a>
+                                <div class="collapse" id="OtrosLabs">
+                                    <div class="card card-body">
+                                        @Html.LabelFor(model => model.OtrosLabs.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.VitaminaD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.VitaminaD, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Calcio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Calcio, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Fosforo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Fosforo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Magnesio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Magnesio, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Sodio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Sodio, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Potasio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Potasio, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.Cloro, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.Cloro, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.LabelFor(model => model.OtrosLabs.HemoglobinaGlugosilada, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.OtrosLabs.HemoglobinaGlugosilada, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+
+                            </div>
+                                <div class="form-horizontal">
+                                    <h4>Diagnostico y Tratamiento </h4>
+                                    <hr />
+                                    <a class="btn btn-primary" data-toggle="collapse" href="#MedicalTest" role="button" aria-expanded="false" aria-controls="MedicalTest">
+                                        Diagnostico y Tratamiento
+                                    </a>
+                                    <div class="collapse" id="MedicalTest">
+                                        <div class="card card-body">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    @Html.LabelFor(model => model.Others.Reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.Others.Reason, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Others.Reason, "", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    @Html.LabelFor(model => model.Others.Diagnosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                    @Html.EditorFor(model => model.Others.Diagnosis, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Others.Diagnosis, "", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    @Html.LabelFor(model => model.Others.Prognosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                    @Html.EnumDropDownListFor(model => model.Others.Prognosis, htmlAttributes: new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.Others.Prognosis, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Guardar" class="btn btn-info" />
+                                </div>
+                            </div>
+
+                            }
+
+                            <div>
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+
+                            @section Scripts {
+                                @Scripts.Render("~/bundles/jqueryval")
+                            }

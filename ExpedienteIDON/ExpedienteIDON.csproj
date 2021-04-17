@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202104151741205_AddNullableToSymptomTable.Designer.cs">
       <DependentUpon>202104151741205_AddNullableToSymptomTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104161852389_ModificarDataAnnotationPaciente.cs" />
+    <Compile Include="Migrations\202104161852389_ModificarDataAnnotationPaciente.Designer.cs">
+      <DependentUpon>202104161852389_ModificarDataAnnotationPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -498,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104151741205_AddNullableToSymptomTable.resx">
       <DependentUpon>202104151741205_AddNullableToSymptomTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104161852389_ModificarDataAnnotationPaciente.resx">
+      <DependentUpon>202104161852389_ModificarDataAnnotationPaciente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

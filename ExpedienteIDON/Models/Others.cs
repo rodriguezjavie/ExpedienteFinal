@@ -9,8 +9,10 @@ namespace ExpedienteIDON.Models
     public class Others
     {
         public int Id { get; set; }
+        [Required]
         [Display(Name = "Motivo de consulta")]
         public string Reason { get; set; }
+        [Required]
         [Display(Name = "Diagnostico")]
         public string Diagnosis { get; set; }
         [Display(Name = "Pronostico")]

@@ -206,6 +206,10 @@
     <Compile Include="Migrations\202104161852389_ModificarDataAnnotationPaciente.Designer.cs">
       <DependentUpon>202104161852389_ModificarDataAnnotationPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104170443476_populateBloodTypesTable.cs" />
+    <Compile Include="Migrations\202104170443476_populateBloodTypesTable.Designer.cs">
+      <DependentUpon>202104170443476_populateBloodTypesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -505,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104161852389_ModificarDataAnnotationPaciente.resx">
       <DependentUpon>202104161852389_ModificarDataAnnotationPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104170443476_populateBloodTypesTable.resx">
+      <DependentUpon>202104170443476_populateBloodTypesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

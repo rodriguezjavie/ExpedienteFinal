@@ -18,7 +18,8 @@ namespace ExpedienteIDON.Controllers
         // GET: Patients
         public ActionResult Index()
         {
-            return View(db.Patients.ToList());
+            var patient = db.MedicalRecords.Include(m => m.Patient).Include(m => m.NonPathologicalRecord.BloodType).Include(m=>m.Others).ToList();
+            return View(patient);
         }
 
         // GET: Patients/Details/5

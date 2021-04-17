@@ -18,12 +18,12 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Name, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre(s)" } })
                 @Html.ValidationMessageFor(model => model.Patient.Name, "El campo nombre es requerido", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.LastName, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apellido(s)" } })
                 @Html.ValidationMessageFor(model => model.Patient.LastName, "El campo Apellido es requerido", new { @class = "text-danger" })
 
             </div>
@@ -35,23 +35,23 @@
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.Patient.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefono" } })
                 @Html.ValidationMessageFor(model => model.Patient.Phone, "", new { @class = "text-danger" })
 
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Cellphone, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.Patient.Cellphone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Cellphone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Celular" } })
                 @Html.ValidationMessageFor(model => model.Patient.Cellphone, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Birthday, htmlAttributes: new { @class = "control-label col-md-6" })
-                @Html.EditorFor(model => model.Patient.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Birthday, new { htmlAttributes = new { @class = "form-control",@placeholder="dd/mm/aa" } })
                 @Html.ValidationMessageFor(model => model.Patient.Birthday, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Email, htmlAttributes: new { @class = "control-label col-md-6" })
-                @Html.EditorFor(model => model.Patient.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "email@dominio.com" } })
                 @Html.ValidationMessageFor(model => model.Patient.Email, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-4">
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Ocupation, htmlAttributes: new { @class = "control-label col-md-6" })
-                @Html.EditorFor(model => model.Patient.Ocupation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Ocupation, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ocupación u oficio(s)" } })
                 @Html.ValidationMessageFor(model => model.Patient.Ocupation, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-4">
@@ -76,7 +76,7 @@
             </div>
             <div class="form-group col-md-4">
                 @Html.LabelFor(model => model.Patient.Address, htmlAttributes: new { @class = "control-label col-md-6" })
-                @Html.EditorFor(model => model.Patient.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Patient.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Calle, colonia y numero" } })
                 @Html.ValidationMessageFor(model => model.Patient.Address, "", new { @class = "text-danger" })
             </div>
 
@@ -270,11 +270,11 @@
                 @Html.LabelFor(model => model.GynecoRecord.Obitos, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.GynecoRecord.Obitos, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.LabelFor(model => model.GynecoRecord.SexualLifeStart, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.GynecoRecord.SexualLifeStart, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GynecoRecord.SexualLifeStart, new { htmlAttributes = new { @class = "form-control", @placeholder = "Edad del paciente" } })
                 @Html.LabelFor(model => model.GynecoRecord.RegularMenstrualCycle, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.GynecoRecord.RegularMenstrualCycle)
                 @Html.LabelFor(model => model.GynecoRecord.LastMenstruationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.GynecoRecord.LastMenstruationDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GynecoRecord.LastMenstruationDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                 @Html.LabelFor(model => model.GynecoRecord.Amenorrea, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.GynecoRecord.Amenorrea)
                 @Html.LabelFor(model => model.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -282,355 +282,361 @@
                 @Html.LabelFor(model => model.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EnumDropDownListFor(model => model.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "form-control" })
                 @Html.LabelFor(model => model.GynecoRecord.PregnancyHypertensionDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.GynecoRecord.PregnancyHypertensionDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GynecoRecord.PregnancyHypertensionDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                 @Html.LabelFor(model => model.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EnumDropDownListFor(model => model.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "form-control" })
                 @Html.LabelFor(model => model.GynecoRecord.PregnancyDiabetesDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.GynecoRecord.PregnancyDiabetesDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GynecoRecord.PregnancyDiabetesDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                 @Html.LabelFor(model => model.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EnumDropDownListFor(model => model.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "form-control" })
                 @Html.LabelFor(model => model.GynecoRecord.ChildrenPlus4KgDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
 
 
                 </div>
             </div>
         </div>
 
-        <div class="form-horizontal">
-            <h4>Antecedentes Personales Patologicos</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT1" role="button" aria-expanded="false" aria-controls="diabetesT1">
-                @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType1)
-            </a>
-            <div class="collapse" id="diabetesT1">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.DiabetesType1, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.DiabetesType1)
-                    @Html.LabelFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.Diabetes1Comment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Diabetes1Comment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+    <div class="form-horizontal">
+        <h4>Antecedentes Personales Patologicos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT1" role="button" aria-expanded="false" aria-controls="diabetesT1">
+            @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType1)
+        </a>
+        <div class="collapse" id="diabetesT1">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.DiabetesType1, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.DiabetesType1)
+                @Html.LabelFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Diabetes1DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.Diabetes1Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Diabetes1Comment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT2" role="button" aria-expanded="false" aria-controls="diabetesT2">
-                @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType2)
-            </a>
-            <div class="collapse" id="diabetesT2">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.DiabetesType2, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.DiabetesType2)
-                    @Html.LabelFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.Diabetes2Comment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Diabetes2Comment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#diabetesT2" role="button" aria-expanded="false" aria-controls="diabetesT2">
+            @Html.DisplayNameFor(model => model.PathologicRecord.DiabetesType2)
+        </a>
+        <div class="collapse" id="diabetesT2">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.DiabetesType2, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.DiabetesType2)
+                @Html.LabelFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Diabetes2DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.Diabetes2Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Diabetes2Comment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Obesity" role="button" aria-expanded="false" aria-controls="Obesity">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Obesity)
-            </a>
-            <div class="collapse" id="Obesity">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Obesity, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Obesity)
-                    @Html.LabelFor(model => model.PathologicRecord.ObesityDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ObesityDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.ObesityComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ObesityComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Obesity" role="button" aria-expanded="false" aria-controls="Obesity">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Obesity)
+        </a>
+        <div class="collapse" id="Obesity">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Obesity, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Obesity)
+                @Html.LabelFor(model => model.PathologicRecord.ObesityDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ObesityDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.ObesityComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ObesityComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#MaxW" role="button" aria-expanded="false" aria-controls="MaxW">
-                @Html.DisplayNameFor(model => model.PathologicRecord.MaxWeight)
-            </a>
-            <div class="collapse" id="MaxW">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.MaxWeight, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.MaxWeight, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.WeightDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.WeightDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.WeightComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.WeightComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#MaxW" role="button" aria-expanded="false" aria-controls="MaxW">
+            @Html.DisplayNameFor(model => model.PathologicRecord.MaxWeight)
+        </a>
+        <div class="collapse" id="MaxW">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.MaxWeight, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.MaxWeight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.WeightDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.WeightDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.WeightComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.WeightComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Hypertension" role="button" aria-expanded="false" aria-controls="Hypertension">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Hypertension)
-            </a>
-            <div class="collapse" id="Hypertension">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Hypertension, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.Hypertension)
-                    @Html.LabelFor(model => model.PathologicRecord.HypertensionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypertensionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.HypertensionComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypertensionComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Hypertension" role="button" aria-expanded="false" aria-controls="Hypertension">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Hypertension)
+        </a>
+        <div class="collapse" id="Hypertension">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Hypertension, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.Hypertension)
+                @Html.LabelFor(model => model.PathologicRecord.HypertensionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypertensionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.HypertensionComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypertensionComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#IschemicHeartDisease" role="button" aria-expanded="false" aria-controls="IschemicHeartDisease">
-                @Html.DisplayNameFor(model => model.PathologicRecord.IschemicHeartDisease)
-            </a>
-            <div class="collapse" id="IschemicHeartDisease">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDisease)
-                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#IschemicHeartDisease" role="button" aria-expanded="false" aria-controls="IschemicHeartDisease">
+            @Html.DisplayNameFor(model => model.PathologicRecord.IschemicHeartDisease)
+        </a>
+        <div class="collapse" id="IschemicHeartDisease">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDisease)
+                @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.IschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            <hr />
-            <a class="btn btn-primary" data-toggle="collapse" href="#NoIschemicHeartDisease" role="button" aria-expanded="false" aria-controls="NoIschemicHeartDisease">
-                @Html.DisplayNameFor(model => model.PathologicRecord.NoIschemicHeartDisease)
-            </a>
-            <div class="collapse" id="NoIschemicHeartDisease">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDisease)
-                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <br />
+        <br />
+        <a class="btn btn-primary" data-toggle="collapse" href="#NoIschemicHeartDisease" role="button" aria-expanded="false" aria-controls="NoIschemicHeartDisease">
+            @Html.DisplayNameFor(model => model.PathologicRecord.NoIschemicHeartDisease)
+        </a>
+        <div class="collapse" id="NoIschemicHeartDisease">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDisease, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDisease)
+                @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NoIschemicHeartDiseaseComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            </div>
-
-            <a class="btn btn-primary" data-toggle="collapse" href="#CerebralDisease" role="button" aria-expanded="false" aria-controls="CerebralDisease">
-                EVC
-            </a>
-            <div class="collapse" id="CerebralDisease">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.CerebralDisease, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.CerebralDisease)
-                    @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
-
-                </div>
-            </div>
-
-            <a class="btn btn-primary" data-toggle="collapse" href="#Epilepsy" role="button" aria-expanded="false" aria-controls="Epilepsy">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Epilepsy)
-            </a>
-            <div class="collapse" id="Epilepsy">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Epilepsy, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Epilepsy)
-                    @Html.LabelFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.EpilepsyComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.EpilepsyComment, new { htmlAttributes = new { @class = "form-control" } })
-
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Thyroid" role="button" aria-expanded="false" aria-controls="Thyroid">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Thyroid)
-            </a>
-            <div class="collapse" id="Thyroid">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Thyroid, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Thyroid)
-                    @Html.LabelFor(model => model.PathologicRecord.ThyroidDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ThyroidDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.ThyroidComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ThyroidComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#LungDisease" role="button" aria-expanded="false" aria-controls="LungDisease">
-                EPOC
-            </a>
-            <div class="collapse" id="LungDisease">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.LungDisease, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LungDisease)
-                    @Html.LabelFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.LungDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LungDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#LiverDisease" role="button" aria-expanded="false" aria-controls="LiverDisease">
-                @Html.DisplayNameFor(model => model.PathologicRecord.LiverDisease)
-            </a>
-            <div class="collapse" id="LiverDisease">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.LiverDisease, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LiverDisease)
-                    @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Colon" role="button" aria-expanded="false" aria-controls="Colon">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Colon)
-            </a>
-            <div class="collapse" id="Colon">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Colon, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.Colon)
-                    @Html.LabelFor(model => model.PathologicRecord.ColonDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ColonDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.ColonComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.ColonComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Cancer" role="button" aria-expanded="false" aria-controls="Cancer">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Cancer)
-            </a>
-            <div class="collapse" id="Cancer">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Cancer, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Cancer)
-                    @Html.LabelFor(model => model.PathologicRecord.CancerDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.CancerDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.CancerComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.CancerComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <hr />
-            <a class="btn btn-primary" data-toggle="collapse" href="#Hypertriglyceridemia" role="button" aria-expanded="false" aria-controls="Hypertriglyceridemia">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Hypertriglyceridemia)
-            </a>
-            <div class="collapse" id="Hypertriglyceridemia">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Hypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Hypertriglyceridemia)
-                    @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-
-            <a class="btn btn-primary" data-toggle="collapse" href="#Hypercholesterolemia" role="button" aria-expanded="false" aria-controls="Hypercholesterolemia">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Hypercholesterolemia)
-            </a>
-            <div class="collapse" id="Hypercholesterolemia">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Hypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Hypercholesterolemia)
-                    @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Necropathy" role="button" aria-expanded="false" aria-controls="Necropathy">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Necropathy)
-            </a>
-            <div class="collapse" id="Necropathy">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Necropathy, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Necropathy)
-                    @Html.LabelFor(model => model.PathologicRecord.NecropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NecropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.NecropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NecropathyComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Retinopathy" role="button" aria-expanded="false" aria-controls="Retinopathy">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Retinopathy)
-            </a>
-            <div class="collapse" id="Retinopathy">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Retinopathy, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.Retinopathy)
-                    @Html.LabelFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.RetinopathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.RetinopathyComment, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
 
 
-                </div>
-            </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Ophthalmological" role="button" aria-expanded="false" aria-controls="Ophthalmological">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Ophthalmological)
-            </a>
-            <div class="collapse" id="Ophthalmological">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Ophthalmological, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.Ophthalmological)
-                    @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalComment, new { htmlAttributes = new { @class = "form-control" } })
+        <a class="btn btn-primary" data-toggle="collapse" href="#CerebralDisease" role="button" aria-expanded="false" aria-controls="CerebralDisease">
+            EVC
+        </a>
+        <div class="collapse" id="CerebralDisease">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.CerebralDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.CerebralDisease)
+                @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.CerebralDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.CerebralDiseaseComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
 
-                </div>
             </div>
-            <hr />
-            <a class="btn btn-primary" data-toggle="collapse" href="#Neuropathy" role="button" aria-expanded="false" aria-controls="Neuropathy">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Neuropathy)
-            </a>
-            <div class="collapse" id="Neuropathy">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Neuropathy, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Neuropathy)
-                    @Html.LabelFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.NeuropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.NeuropathyComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
+        </div>
 
-            <a class="btn btn-primary" data-toggle="collapse" href="#BloodTransfusion" role="button" aria-expanded="false" aria-controls="BloodTransfusion">
-                @Html.DisplayNameFor(model => model.PathologicRecord.BloodTransfusion)
-            </a>
-            <div class="collapse" id="BloodTransfusion">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusion, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusion)
-                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Epilepsy" role="button" aria-expanded="false" aria-controls="Epilepsy">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Epilepsy)
+        </a>
+        <div class="collapse" id="Epilepsy">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Epilepsy, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Epilepsy)
+                @Html.LabelFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.EpilepsyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.EpilepsyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.EpilepsyComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Allergy" role="button" aria-expanded="false" aria-controls="Allergy">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Allergy)
-            </a>
-            <div class="collapse" id="Allergy">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Allergy, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.PathologicRecord.Allergy)
-                    @Html.LabelFor(model => model.PathologicRecord.AllergyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.AllergyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.AllergyComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.AllergyComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Thyroid" role="button" aria-expanded="false" aria-controls="Thyroid">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Thyroid)
+        </a>
+        <div class="collapse" id="Thyroid">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Thyroid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Thyroid)
+                @Html.LabelFor(model => model.PathologicRecord.ThyroidDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ThyroidDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.ThyroidComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ThyroidComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#Surgery" role="button" aria-expanded="false" aria-controls="Surgery">
-                @Html.DisplayNameFor(model => model.PathologicRecord.Surgery)
-            </a>
-            <div class="collapse" id="Surgery">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.PathologicRecord.Surgery, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.Surgery)
-                    @Html.LabelFor(model => model.PathologicRecord.SurgeryDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.SurgeryDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.PathologicRecord.SurgeryComment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.PathologicRecord.SurgeryComment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#LungDisease" role="button" aria-expanded="false" aria-controls="LungDisease">
+            EPOC
+        </a>
+        <div class="collapse" id="LungDisease">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.LungDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LungDisease)
+                @Html.LabelFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LungDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.LungDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LungDiseaseComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
             </div>
-            <a class="btn btn-primary" data-toggle="collapse" href="#OtherPathologicRecord" role="button" aria-expanded="false" aria-controls="OtherPathologicRecord">
-                @Html.DisplayNameFor(model => model.OtherPathologicRecord.Name)
-            </a>
-            <div class="collapse" id="OtherPathologicRecord">
-                <div class="card card-body">
-                    @Html.LabelFor(model => model.OtherPathologicRecord.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.OtherPathologicRecord.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.OtherPathologicRecord.DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.OtherPathologicRecord.DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.LabelFor(model => model.OtherPathologicRecord.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.OtherPathologicRecord.Comment, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#LiverDisease" role="button" aria-expanded="false" aria-controls="LiverDisease">
+            @Html.DisplayNameFor(model => model.PathologicRecord.LiverDisease)
+        </a>
+        <div class="collapse" id="LiverDisease">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.LiverDisease, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LiverDisease)
+                @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.LiverDiseaseComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.LiverDiseaseComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
             </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Colon" role="button" aria-expanded="false" aria-controls="Colon">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Colon)
+        </a>
+        <div class="collapse" id="Colon">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Colon, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.Colon)
+                @Html.LabelFor(model => model.PathologicRecord.ColonDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ColonDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.ColonComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.ColonComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Cancer" role="button" aria-expanded="false" aria-controls="Cancer">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Cancer)
+        </a>
+        <div class="collapse" id="Cancer">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Cancer, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Cancer)
+                @Html.LabelFor(model => model.PathologicRecord.CancerDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.CancerDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.CancerComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.CancerComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <a class="btn btn-primary" data-toggle="collapse" href="#Hypertriglyceridemia" role="button" aria-expanded="false" aria-controls="Hypertriglyceridemia">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Hypertriglyceridemia)
+        </a>
+        <div class="collapse" id="Hypertriglyceridemia">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Hypertriglyceridemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Hypertriglyceridemia)
+                @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.HypertriglyceridemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypertriglyceridemiaComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+
+        <a class="btn btn-primary" data-toggle="collapse" href="#Hypercholesterolemia" role="button" aria-expanded="false" aria-controls="Hypercholesterolemia">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Hypercholesterolemia)
+        </a>
+        <div class="collapse" id="Hypercholesterolemia">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Hypercholesterolemia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Hypercholesterolemia)
+                @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.HypercholesterolemiaComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.HypercholesterolemiaComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Necropathy" role="button" aria-expanded="false" aria-controls="Necropathy">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Necropathy)
+        </a>
+        <div class="collapse" id="Necropathy">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Necropathy, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Necropathy)
+                @Html.LabelFor(model => model.PathologicRecord.NecropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NecropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.NecropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NecropathyComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Retinopathy" role="button" aria-expanded="false" aria-controls="Retinopathy">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Retinopathy)
+        </a>
+        <div class="collapse" id="Retinopathy">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Retinopathy, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.Retinopathy)
+                @Html.LabelFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.RetinopathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.RetinopathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.RetinopathyComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+
+
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Ophthalmological" role="button" aria-expanded="false" aria-controls="Ophthalmological">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Ophthalmological)
+        </a>
+        <div class="collapse" id="Ophthalmological">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Ophthalmological, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.Ophthalmological)
+                @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.OphthalmologicalComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.OphthalmologicalComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <a class="btn btn-primary" data-toggle="collapse" href="#Neuropathy" role="button" aria-expanded="false" aria-controls="Neuropathy">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Neuropathy)
+        </a>
+        <div class="collapse" id="Neuropathy">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Neuropathy, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Neuropathy)
+                @Html.LabelFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NeuropathyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.NeuropathyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.NeuropathyComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+
+        <a class="btn btn-primary" data-toggle="collapse" href="#BloodTransfusion" role="button" aria-expanded="false" aria-controls="BloodTransfusion">
+            @Html.DisplayNameFor(model => model.PathologicRecord.BloodTransfusion)
+        </a>
+        <div class="collapse" id="BloodTransfusion">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.BloodTransfusion, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.BloodTransfusion)
+                @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.BloodTransfusionComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.BloodTransfusionComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Allergy" role="button" aria-expanded="false" aria-controls="Allergy">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Allergy)
+        </a>
+        <div class="collapse" id="Allergy">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Allergy, htmlAttributes: new { @class = "control-label col-md-4" })
+                @Html.EditorFor(model => model.PathologicRecord.Allergy)
+                @Html.LabelFor(model => model.PathologicRecord.AllergyDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.AllergyDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.AllergyComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.AllergyComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#Surgery" role="button" aria-expanded="false" aria-controls="Surgery">
+            @Html.DisplayNameFor(model => model.PathologicRecord.Surgery)
+        </a>
+        <div class="collapse" id="Surgery">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.PathologicRecord.Surgery, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.Surgery)
+                @Html.LabelFor(model => model.PathologicRecord.SurgeryDiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.SurgeryDiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.PathologicRecord.SurgeryComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PathologicRecord.SurgeryComment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#OtherPathologicRecord" role="button" aria-expanded="false" aria-controls="OtherPathologicRecord">
+            @Html.DisplayNameFor(model => model.OtherPathologicRecord.Name)
+        </a>
+        <div class="collapse" id="OtherPathologicRecord">
+            <div class="card card-body">
+                @Html.LabelFor(model => model.OtherPathologicRecord.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.OtherPathologicRecord.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.OtherPathologicRecord.DiagnosticYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.OtherPathologicRecord.DiagnosticYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.LabelFor(model => model.OtherPathologicRecord.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.OtherPathologicRecord.Comment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comentarios" } })
+            </div>
+        </div>
+    </div>
             <div class="form-horizontal">
                 <h4>Interrogarorio por Aparatos y sistemas</h4>
                 <hr />
@@ -651,13 +657,13 @@
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.Symptom.StartDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Symptom.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.Symptom.StartDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                 @Html.ValidationMessageFor(model => model.Symptom.StartDate, "", new { @class = "text-danger" })
 
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.Symptom.EndDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Symptom.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.Symptom.EndDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                 @Html.ValidationMessageFor(model => model.Symptom.EndDate, "", new { @class = "text-danger" })
 
                             </div>
@@ -915,7 +921,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 @Html.LabelFor(model => model.MedicalTest.RadiographToraxDate, htmlAttributes: new { @class = "control-label col-md-6" })
-                                                @Html.EditorFor(model => model.MedicalTest.RadiographToraxDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.MedicalTest.RadiographToraxDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                                 @Html.ValidationMessageFor(model => model.MedicalTest.RadiographToraxDate, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="form-group col-md-6">
@@ -934,7 +940,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 @Html.LabelFor(model => model.MedicalTest.UltrasoundDate, htmlAttributes: new { @class = "control-label col-md-6" })
-                                                @Html.EditorFor(model => model.MedicalTest.UltrasoundDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.MedicalTest.UltrasoundDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                                 @Html.ValidationMessageFor(model => model.MedicalTest.UltrasoundDate, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="form-group col-md-6">
@@ -956,7 +962,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 @Html.LabelFor(model => model.MedicalTest.ElectrocardiographyDate, htmlAttributes: new { @class = "control-label col-md-6" })
-                                                @Html.EditorFor(model => model.MedicalTest.ElectrocardiographyDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.MedicalTest.ElectrocardiographyDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                                 @Html.ValidationMessageFor(model => model.MedicalTest.ElectrocardiographyDate, "", new { @class = "text-danger" })
                                             </div>
                                             <div class="form-group col-md-6">
@@ -990,7 +996,7 @@
                                 <div class="collapse" id="BiometriaHematica">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.BiometriaHematica.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.BiometriaHematica.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.BiometriaHematica.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.BiometriaHematica.Eritrocitos, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.BiometriaHematica.Eritrocitos, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.BiometriaHematica.Hemoglobina, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1012,7 +1018,7 @@
                                 <div class="collapse" id="GeneralOrina">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.GeneralOrina.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.GeneralOrina.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.GeneralOrina.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.GeneralOrina.Aspecto, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.GeneralOrina.Aspecto, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.GeneralOrina.Densidad, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1044,7 +1050,7 @@
                                 <div class="collapse" id="Hormonas">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.Hormonas.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.Hormonas.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Hormonas.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.Hormonas.LH, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.Hormonas.LH, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.Hormonas.FSH, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1066,7 +1072,7 @@
                                 <div class="collapse" id="PerfilHepatico">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.PerfilHepatico.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.PerfilHepatico.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.PerfilHepatico.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.PerfilHepatico.BilirrubinaTotal, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.PerfilHepatico.BilirrubinaTotal, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.PerfilHepatico.BilirrubinaDirecta, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1090,7 +1096,7 @@
                                 <div class="collapse" id="PerfilTiroideo">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.PerfilTiroideo.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.PerfilTiroideo.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.PerfilTiroideo.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.PerfilTiroideo.TSH, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.PerfilTiroideo.TSH, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.PerfilTiroideo.T3Total, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1110,7 +1116,7 @@
                                 <div class="collapse" id="QuimicaSanguinea">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.QuimicaSanguinea.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.QuimicaSanguinea.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.QuimicaSanguinea.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.QuimicaSanguinea.Glucosa, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.QuimicaSanguinea.Glucosa, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.QuimicaSanguinea.Creatinina, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1134,7 +1140,7 @@
                                 <div class="collapse" id="OtrosLabs">
                                     <div class="card card-body">
                                         @Html.LabelFor(model => model.OtrosLabs.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.EditorFor(model => model.OtrosLabs.Date, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.OtrosLabs.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
                                         @Html.LabelFor(model => model.OtrosLabs.VitaminaD, htmlAttributes: new { @class = "control-label col-md-2" })
                                         @Html.EditorFor(model => model.OtrosLabs.VitaminaD, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.LabelFor(model => model.OtrosLabs.Calcio, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1158,14 +1164,14 @@
                                 <div class="form-horizontal">
                                     <h4>Diagnostico y Tratamiento </h4>
                                     <hr />
-                                    <a class="btn btn-primary" data-toggle="collapse" href="#MedicalTest" role="button" aria-expanded="false" aria-controls="MedicalTest">
+                                    <a class="btn btn-primary" data-toggle="collapse" href="#Others" role="button" aria-expanded="false" aria-controls="Others">
                                         Diagnostico y Tratamiento
                                     </a>
-                                    <div class="collapse" id="MedicalTest">
+                                    <div class="collapse" id="Others">
                                         <div class="card card-body">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    @Html.LabelFor(model => model.Others.Reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.LabelFor(model => model.Others.Reason, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     @Html.EditorFor(model => model.Others.Reason, new { htmlAttributes = new { @class = "form-control" } })
                                                     @Html.ValidationMessageFor(model => model.Others.Reason, "", new { @class = "text-danger" })
                                                 </div>

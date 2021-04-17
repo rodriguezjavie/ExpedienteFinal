@@ -12,6 +12,7 @@ namespace ExpedienteIDON.Models
         [Required]
         [Display(Name = "Nombre(s)")]
         public string Name { get; set; }
+        [Required]
         [Display(Name = "Apellido(s)")]
         public string LastName { get; set; }
         [Display(Name = "Fecha de Nacimiento")]
@@ -20,6 +21,7 @@ namespace ExpedienteIDON.Models
         [Display(Name = "Genero")]
         public Gender PatientGender { get; set; }
 
+        [Required]
         [Phone]
         [Display(Name = "Telefono")]
         public string Phone { get; set; }
@@ -27,7 +29,7 @@ namespace ExpedienteIDON.Models
         [Phone]
         [Display(Name = "Celular")]
         public string Cellphone { get; set; }
-
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -38,7 +40,7 @@ namespace ExpedienteIDON.Models
         public Studies PatientStudies { get; set; }
         [Display(Name = "Estado Civil")]
         public CivilStatus PatientCivilStatus { get; set; }
-
+        [Required]
         [Display(Name = "Dirección")]
         public string Address { get; set; }
     }

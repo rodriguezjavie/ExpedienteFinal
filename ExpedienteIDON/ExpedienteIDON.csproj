@@ -210,6 +210,14 @@
     <Compile Include="Migrations\202104170443476_populateBloodTypesTable.Designer.cs">
       <DependentUpon>202104170443476_populateBloodTypesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104171615339_addRequieredFieldsPatient.cs" />
+    <Compile Include="Migrations\202104171615339_addRequieredFieldsPatient.Designer.cs">
+      <DependentUpon>202104171615339_addRequieredFieldsPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104171618572_addRequieredFieldsPatientNew.cs" />
+    <Compile Include="Migrations\202104171618572_addRequieredFieldsPatientNew.Designer.cs">
+      <DependentUpon>202104171618572_addRequieredFieldsPatientNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -512,6 +520,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104170443476_populateBloodTypesTable.resx">
       <DependentUpon>202104170443476_populateBloodTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104171615339_addRequieredFieldsPatient.resx">
+      <DependentUpon>202104171615339_addRequieredFieldsPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104171618572_addRequieredFieldsPatientNew.resx">
+      <DependentUpon>202104171618572_addRequieredFieldsPatientNew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

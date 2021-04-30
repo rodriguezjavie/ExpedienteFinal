@@ -1,31 +1,195 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Inicio";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Dashboard</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </div>
+        </div>
+        <!-- start new patient list -->
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Lista de nuevos pacientes</header>
+                        <div class="tools">
+                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-wrap">
+                            <div class="table-responsive">
+                                <table class="table display product-overview mb-30" id="support_table">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nombre</th>
+                                            <th>Doctor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Jens Brincker</td>
+                                            <td>Dr.Kenny Josh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Mark Hay</td>
+                                            <td>Dr. Mark</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>David Perry</td>
+                                            <td>Dr.Felix </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Anthony Davie</td>
+                                            <td>Dr.Beryl</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Mark Hay</td>
+                                            <td>Dr.Jayesh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Sue Woodger</td>
+                                            <td>Dr.Sharma</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center full-width">
+                                <a href="#">Todos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Lista de Doctores</header>
+                    </div>
+                    <div class="card-body ">
+                        <div class="row">
+                            <ul id="homeDoctorList" class="docListWindow small-slimscroll-style">
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc1.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Rajesh</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc2.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Sarah Smith</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc3.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.John Deo</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Jay Soni</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Jacob Ryan</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Megha Trivedi</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Rajesh</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.Sarah Smith</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prog-avatar">
+                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="#">Dr.John Deo</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="text-center full-width">
+                                <a href="#">Todos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end new patient list -->
+    </div>
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<!-- end page content -->

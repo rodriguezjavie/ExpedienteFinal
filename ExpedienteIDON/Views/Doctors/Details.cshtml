@@ -4,71 +4,103 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Doctor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cellphone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cellphone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DoctorGender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoctorGender)
-        </dd>
-
-    </dl>
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Perfil del Doctor</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a class="parent-item" href="@Url.Action("Index","Doctors")">Doctores</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Perfil del Doctor</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN PROFILE SIDEBAR -->
+                <div class="profile-sidebar">
+                    <div class="card ">
+                        <div class="card-body no-padding height-9">
+                            <div class="row">
+                                <div class="profile-userpic">
+                                    <img src="@Url.Content("/Scripts/theme/img/user/user8.jpg")" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                            <div class="profile-usertitle">
+                                <div class="profile-usertitle-name"> @Html.DisplayFor(model => model.Name) </div>
+                                <div class="profile-usertitle-job"> Doctor </div>
+                            </div>
+                            <!-- END SIDEBAR USER TITLE -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head ">
+                            <header>Información</header>
+                        </div>
+                        <div class="card-body no-padding height-9">
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>Genero </b>
+                                    <div class="profile-desc-item pull-right">@Html.DisplayFor(model => model.DoctorGender)</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Email </b>
+                                    <div class="profile-desc-item pull-right">@Html.DisplayFor(model => model.Email)</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Teléfono</b>
+                                    <div class="profile-desc-item pull-right">@Html.DisplayFor(model => model.Phone)</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Celular</b>
+                                    <div class="profile-desc-item pull-right">@Html.DisplayFor(model => model.Cellphone)</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head ">
+                            <header>Dirección</header>
+                        </div>
+                        <div class="card-body no-padding height-9">
+                            <div class="row text-center m-t-10">
+                                <div class="col-md-12">
+                                    <p>
+                                        @Html.DisplayFor(model => model.Address)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BEGIN PROFILE SIDEBAR -->
+                <!-- BEGIN PROFILE CONTENT -->
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="card">
+                            <div class="white-box">
+                                <!-- Nav tabs -->
+                                <div class="p-rl-20">
+                                    <ul class="nav customtab nav-tabs" role="tablist">
+                                        <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">Actvidades</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PROFILE CONTENT -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- end page container -->E

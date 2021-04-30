@@ -7,7 +7,6 @@ namespace ExpedienteIDON.Models
 {
     public enum GradoAfectación
     {
-        Ninguna,
         Leve,
         Moderada,
         Severa

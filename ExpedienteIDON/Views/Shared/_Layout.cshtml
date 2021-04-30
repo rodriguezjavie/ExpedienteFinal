@@ -5,62 +5,485 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+    <!-- icons -->
+    <link href="@Url.Content("/Scripts/theme/fonts/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- data tables -->
+    <link href="@Url.Content("/Scripts/theme/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            </button>
-            <a class="navbar-brand" href="/">Application name</a>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav mr-auto">
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-color logo-dark dark-theme">
 
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/Home/About" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/Home/Contact" class="nav-link">Contact</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Doctor
+    <div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="@Url.Action("Index","Home")">
+                        <img alt="" src="@Url.Content("/Scripts/theme/img/logo.png")">
+                        <span class="logo-default">GDS</span>
+                    </a>
+                </div>
+                <!-- logo end -->
+                <ul class="nav navbar-nav navbar-left in">
+                    <li><a href="#" class="menu-toggler sidebar-toggler font-size-20"><i class="fa fa-exchange" aria-hidden="true"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left in">
+                    <li class="dropdown dropdown-extended dropdown-notification">
+                        <a href="javascript:;" class="dropdown-toggle app-list-icon font-size-20" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="fa fa-th" aria-hidden="true"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item">@Html.ActionLink("Todos los doctores", "Index", "Doctors")</a>
-                            <a class="dropdown-item">@Html.ActionLink("Nuevo Doctor", "Create", "Doctors")</a>
-                            <div class="dropdown-divider"></div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Paciente
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item">@Html.ActionLink("Todos los pacientes", "Index", "Patients")</a>
-                            <a class="dropdown-item">@Html.ActionLink("Nuevo Paciente", "Create", "Patients")</a>
-                            <div class="dropdown-divider"></div>
-                        </div>
+                        <ul class="dropdown-menu app-icon">
+                            <li class="app-dropdown-header">
+                                <p><span class="bold">Applications</span></p>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list app-icon-dropdown" data-handle-color="#637283">
+                                    <li>
+                                        <a href="add_patient.html" class="patient-icon">
+                                            <i class="material-icons">local_hotel</i>
+                                            <span class="block">Add Patient</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="email_inbox.html" class="email-icon">
+                                            <i class="material-icons">drafts</i>
+                                            <span class="block">Email</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="view_appointment.html" class="appoint-icon">
+                                            <i class="material-icons">assignment</i>
+                                            <span class="block">Appointment</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="all_doctors.html" class="doctor-icon">
+                                            <i class="material-icons">people</i>
+                                            <span class="block">Doctors</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="google_maps.html" class="map-icon">
+                                            <i class="material-icons">map</i>
+                                            <span class="block">Map</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="payments.html" class="payment-icon">
+                                            <i class="material-icons">monetization_on</i>
+                                            <span class="block">Payments</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-
-                <ul class="nav navbar-nav navbar-right mr-auto">
-                    <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
-                    <li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
+                <ul class="nav navbar-nav navbar-left in">
+                    <!-- start full screen button -->
+                    <li><a href="javascript:;" class="fullscreen-click font-size-20"><i class="fa fa-arrows-alt"></i></a></li>
+                    <!-- end full screen button -->
                 </ul>
-
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- start manage user dropdown -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle " src="@Url.Content("../Scripts/theme/img/dp.jpg")" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="user_profile.html">
+                                        <i class="fa fa-user"></i> Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-cogs"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-question-circle"></i> Help
+                                    </a>
+                                </li>
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="lock_screen.html">
+                                        <i class="fa fa-lock"></i> Lock
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="login.html">
+                                        <i class="fa fa-sign-out"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+                        <li class="dropdown dropdown-quick-sidebar-toggler">
+                            <a id="headerSettingButton" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">settings</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
+        <!-- end header -->
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- start page container -->
+    <div class="page-container">
+        <!-- start sidebar menu -->
+        <div class="sidebar-container">
+            <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+                <div id="remove-scroll" class="left-sidemenu">
+                    <ul class="sidemenu  page-header-fixed slimscroll-style" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        <li class="sidebar-user-panel">
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="@Url.Content("/Scripts/theme/img/dp.jpg")" class="img-circle user-img-circle" alt="User Image" />
+                                </div>
+                                <div class="pull-left info">
+                                    <p> Administrador</p>
+                                    <small>Admin</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item active open">
+                            <a href="@Url.Action("Index","Home")" class="nav-link">
+                                <i class="material-icons">dashboard</i>
+                                <span class="title">Dashboard</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle">
+                                <i class="material-icons">accessible</i>
+                                <span class="title">Pacientes</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="@Url.Action("Index","Patients")" class="nav-link ">
+                                        <span class="title">Lista de pacientes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="@Url.Action("Create","Patients")" class="nav-link ">
+                                        <span class="title">Nuevo Paciente</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle">
+                                <i class="material-icons">person</i>
+                                <span class="title">Doctores</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="@Url.Action("Index","Doctors")" class="nav-link ">
+                                        <span class="title">Lista de doctores</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="@Url.Action("Create","Doctors")" class="nav-link ">
+                                        <span class="title">Nuevo Doctor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end sidebar menu -->
+        <!-- start Render -->
+        @RenderBody()
+        <!-- Render -->
+        <!-- end Render -->
+        <div class="chat-sidebar-container" data-close-on-body-click="false">
+            <div class="chat-sidebar">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab">Theme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_2" class="nav-link tab-icon" data-toggle="tab">Settings</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Start Color Theme Sidebar -->
+                    <div class="tab-pane chat-sidebar-settings in show active animated shake" role="tabpanel" id="quick_sidebar_tab_1">
+                        <div class="chat-sidebar-slimscroll-style">
+                            <div class="theme-light-dark">
+                                <h6>Sidebar Theme</h6>
+                                <button type="button" data-theme="white" class="btn lightColor btn-outline btn-circle m-b-10 theme-button">Light Sidebar</button>
+                                <button type="button" data-theme="dark" class="btn dark btn-outline btn-circle m-b-10 theme-button">Dark Sidebar</button>
+                            </div>
+                            <div class="theme-light-dark">
+                                <h6>Sidebar Color</h6>
+                                <ul class="list-unstyled">
+                                    <li class="complete">
+                                        <div class="theme-color sidebar-theme">
+                                            <a href="#" data-theme="white"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="dark"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="blue"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="indigo"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="cyan"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="green"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="red"><span class="head"></span><span class="cont"></span></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h6>Header Brand color</h6>
+                                <ul class="list-unstyled">
+                                    <li class="theme-option">
+                                        <div class="theme-color logo-theme">
+                                            <a href="#" data-theme="logo-white"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-dark"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-blue"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-indigo"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-cyan"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-green"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="logo-red"><span class="head"></span><span class="cont"></span></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h6>Header color</h6>
+                                <ul class="list-unstyled">
+                                    <li class="theme-option">
+                                        <div class="theme-color header-theme">
+                                            <a href="#" data-theme="header-white"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-dark"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-blue"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-indigo"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-cyan"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-green"><span class="head"></span><span class="cont"></span></a>
+                                            <a href="#" data-theme="header-red"><span class="head"></span><span class="cont"></span></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Color Theme Sidebar -->
+                    <!-- Start Setting Panel -->
+                    <div class="tab-pane chat-sidebar-settings animated slideInUp" id="quick_sidebar_tab_2">
+                        <div class="chat-sidebar-settings-list chat-sidebar-slimscroll-style">
+                            <div class="chat-header"><h5 class="list-heading">Layout Settings</h5></div>
+                            <div class="chatpane inner-content ">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Sidebar Position</div>
+                                        <div class="setting-set">
+                                            <select class="sidebar-pos-option form-control input-inline input-sm input-small ">
+                                                <option value="left" selected="selected">Left</option>
+                                                <option value="right">Right</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Header</div>
+                                        <div class="setting-set">
+                                            <select class="page-header-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed" selected="selected">Fixed</option>
+                                                <option value="default">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Sidebar Menu </div>
+                                        <div class="setting-set">
+                                            <select class="sidebar-menu-option form-control input-inline input-sm input-small ">
+                                                <option value="accordion" selected="selected">Accordion</option>
+                                                <option value="hover">Hover</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Footer</div>
+                                        <div class="setting-set">
+                                            <select class="page-footer-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed">Fixed</option>
+                                                <option value="default" selected="selected">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header"><h5 class="list-heading">Account Settings</h5></div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Notifications</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-1">
+                                                    <input type="checkbox" id="switch-1"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Show Online</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-7">
+                                                    <input type="checkbox" id="switch-7"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Status</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-2">
+                                                    <input type="checkbox" id="switch-2"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">2 Steps Verification</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-3">
+                                                    <input type="checkbox" id="switch-3"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header"><h5 class="list-heading">General Settings</h5></div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Location</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-4">
+                                                    <input type="checkbox" id="switch-4"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Save Histry</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-5">
+                                                    <input type="checkbox" id="switch-5"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Auto Updates</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-6">
+                                                    <input type="checkbox" id="switch-6"
+                                                           class="mdl-switch__input" checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end chat sidebar -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                @DateTime.Now.Year &copy; Powered by
+                <a href="mailto:ventas@gooddata.com.mx" target="_top" class="makerCss">Good Data Systems</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="material-icons">eject</i>
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end page container -->
+    <!-- start js include path -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/popper/popper.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery-blockui/jquery.blockui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery-slimscroll/jquery.slimscroll.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
+    <!-- bootstrap -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker-init.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js")"></script>
+    <!-- Common js-->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/app.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/layout.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/theme-color.js")"></script>
+    <!-- Material -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/material/material.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/pages/material_select/getmdl-select.js")"></script>
+    <!-- dropzone -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/dropzone/dropzone.js")"></script>
+    <!-- Mask -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js")"></script>
+    <!-- Date picker -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/material-datetimepicker/bootstrap-material-datetimepicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/material-datetimepicker/datetimepicker.js")"></script>
+    <!--tags input-->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery-tags-input/jquery-tags-input.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/jquery-tags-input/jquery-tags-input-init.js")"></script>
+    <!--select2-->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/select2/js/select2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/pages/select2/select2-init.js")"></script>
+    <!-- counterup -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/counterup/jquery.waypoints.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/counterup/jquery.counterup.min.js")"></script>
+    <!-- data tables -->
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js")"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/theme/js/pages/table/table_data.js")"></script>
 </body>
 </html>

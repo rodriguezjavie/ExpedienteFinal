@@ -43,6 +43,8 @@ namespace ExpedienteIDON.Models
         public DbSet<Hormonas> Hormonas { get; set; }
         public DbSet<GeneralOrina> GeneralOrinas { get; set; }
         public DbSet<OtrosLabs> OtrosLabs { get; set; }
+        public DbSet<EvolutionNote> EvolutionNotes { get; set; }
+
 
 
         public ApplicationDbContext()

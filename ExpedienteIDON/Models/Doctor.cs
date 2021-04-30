@@ -23,5 +23,7 @@ namespace ExpedienteIDON.Models
         public string Address { get; set; }
         [Display(Name = "Genero")]
         public Gender DoctorGender { get; set; }
+        [Display(Name = "Cédula")]
+        public string Cedula { get; set; }
     }
 }

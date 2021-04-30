@@ -23,7 +23,7 @@ namespace ExpedienteIDON.Models
         public int NonPathologicalRecordId { get; set; }
         public NonPathologicalRecord NonPathologicalRecord { get; set; }
         [ForeignKey("GynecoRecord")]
-        public int GynecoRecordId { get; set; }
+        public int? GynecoRecordId { get; set; }
         public GynecoRecord GynecoRecord { get; set; }
         [ForeignKey("PathologicRecord")]
         public int PathologicRecordId { get; set; }

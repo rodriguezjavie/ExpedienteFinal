@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExpedienteIDON.Models;
+using ExpedienteIDON.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,8 +8,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ExpedienteIDON.Models;
-using ExpedienteIDON.ViewModels;
 
 namespace ExpedienteIDON.Controllers
 {
@@ -18,7 +18,7 @@ namespace ExpedienteIDON.Controllers
         // GET: Patients
         public ActionResult Index()
         {
-            var patient = db.MedicalRecords.Include(m => m.Patient).Include(m => m.NonPathologicalRecord.BloodType).Include(m=>m.Others).ToList();
+            var patient = db.MedicalRecords.Include(m => m.Patient).Include(m => m.NonPathologicalRecord.BloodType).Include(m => m.Others).ToList();
             return View(patient);
         }
 
@@ -37,6 +37,20 @@ namespace ExpedienteIDON.Controllers
             return View(patient);
         }
 
+        public ActionResult DetailsMedicalRecord(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MedicalRecord record = db.MedicalRecords.Include(p => p.Patient).Where(a => a.PatientId == id).Single();
+            if (record == null)
+            {
+                return HttpNotFound();
+            }
+            return View(record);
+        }
+
         // GET: Patients/Create
         public ActionResult Create()
         {
@@ -44,27 +58,11 @@ namespace ExpedienteIDON.Controllers
             {
 
                 BloodTypes = db.BloodTypes.ToList(),
-                FamilyRecord = new FamilyRecord(),
-                GynecoRecord = new GynecoRecord(),
                 MedicalRecord = new MedicalRecord(),
-                NonPathologicalRecord = new NonPathologicalRecord(),
                 OtherFamilyRecord = new OtherFamilyRecord(),
                 OtherPathologicRecord = new OtherPathologicRecord(),
-                PathologicRecord = new PathologicRecord(),
-                Patient = new Patient(),
-                Symptom=new Symptom(),
-                VitalSigns=new VitalSigns(),
-                PhysicalExploration=new PhysicalExploration(),
-                MedicalTest=new MedicalTest(),
-                LabsTest=new LabsTest(),
-                Others= new Others(),
-                BiometriaHematica=new BiometriaHematica(),
-                PerfilHepatico=new PerfilHepatico(),
-                QuimicaSanguinea=new QuimicaSanguinea(),
-                PerfilTiroideo=new PerfilTiroideo(),
-                Hormonas=new Hormonas(),
-                GeneralOrina=new GeneralOrina(),
-                OtrosLabs=new OtrosLabs()
+                Symptom = new Symptom(),
+                LabsTest = new LabsTest(),
 
             };
             return View(historyRecord);
@@ -77,42 +75,26 @@ namespace ExpedienteIDON.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create
             ([Bind(Include = "Id,Name,LastName,Birthday,PatientGender,Phone,Cellphone,Email,Photo,Ocupation,PatientStudies,PatientCivilStatus,Address")]
-        FamilyRecord familyRecord, OtherFamilyRecord otherFamilyRecord, GynecoRecord gynecoRecord, NonPathologicalRecord nonPathologicalRecord
-            , Patient patient, PathologicRecord pathologicRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord
-            ,Symptom symptom, VitalSigns vitalSigns, PhysicalExploration physicalExploration, MedicalTest medicalTest, LabsTest labsTest
-            , Others others, BiometriaHematica biometriaHematica, QuimicaSanguinea quimicaSanguinea, Hormonas hormonas, PerfilHepatico perfilHepatico
-            , PerfilTiroideo perfilTiroideo, GeneralOrina generalOrina, OtrosLabs otrosLabs)
+             OtherFamilyRecord otherFamilyRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord
+            , Symptom symptom, LabsTest labsTest)
+            
         {
             var historyRecord = new HistoryRecordViewModel
             {
 
                 BloodTypes = db.BloodTypes.ToList(),
-                FamilyRecord = familyRecord,
-                GynecoRecord = gynecoRecord,
                 MedicalRecord = medicalRecord,
-                NonPathologicalRecord = nonPathologicalRecord,
                 OtherFamilyRecord = otherFamilyRecord,
                 OtherPathologicRecord = otherPathologicRecord,
-                PathologicRecord = pathologicRecord,
-                Patient = patient,
                 Symptom = symptom,
-                VitalSigns = vitalSigns,
-                PhysicalExploration = physicalExploration,
-                MedicalTest = medicalTest,
                 LabsTest = labsTest,
-                Others = others,
-                BiometriaHematica = biometriaHematica,
-                PerfilHepatico = perfilHepatico,
-                QuimicaSanguinea = quimicaSanguinea,
-                PerfilTiroideo = perfilTiroideo,
-                Hormonas = hormonas,
-                GeneralOrina = generalOrina,
-                OtrosLabs = otrosLabs
 
             };
             if (ModelState.IsValid)
             {
                 medicalRecord.Created = DateTime.Now;
+                if (medicalRecord.Patient.PatientGender == Gender.Masculino)
+                    medicalRecord.GynecoRecord = null;
                 db.MedicalRecords.Add(medicalRecord);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -4,113 +4,150 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Perfil del paciente</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a class="parent-item" href="@Url.Action("Index","Patients")">Pacientes</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Perfil del paciente</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <div class="white-box">
+                    <div class=" cardbox patient-profile">
+                        <img src="@Url.Content("/Scripts/theme/img/patient1.jpg")" class="img-responsive" alt="">
+                    </div>
+                    <div class="cardbox">
+                        <div class="header">
+                            <h4 class="font-bold">INFORMACIÓN BÁSICA</h4>
+                        </div>
+                        <div class="body">
+                            <div class="user-btm-box">
+                                <!-- .row -->
+                                <div class="row text-center m-t-10">
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 b-r">
+                                        <strong>Nombre:</strong>
+                                        <p>@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                        <strong>Género</strong>
+                                        <p>@Html.DisplayFor(model => model.PatientGender)</p>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                                <!-- .row -->
+                                <div class="row text-center m-t-10">
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 b-r">
+                                        <strong>Teléfono</strong>
+                                        <p>
+                                            <a href="tel:@Html.DisplayFor(model => model.Phone)">
+                                                @Html.DisplayFor(model => model.Phone)
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                        <strong>Célular</strong>
+                                        <p>
+                                            <a href="tel:@Html.DisplayFor(model => model.Cellphone)">
+                                                @Html.DisplayFor(model => model.Cellphone)
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                                <!-- .row -->
+                                <div class="row text-center m-t-10">
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 b-r">
+                                        <strong>Email</strong>
+                                        <p>@Html.DisplayFor(model => model.Email)</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                        <strong>Ocupación</strong>
+                                        <p>@Html.DisplayFor(model => model.Ocupation)</p>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                                <!-- .row -->
+                                <div class="row text-center m-t-10">
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 b-r">
+                                        <strong>Fecha Nacimiento</strong>
+                                        <p>@Html.DisplayFor(model => model.Birthday)</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                        <strong>Estudios</strong>
+                                        <p>@Html.DisplayFor(model => model.PatientStudies)</p>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                                <!-- .row -->
+                                <div class="row text-center m-t-10">
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 b-r">
+                                        <strong>Estado Civil</strong>
+                                        <p>@Html.DisplayFor(model => model.PatientCivilStatus)</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
+                                        <strong>Dirección</strong>
+                                        <p>@Html.DisplayFor(model => model.Address)</p>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div>
-    <h4>Patient</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-
-        </dt>
-        
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Birthday)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Birthday)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientGender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PatientGender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cellphone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cellphone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ocupation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ocupation)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientStudies)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PatientStudies)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PatientCivilStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PatientCivilStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-    </dl>
+            <div class="col-md-8 col-xs-12">
+                <div class="cardbox">
+                    <div class="body">
+                        <div class="mypost-list">
+                            <div class="post-box">
+                                <h4 class="font-bold">General</h4>
+                                <hr>
+                                <h5>Glucosa <span class="pull-right">85</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                </div>
+                                <h5>Presión<span class="pull-right">93</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%;"> <span class="sr-only">50% Complete</span> </div>
+                                </div>
+                                <h5>Masa corporal<span class="pull-right">55</span></h5>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%;"> <span class="sr-only">50% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card card-box">
+                                            <div class="card-head">
+                                                <header>Historial de visitas</header>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

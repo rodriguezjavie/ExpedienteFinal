@@ -23,8 +23,23 @@ namespace ExpedienteIDON
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                        "~/Scripts/theme/plugins/bootstrap/css/bootstrap.min.css",
+                        "~/Scripts/theme/css/style.css",
+                        "~/Scripts/theme/css/plugins.min.css",
+                        "~/Scripts/theme/css/responsive.css",
+                        "~/Scripts/theme/css/theme-color.css",
+                        "~/Scripts/theme/plugins/material/material.min.css",
+                        "~/Scripts/theme/css/material_style.css",
+                        "~/Scripts/theme/fonts/font-awesome/css/font-awesome.min.css",
+                        "~/Scripts/theme/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",
+                        "~/Scripts/theme/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css",
+                        "~/Scripts/theme/plugins/material/material.min.css",
+                        "~/Scripts/theme/css/material_style.css",
+                        "~/Scripts/theme/css/pages/formlayout.css",
+                        "~/Scripts/theme/plugins/dropzone/dropzone.css",
+                        "~/Scripts/theme/plugins/jquery-tags-input/jquery-tags-input.css",
+                        "~/Scripts/theme/plugins/select2/css/select2.css",
+                        "~/Scripts/theme/plugins/select2/css/select2-bootstrap.min.css"));
         }
     }
 }

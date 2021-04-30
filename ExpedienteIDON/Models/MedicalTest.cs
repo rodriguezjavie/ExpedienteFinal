@@ -15,6 +15,8 @@ namespace ExpedienteIDON.Models
         public DateTime? RadiographToraxDate { get; set; }
         [Display(Name = "¿Radiografía de tórax normal?")]
         public bool RadiographToraxNormal { get; set; }
+        [Display(Name = "Comentarios de Radiografía")]
+        public string RadiographToraxObservations { get; set; }
         [Display(Name = "Ultrasonido")]
         public bool Ultrasound { get; set; }
         [Display(Name = "Fecha de ultrasonido")]

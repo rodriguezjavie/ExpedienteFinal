@@ -18,12 +18,12 @@ namespace ExpedienteIDON.Models
         [Display(Name = "Fecha de Nacimiento")]
         public DateTime? Birthday { get; set; }
 
-        [Display(Name = "Genero")]
+        [Display(Name = "Género")]
         public Gender PatientGender { get; set; }
 
         [Required]
         [Phone]
-        [Display(Name = "Telefono")]
+        [Display(Name = "Teléfono")]
         public string Phone { get; set; }
 
         [Phone]

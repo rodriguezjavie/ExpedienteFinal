@@ -1,12 +1,9 @@
-﻿using System;
+﻿using ExpedienteIDON.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
@@ -17,120 +14,89 @@ namespace ExpedienteIDON.Controllers
         // GET: Prescriptions
         public ActionResult Index()
         {
-            var prescriptions = db.Prescriptions.Include(p => p.Doctor).Include(p => p.Patient);
-            return View(prescriptions.ToList());
-        }
-
-        // GET: Prescriptions/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prescription prescription = db.Prescriptions.Find(id);
-            if (prescription == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prescription);
-        }
-
-        // GET: Prescriptions/Create
-        public ActionResult Create()
-        {
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name");
-            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Name");
             return View();
         }
 
-        // POST: Prescriptions/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DoctorId,PatientId,Medicine,UnitOfMeasure,Dose,Frequency,Administration,StartDate,EndDate,Indications")] Prescription prescription)
+        // GET: Prescriptions/Details/5
+        public ActionResult Details(int id)
         {
-            if (ModelState.IsValid)
+            return View();
+        }
+        [Route("Prescriptions/Create/{doctorId}/{patientId}")]
+        // GET: Prescriptions/Create
+        public ActionResult Create(int doctorId, int patientId)
+        {
+            var doctor = db.Doctors.Single(d => d.Id == doctorId);
+            var patient = db.Patients.Single(p => p.Id == patientId);
+            var perscription = new Prescription
             {
+                Doctor=doctor,
+                Patient=patient
+            };
+            return View(perscription);
+        }
+
+        // POST: Prescriptions/Create
+        [Route("Prescriptions/Create/{doctorId}/{patientId}")]
+        [HttpPost]
+        public ActionResult Create(Prescription prescription, Doctor doctor, Patient patient)
+        {
+            try
+            {
+                prescription.DateCreated = DateTime.Now;
                 db.Prescriptions.Add(prescription);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
-
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", prescription.DoctorId);
-            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Name", prescription.PatientId);
-            return View(prescription);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Prescriptions/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prescription prescription = db.Prescriptions.Find(id);
-            if (prescription == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", prescription.DoctorId);
-            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Name", prescription.PatientId);
-            return View(prescription);
+            return View();
         }
 
         // POST: Prescriptions/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DoctorId,PatientId,Medicine,UnitOfMeasure,Dose,Frequency,Administration,StartDate,EndDate,Indications")] Prescription prescription)
+        public ActionResult Edit(int id, FormCollection collection)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(prescription).State = EntityState.Modified;
-                db.SaveChanges();
+                // TODO: Add update logic here
+
                 return RedirectToAction("Index");
             }
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", prescription.DoctorId);
-            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Name", prescription.PatientId);
-            return View(prescription);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Prescriptions/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prescription prescription = db.Prescriptions.Find(id);
-            if (prescription == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prescription);
+            return View();
         }
 
         // POST: Prescriptions/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            Prescription prescription = db.Prescriptions.Find(id);
-            db.Prescriptions.Remove(prescription);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            try
             {
-                db.Dispose();
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
             }
-            base.Dispose(disposing);
+            catch
+            {
+                return View();
+            }
         }
     }
 }

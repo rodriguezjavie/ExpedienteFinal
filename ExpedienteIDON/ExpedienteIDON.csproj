@@ -240,6 +240,22 @@
     <Compile Include="Migrations\202105031609284_AddPrescriptionTable.Designer.cs">
       <DependentUpon>202105031609284_AddPrescriptionTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105031712266_NullableAndCreateDateToPrescriptionTable.cs" />
+    <Compile Include="Migrations\202105031712266_NullableAndCreateDateToPrescriptionTable.Designer.cs">
+      <DependentUpon>202105031712266_NullableAndCreateDateToPrescriptionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105031842192_removeNavigationFieldsPrescriptionModel.cs" />
+    <Compile Include="Migrations\202105031842192_removeNavigationFieldsPrescriptionModel.Designer.cs">
+      <DependentUpon>202105031842192_removeNavigationFieldsPrescriptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105031912443_removePrescriptionTable.cs" />
+    <Compile Include="Migrations\202105031912443_removePrescriptionTable.Designer.cs">
+      <DependentUpon>202105031912443_removePrescriptionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105031951511_addPrescriptionsTable.cs" />
+    <Compile Include="Migrations\202105031951511_addPrescriptionsTable.Designer.cs">
+      <DependentUpon>202105031951511_addPrescriptionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -1536,10 +1552,6 @@
     <Content Include="Views\EvolutionNote\Create.cshtml" />
     <Content Include="Views\EvolutionNote\Index.cshtml" />
     <Content Include="Views\Prescriptions\Create.cshtml" />
-    <Content Include="Views\Prescriptions\Delete.cshtml" />
-    <Content Include="Views\Prescriptions\Details.cshtml" />
-    <Content Include="Views\Prescriptions\Edit.cshtml" />
-    <Content Include="Views\Prescriptions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1585,6 +1597,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031609284_AddPrescriptionTable.resx">
       <DependentUpon>202105031609284_AddPrescriptionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031712266_NullableAndCreateDateToPrescriptionTable.resx">
+      <DependentUpon>202105031712266_NullableAndCreateDateToPrescriptionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031842192_removeNavigationFieldsPrescriptionModel.resx">
+      <DependentUpon>202105031842192_removeNavigationFieldsPrescriptionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031912443_removePrescriptionTable.resx">
+      <DependentUpon>202105031912443_removePrescriptionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031951511_addPrescriptionsTable.resx">
+      <DependentUpon>202105031951511_addPrescriptionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -12,16 +12,14 @@ namespace ExpedienteIDON.Models
         public Doctor Doctor { get; set; }
         public int PatientId { get; set; }
         public Patient Patient { get; set; }
+        public DateTime DateCreated { get; set; }
         public string Medicine { get; set; }
         public string UnitOfMeasure { get; set; }
         public string Dose { get; set; }
         public string Frequency { get; set; }
         public string Administration { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string Indications { get; set; }
-
-
     }
-
 }

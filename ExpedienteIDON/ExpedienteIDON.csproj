@@ -185,6 +185,7 @@
     <Compile Include="Controllers\PerfilHepaticoesController.cs" />
     <Compile Include="Controllers\PerfilTiroideosController.cs" />
     <Compile Include="Controllers\PhysicalExplorationsController.cs" />
+    <Compile Include="Controllers\PrescriptionsController.cs" />
     <Compile Include="Controllers\QuimicaSanguineasController.cs" />
     <Compile Include="Controllers\SymptomsController.cs" />
     <Compile Include="Controllers\VitalSignsController.cs" />
@@ -235,6 +236,10 @@
     <Compile Include="Migrations\202104301658418_addRadiographToraxObservationFielInMedicalTestTable.Designer.cs">
       <DependentUpon>202104301658418_addRadiographToraxObservationFielInMedicalTestTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105031609284_AddPrescriptionTable.cs" />
+    <Compile Include="Migrations\202105031609284_AddPrescriptionTable.Designer.cs">
+      <DependentUpon>202105031609284_AddPrescriptionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -270,6 +275,7 @@
     <Compile Include="Models\PerfilHepatico.cs" />
     <Compile Include="Models\PerfilTiroideo.cs" />
     <Compile Include="Models\PhysicalExploration.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Prognosis.cs" />
     <Compile Include="Models\QuimicaSanguinea.cs" />
     <Compile Include="Models\Studies.cs" />
@@ -1529,6 +1535,11 @@
     <Content Include="Views\Patients\DetailsMedicalRecord.cshtml" />
     <Content Include="Views\EvolutionNote\Create.cshtml" />
     <Content Include="Views\EvolutionNote\Index.cshtml" />
+    <Content Include="Views\Prescriptions\Create.cshtml" />
+    <Content Include="Views\Prescriptions\Delete.cshtml" />
+    <Content Include="Views\Prescriptions\Details.cshtml" />
+    <Content Include="Views\Prescriptions\Edit.cshtml" />
+    <Content Include="Views\Prescriptions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1571,6 +1582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104301658418_addRadiographToraxObservationFielInMedicalTestTable.resx">
       <DependentUpon>202104301658418_addRadiographToraxObservationFielInMedicalTestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105031609284_AddPrescriptionTable.resx">
+      <DependentUpon>202105031609284_AddPrescriptionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -44,8 +44,7 @@ namespace ExpedienteIDON.Models
         public DbSet<GeneralOrina> GeneralOrinas { get; set; }
         public DbSet<OtrosLabs> OtrosLabs { get; set; }
         public DbSet<EvolutionNote> EvolutionNotes { get; set; }
-
-
+        public DbSet<Prescription> Prescriptions { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

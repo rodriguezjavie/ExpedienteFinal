@@ -39,7 +39,7 @@ namespace ExpedienteIDON.Controllers
         // POST: Prescriptions/Create
         [Route("Prescriptions/Create/{doctorId}/{patientId}")]
         [HttpPost]
-        public ActionResult Create(Prescription prescription, Doctor doctor, Patient patient)
+        public ActionResult Create(Prescription prescription)
         {
             try
             {

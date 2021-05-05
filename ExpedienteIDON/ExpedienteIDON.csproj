@@ -256,6 +256,10 @@
     <Compile Include="Migrations\202105031951511_addPrescriptionsTable.Designer.cs">
       <DependentUpon>202105031951511_addPrescriptionsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105041832114_addDoctorIdToEvolutionNote.cs" />
+    <Compile Include="Migrations\202105041832114_addDoctorIdToEvolutionNote.Designer.cs">
+      <DependentUpon>202105041832114_addDoctorIdToEvolutionNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -1609,6 +1613,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031951511_addPrescriptionsTable.resx">
       <DependentUpon>202105031951511_addPrescriptionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105041832114_addDoctorIdToEvolutionNote.resx">
+      <DependentUpon>202105041832114_addDoctorIdToEvolutionNote.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

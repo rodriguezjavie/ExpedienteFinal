@@ -24,12 +24,15 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: EvolutionNote/Create
-        public ActionResult Create(int id)
+        [Route("EvolutionNote/Create/{doctorId}/{patientId}")]
+        public ActionResult Create(int doctorId, int patientId)
         {
-            var patient = db.Patients.Single(p => p.Id == id);
+            var patient = db.Patients.Single(p => p.Id == patientId);
+            var doctor = db.Doctors.Single(d => d.Id == doctorId);
             var evolutionNote = new EvolutionNote
             {
                 Patient = patient,
+                Doctor=doctor
             };
            
 
@@ -38,14 +41,15 @@ namespace ExpedienteIDON.Controllers
         }
 
         // POST: EvolutionNote/Create
+        [Route("EvolutionNote/Create/{doctorId}/{patientId}")]
         [HttpPost]
-        public ActionResult Create(EvolutionNote evolutionNote, Patient patient)
+        public ActionResult Create(EvolutionNote evolutionNote)
         {
             try
 
             {
 
-                evolutionNote.PatientId = patient.Id;
+                
                 if (evolutionNote.BiometriaHematica.Date == null)
                     evolutionNote.BiometriaHematica = null;
                 if (evolutionNote.GeneralOrina.Date == null)

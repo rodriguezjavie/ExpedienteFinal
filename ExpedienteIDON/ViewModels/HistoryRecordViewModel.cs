@@ -14,6 +14,8 @@ namespace ExpedienteIDON.ViewModels
         public Symptom Symptom { get; set; }
         public LabsTest LabsTest { get; set; }
         public IEnumerable<BloodType> BloodTypes { get; set; }
+        public IEnumerable<Estado> Estados { get; set; }
+        public IEnumerable<Municipio> Municipios { get; set; }
 
     }
 }

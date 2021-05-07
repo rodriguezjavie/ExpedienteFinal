@@ -260,6 +260,34 @@
     <Compile Include="Migrations\202105041832114_addDoctorIdToEvolutionNote.Designer.cs">
       <DependentUpon>202105041832114_addDoctorIdToEvolutionNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105061741193_removeAddressFieldInPatients.cs" />
+    <Compile Include="Migrations\202105061741193_removeAddressFieldInPatients.Designer.cs">
+      <DependentUpon>202105061741193_removeAddressFieldInPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105061750574_modifyAddressFieldInPatients.cs" />
+    <Compile Include="Migrations\202105061750574_modifyAddressFieldInPatients.Designer.cs">
+      <DependentUpon>202105061750574_modifyAddressFieldInPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071625238_AddNullableMunicipioIdAndEstadoId.cs" />
+    <Compile Include="Migrations\202105071625238_AddNullableMunicipioIdAndEstadoId.Designer.cs">
+      <DependentUpon>202105071625238_AddNullableMunicipioIdAndEstadoId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071740002_removeMunicipioAndEstadoTables.cs" />
+    <Compile Include="Migrations\202105071740002_removeMunicipioAndEstadoTables.Designer.cs">
+      <DependentUpon>202105071740002_removeMunicipioAndEstadoTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071747563_AddNullableMunicipiosAndEstadosTable.cs" />
+    <Compile Include="Migrations\202105071747563_AddNullableMunicipiosAndEstadosTable.Designer.cs">
+      <DependentUpon>202105071747563_AddNullableMunicipiosAndEstadosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071852053_removeMunicipioAndEstadoTables1.cs" />
+    <Compile Include="Migrations\202105071852053_removeMunicipioAndEstadoTables1.Designer.cs">
+      <DependentUpon>202105071852053_removeMunicipioAndEstadoTables1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071857339_addMunicipioAndEstadoTables1.cs" />
+    <Compile Include="Migrations\202105071857339_addMunicipioAndEstadoTables1.Designer.cs">
+      <DependentUpon>202105071857339_addMunicipioAndEstadoTables1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -269,6 +297,7 @@
     <Compile Include="Models\DietType.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DrugType.cs" />
+    <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\EvolutionNote.cs" />
     <Compile Include="Models\ExerciseType.cs" />
     <Compile Include="Models\FamilyRecord.cs" />
@@ -285,6 +314,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MedicalRecord.cs" />
     <Compile Include="Models\MedicalTest.cs" />
+    <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\NonPathologicalRecord.cs" />
     <Compile Include="Models\OtherFamilyRecord.cs" />
     <Compile Include="Models\OtherPathologicRecord.cs" />
@@ -1616,6 +1646,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105041832114_addDoctorIdToEvolutionNote.resx">
       <DependentUpon>202105041832114_addDoctorIdToEvolutionNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105061741193_removeAddressFieldInPatients.resx">
+      <DependentUpon>202105061741193_removeAddressFieldInPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105061750574_modifyAddressFieldInPatients.resx">
+      <DependentUpon>202105061750574_modifyAddressFieldInPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071625238_AddNullableMunicipioIdAndEstadoId.resx">
+      <DependentUpon>202105071625238_AddNullableMunicipioIdAndEstadoId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071740002_removeMunicipioAndEstadoTables.resx">
+      <DependentUpon>202105071740002_removeMunicipioAndEstadoTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071747563_AddNullableMunicipiosAndEstadosTable.resx">
+      <DependentUpon>202105071747563_AddNullableMunicipiosAndEstadosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071852053_removeMunicipioAndEstadoTables1.resx">
+      <DependentUpon>202105071852053_removeMunicipioAndEstadoTables1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071857339_addMunicipioAndEstadoTables1.resx">
+      <DependentUpon>202105071857339_addMunicipioAndEstadoTables1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

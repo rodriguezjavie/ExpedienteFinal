@@ -40,8 +40,16 @@ namespace ExpedienteIDON.Models
         public Studies PatientStudies { get; set; }
         [Display(Name = "Estado Civil")]
         public CivilStatus PatientCivilStatus { get; set; }
-        [Required]
-        [Display(Name = "Dirección")]
-        public string Address { get; set; }
+        [Display(Name = "Calle y Numero")]
+        public string StreetAndNumber { get; set; }
+        [Display(Name = "Colonia")]
+        public string Suburb { get; set; }
+        [Display(Name = "Ciudad")]
+        public string City { get; set; }
+        public int MunicipioId { get; set; }
+        public Municipio Municipio { get; set; }
+        [Display(Name = "Codigo Postal")]
+        public string ZipCode { get; set; }
+
     }
 }

@@ -58,6 +58,8 @@ namespace ExpedienteIDON.Controllers
             {
 
                 BloodTypes = db.BloodTypes.ToList(),
+                Municipios=db.Municipios.ToList(),
+                Estados=db.Estadoes.ToList(),
                 MedicalRecord = new MedicalRecord(),
                 OtherFamilyRecord = new OtherFamilyRecord(),
                 OtherPathologicRecord = new OtherPathologicRecord(),
@@ -83,6 +85,8 @@ namespace ExpedienteIDON.Controllers
             {
 
                 BloodTypes = db.BloodTypes.ToList(),
+                Municipios = db.Municipios.ToList(),
+                Estados = db.Estadoes.ToList(),
                 MedicalRecord = medicalRecord,
                 OtherFamilyRecord = otherFamilyRecord,
                 OtherPathologicRecord = otherPathologicRecord,

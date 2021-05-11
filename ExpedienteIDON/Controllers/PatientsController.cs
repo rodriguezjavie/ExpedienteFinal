@@ -58,8 +58,8 @@ namespace ExpedienteIDON.Controllers
             {
 
                 BloodTypes = db.BloodTypes.ToList(),
-                Municipios=db.Municipios.ToList(),
-                Estados=db.Estadoes.ToList(),
+                Estados = db.Estadoes.ToList(),
+                Municipios = db.Municipios.ToList(),
                 MedicalRecord = new MedicalRecord(),
                 OtherFamilyRecord = new OtherFamilyRecord(),
                 OtherPathologicRecord = new OtherPathologicRecord(),
@@ -163,6 +163,14 @@ namespace ExpedienteIDON.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetMunicipios(int estadoId)
+        {
+            var selecList = db.Municipios.Where(m => m.EstadoId == estadoId);
+            ViewBag.Municipio = new SelectList(selecList, "Id", "Name");
+            return PartialView("_DisplayMunicipio");
+        }
+       
 
         protected override void Dispose(bool disposing)
         {

@@ -17,6 +17,14 @@ namespace ExpedienteIDON.Models
             return userIdentity;
         }
     }
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+
+        public ApplicationRole(string roleName) : base(roleName) { }
+
+        
+    }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -57,5 +65,6 @@ namespace ExpedienteIDON.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }

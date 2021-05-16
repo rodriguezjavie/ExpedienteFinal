@@ -1,4 +1,5 @@
 ﻿using ExpedienteIDON.Models;
+using ExpedienteIDON.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,45 +8,53 @@ using System.Web.Mvc;
 
 namespace ExpedienteIDON.Controllers
 {
-    public class PrescriptionsController : Controller
+    public class PrescriptionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: Prescriptions
+        // GET: Prescription
         public ActionResult Index()
         {
-            return View();
+            var list = db.Prescriptions.ToList();
+            return View(list);
         }
 
-        // GET: Prescriptions/Details/5
+        // GET: Prescription/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
-        [Route("Prescriptions/Create/{doctorId}/{patientId}")]
-        // GET: Prescriptions/Create
-        public ActionResult Create(int doctorId, int patientId)
+
+        // GET: Prescription/Create
+        [Route("Prescription/Create/{doctorId}/{patientId}")]
+        public ActionResult Create( int doctorId, int patientId)
         {
-            var doctor = db.Doctors.Single(d => d.Id == doctorId);
-            var patient = db.Patients.Single(p => p.Id == patientId);
-            var perscription = new Prescription
+            var doctor = db.Doctors.SingleOrDefault(d => d.Id == doctorId);
+            var patient = db.Patients.SingleOrDefault(p => p.Id == patientId);
+            var prescriptVM = new PrescriptionViewModel
             {
-                Doctor=doctor,
-                Patient=patient
+                Doctor = doctor,
+                Patient = patient,
+                MedicinesPrescription = new MedicinesPrescription { Prescription=new Prescription { DoctorId=doctorId, PatientId=patientId} }
             };
-            return View(perscription);
+           
+            return View(prescriptVM);
         }
 
-        // POST: Prescriptions/Create
-        [Route("Prescriptions/Create/{doctorId}/{patientId}")]
+        // POST: Prescription/Create
         [HttpPost]
-        public ActionResult Create(Prescription prescription)
+        [Route("Prescription/Create/{doctorId}/{patientId}")]
+        public ActionResult Create(MedicinesPrescription medicinesPrescription, Prescription prescription)
         {
             try
             {
-                prescription.DateCreated = DateTime.Now;
+                prescription.CratedDate = DateTime.Now;
+                medicinesPrescription.Prescription = prescription;
                 db.Prescriptions.Add(prescription);
+                db.MedicinesPrescriptions.Add(medicinesPrescription);
                 db.SaveChanges();
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+                // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
             }
@@ -55,13 +64,13 @@ namespace ExpedienteIDON.Controllers
             }
         }
 
-        // GET: Prescriptions/Edit/5
+        // GET: Prescription/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Prescriptions/Edit/5
+        // POST: Prescription/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -77,13 +86,13 @@ namespace ExpedienteIDON.Controllers
             }
         }
 
-        // GET: Prescriptions/Delete/5
+        // GET: Prescription/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Prescriptions/Delete/5
+        // POST: Prescription/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

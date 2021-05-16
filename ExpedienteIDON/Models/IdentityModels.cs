@@ -52,10 +52,10 @@ namespace ExpedienteIDON.Models
         public DbSet<GeneralOrina> GeneralOrinas { get; set; }
         public DbSet<OtrosLabs> OtrosLabs { get; set; }
         public DbSet<EvolutionNote> EvolutionNotes { get; set; }
-        public DbSet<Prescription> Prescriptions { get; set; }
         public DbSet<Municipio> Municipios { get; set; }
         public DbSet<Estado> Estadoes { get; set; }
-
+        public DbSet<Prescription> Prescriptions { get; set; }
+        public DbSet<MedicinesPrescription> MedicinesPrescriptions { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

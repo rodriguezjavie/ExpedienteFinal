@@ -185,7 +185,7 @@
     <Compile Include="Controllers\PerfilHepaticoesController.cs" />
     <Compile Include="Controllers\PerfilTiroideosController.cs" />
     <Compile Include="Controllers\PhysicalExplorationsController.cs" />
-    <Compile Include="Controllers\PrescriptionsController.cs" />
+    <Compile Include="Controllers\PrescriptionController.cs" />
     <Compile Include="Controllers\QuimicaSanguineasController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SymptomsController.cs" />
@@ -301,6 +301,46 @@
     <Compile Include="Migrations\202105111902088_removeRoleViewModel.Designer.cs">
       <DependentUpon>202105111902088_removeRoleViewModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105121606198_removePrescriptionsTable.cs" />
+    <Compile Include="Migrations\202105121606198_removePrescriptionsTable.Designer.cs">
+      <DependentUpon>202105121606198_removePrescriptionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121609247_addNewPrescriptionsTable.cs" />
+    <Compile Include="Migrations\202105121609247_addNewPrescriptionsTable.Designer.cs">
+      <DependentUpon>202105121609247_addNewPrescriptionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105141709568_updateModel.cs" />
+    <Compile Include="Migrations\202105141709568_updateModel.Designer.cs">
+      <DependentUpon>202105141709568_updateModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105141725413_addMedicinesTable.cs" />
+    <Compile Include="Migrations\202105141725413_addMedicinesTable.Designer.cs">
+      <DependentUpon>202105141725413_addMedicinesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105141735374_addPatientAndDoctorToPrescriptionTable.cs" />
+    <Compile Include="Migrations\202105141735374_addPatientAndDoctorToPrescriptionTable.Designer.cs">
+      <DependentUpon>202105141735374_addPatientAndDoctorToPrescriptionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105141815239_addPatientAndDoctorIdToPrescriptionTable.cs" />
+    <Compile Include="Migrations\202105141815239_addPatientAndDoctorIdToPrescriptionTable.Designer.cs">
+      <DependentUpon>202105141815239_addPatientAndDoctorIdToPrescriptionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105150132173_addDoctorAndPatientNavigationPropEnPrescription.cs" />
+    <Compile Include="Migrations\202105150132173_addDoctorAndPatientNavigationPropEnPrescription.Designer.cs">
+      <DependentUpon>202105150132173_addDoctorAndPatientNavigationPropEnPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105151605091_changeNamesMedicineAndPrescriptionModel.cs" />
+    <Compile Include="Migrations\202105151605091_changeNamesMedicineAndPrescriptionModel.Designer.cs">
+      <DependentUpon>202105151605091_changeNamesMedicineAndPrescriptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105151607223_removeMedicineAndPrescriptionModel.cs" />
+    <Compile Include="Migrations\202105151607223_removeMedicineAndPrescriptionModel.Designer.cs">
+      <DependentUpon>202105151607223_removeMedicineAndPrescriptionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105151609193_addMedicineAndPrescriptionsTable.cs" />
+    <Compile Include="Migrations\202105151609193_addMedicineAndPrescriptionsTable.Designer.cs">
+      <DependentUpon>202105151609193_addMedicineAndPrescriptionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BiometriaHematica.cs" />
@@ -327,6 +367,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MedicalRecord.cs" />
     <Compile Include="Models\MedicalTest.cs" />
+    <Compile Include="Models\MedicinesPrescription.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\NonPathologicalRecord.cs" />
     <Compile Include="Models\OtherFamilyRecord.cs" />
@@ -348,6 +389,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\EvolutionNoteVM.cs" />
     <Compile Include="ViewModels\HistoryRecordViewModel.cs" />
+    <Compile Include="ViewModels\PrescriptionViewModel.cs" />
     <Compile Include="ViewModels\RoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1599,13 +1641,15 @@
     <Content Include="Views\Patients\DetailsMedicalRecord.cshtml" />
     <Content Include="Views\EvolutionNote\Create.cshtml" />
     <Content Include="Views\EvolutionNote\Index.cshtml" />
-    <Content Include="Views\Prescriptions\Create.cshtml" />
     <Content Include="Views\Shared\_DisplayMunicipio.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Prescriptions\Create.cshtml" />
+    <Content Include="Views\Prescription\Index.cshtml" />
+    <Content Include="Views\Prescription\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1696,6 +1740,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105111902088_removeRoleViewModel.resx">
       <DependentUpon>202105111902088_removeRoleViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121606198_removePrescriptionsTable.resx">
+      <DependentUpon>202105121606198_removePrescriptionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121609247_addNewPrescriptionsTable.resx">
+      <DependentUpon>202105121609247_addNewPrescriptionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105141709568_updateModel.resx">
+      <DependentUpon>202105141709568_updateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105141725413_addMedicinesTable.resx">
+      <DependentUpon>202105141725413_addMedicinesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105141735374_addPatientAndDoctorToPrescriptionTable.resx">
+      <DependentUpon>202105141735374_addPatientAndDoctorToPrescriptionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105141815239_addPatientAndDoctorIdToPrescriptionTable.resx">
+      <DependentUpon>202105141815239_addPatientAndDoctorIdToPrescriptionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105150132173_addDoctorAndPatientNavigationPropEnPrescription.resx">
+      <DependentUpon>202105150132173_addDoctorAndPatientNavigationPropEnPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105151605091_changeNamesMedicineAndPrescriptionModel.resx">
+      <DependentUpon>202105151605091_changeNamesMedicineAndPrescriptionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105151607223_removeMedicineAndPrescriptionModel.resx">
+      <DependentUpon>202105151607223_removeMedicineAndPrescriptionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105151609193_addMedicineAndPrescriptionsTable.resx">
+      <DependentUpon>202105151609193_addMedicineAndPrescriptionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

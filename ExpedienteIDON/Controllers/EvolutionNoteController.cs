@@ -65,9 +65,10 @@ namespace ExpedienteIDON.Controllers
         }
 
         // POST: EvolutionNote/Create
+       
         [Route("EvolutionNote/Create/{doctorId}/{patientId}")]
         [HttpPost]
-        public ActionResult Create(EvolutionNote evolutionNote)
+        public ActionResult Create(EvolutionNote evolutionNote, string Type)
         {
             try
 
@@ -92,16 +93,26 @@ namespace ExpedienteIDON.Controllers
 
                 db.EvolutionNotes.Add(evolutionNote);
                 db.SaveChanges();
+                if (Type == "Sin Receta")
+                {
+                   
 
-                //return RedirectToAction("Index");
-                return RedirectToAction("Details", "EvolutionNote", new { id = evolutionNote.Id });
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Create", "EvolNotePrescription",new { doctorId =evolutionNote.DoctorId, patientId =evolutionNote.PatientId, evolutionNoteId =evolutionNote.Id});
+                    //return RedirectToAction("Create", "EvolNotePrescription", new { doctorId = evolutionNote.Doctor.Id, patientId = evolutionNote.Patient.Id, evolutionNoteId = evolutionNote.Id });
+                }
+                
+                //return RedirectToAction("Details", "EvolutionNote", new { id = evolutionNote.Id });
             }
             catch
             {
                 return View();
             }
         }
-
+        
         // GET: EvolutionNote/Edit/5
         public ActionResult Edit(int id)
         {

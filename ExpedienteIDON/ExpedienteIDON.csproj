@@ -180,6 +180,7 @@
     <Compile Include="Controllers\LabsTestsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MedicalTestsController.cs" />
+    <Compile Include="Controllers\MultipleButtonAttribute.cs" />
     <Compile Include="Controllers\OthersController.cs" />
     <Compile Include="Controllers\OtrosLabsController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />

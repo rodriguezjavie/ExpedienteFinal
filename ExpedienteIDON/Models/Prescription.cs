@@ -13,5 +13,9 @@ namespace ExpedienteIDON.Models
         public Patient Patient { get; set; }
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
+        public int? EvolutionNoteId { get; set; }
+        public EvolutionNote EvolutionNote { get; set; }
+        public int? MedicalRecordId { get; set; }
+        public MedicalRecord MedicalRecord { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ExpedienteIDON.Models;
+using ExpedienteIDON.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,9 @@ namespace ExpedienteIDON.Controllers
             var evolutionNote = new EvolutionNote
             {
                 Patient = patient,
-                Doctor=doctor
+                Doctor = doctor
             };
-           
+
 
 
             return View(evolutionNote);
@@ -48,8 +49,8 @@ namespace ExpedienteIDON.Controllers
             try
 
             {
+                evolutionNote.CreatedDate = DateTime.Now;
 
-                
                 if (evolutionNote.BiometriaHematica.Date == null)
                     evolutionNote.BiometriaHematica = null;
                 if (evolutionNote.GeneralOrina.Date == null)

@@ -8,6 +8,7 @@ namespace ExpedienteIDON.Models
     public class EvolutionNote
     {
         public int Id { get; set; }
+        public DateTime CreatedDate { get; set; }
         public int PatientId { get; set; }
         public Patient Patient { get; set; }
         public int DoctorId { get; set; }

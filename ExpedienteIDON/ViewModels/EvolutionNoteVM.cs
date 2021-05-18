@@ -11,8 +11,6 @@ namespace ExpedienteIDON.ViewModels
         public Doctor Doctor { get; set; }
         public Patient Patient { get; set; }
         public EvolutionNote EvolutionNote { get; set; }
-        public Prescription Prescription { get; set; }
-        public MedicinesPrescription MedicinesPrescription { get; set; }
 
 
     }

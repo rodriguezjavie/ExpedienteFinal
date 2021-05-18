@@ -2,6 +2,7 @@
 using ExpedienteIDON.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,7 +22,29 @@ namespace ExpedienteIDON.Controllers
         // GET: EvolutionNote/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var evolutionNote = db.EvolutionNotes
+                .Include(v=>v.VitalSigns)
+                .Include(b=>b.BiometriaHematica)
+                .Include(g=>g.GeneralOrina)
+                .Include(h=>h.Hormonas)
+                .Include(ph=>ph.PerfilHepatico)
+                .Include(pt=>pt.PerfilTiroideo)
+                .Include(q=>q.QuimicaSanguinea)
+                .Include(ol=>ol.OtrosLabs)
+                .Include(o=>o.Others)
+                .SingleOrDefault(e => e.Id == id);
+            var patient = db.Patients.Single(p => p.Id == evolutionNote.PatientId);
+            var doctor = db.Doctors.Single(d => d.Id == evolutionNote.DoctorId);
+            var evolucionNoteVM = new EvolutionNoteVM
+            {
+                EvolutionNote = evolutionNote,
+                Patient = patient,
+                Doctor = doctor
+            };
+
+
+
+            return View(evolucionNoteVM);
         }
 
         // GET: EvolutionNote/Create
@@ -70,7 +93,8 @@ namespace ExpedienteIDON.Controllers
                 db.EvolutionNotes.Add(evolutionNote);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", "EvolutionNote", new { id = evolutionNote.Id });
             }
             catch
             {

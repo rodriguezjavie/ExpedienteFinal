@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BiometriaHematicasController.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
+    <Compile Include="Controllers\EvolNotePrescriptionController.cs" />
     <Compile Include="Controllers\EvolutionNoteController.cs" />
     <Compile Include="Controllers\GeneralOrinasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1658,6 +1659,8 @@
     <Content Include="Views\Prescriptions\Create.cshtml" />
     <Content Include="Views\Prescription\Index.cshtml" />
     <Content Include="Views\Prescription\Create.cshtml" />
+    <Content Include="Views\EvolNotePrescription\Create.cshtml" />
+    <Content Include="Views\EvolutionNote\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

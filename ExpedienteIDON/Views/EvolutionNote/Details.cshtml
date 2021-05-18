@@ -1,0 +1,508 @@
+﻿@model ExpedienteIDON.ViewModels.EvolutionNoteVM
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h2>Create</h2>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Nota de Evolución</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="all_patients.html">Pacientes</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+
+                    <li class="active">Datos del paciente</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-body ">
+                        <!-- Start Basic Information -->
+                        <h2>Datos del medico</h2>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Doctor.Name, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Doctor.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Doctor.LastName, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Doctor.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Doctor.Cedula, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Doctor.Cedula, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Name, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.LastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Phone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Phone, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Cellphone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Cellphone, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Birthday, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Birthday, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Email, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Email, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Ocupation, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Ocupation, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.PatientStudies, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Patient.PatientStudies, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.PatientCivilStatus, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Patient.PatientCivilStatus, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Photo, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Photo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <!-- End Basic Information -->
+
+                            <!-- Start VitalSigns -->
+                            <div class="form-horizontal">
+                                <h4>Somatometria y signos vitales</h4>
+                                <hr />
+                                <a class="btn btn-primary" data-toggle="collapse" href="#VitalSigns" role="button" aria-expanded="false" aria-controls="VitalSigns">
+                                    Somatometria y signos vitales
+                                </a>
+                                <div class="collapse" id="VitalSigns">
+                                    <div class="card card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.Size, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.Size, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.Size, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.Weight, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.Weight, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.IMC, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.TABD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.TABD, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.TABD, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.TABI, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.TABI, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.TABI, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.FC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.FC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.FC, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.FR, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.FR, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.FR, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.Waist, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.Waist, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly="readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.Waist, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.Hip, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.Hip, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly="readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.Hip, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(model => model.EvolutionNote.VitalSigns.OxygenSaturation, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.EvolutionNote.VitalSigns.OxygenSaturation, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly="readonly" } })
+                                                    @Html.ValidationMessageFor(model => model.EvolutionNote.VitalSigns.OxygenSaturation, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End VitalSigns -->
+                            <!-- Start LabTest -->
+                            <div class="form-horizontal">
+                                <h4>Examenes de Laboratorio</h4>
+                                <hr />
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#BiometriaHematica" data-parent="#accordion3">
+                                    Biometria Hematica
+                                </a>
+                                <div class="collapse" id="BiometriaHematica">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Eritrocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Eritrocitos, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Hemoglobina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Hemoglobina, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Leucocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Leucocitos, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Linfocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Linfocitos, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Monocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Monocitos, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.BiometriaHematica.Plaquetas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.BiometriaHematica.Plaquetas, new { htmlAttributes = new { @class = "form-control col-sm-10" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#GeneralOrina" data-parent="#accordion3">
+                                    General de Orina
+                                </a>
+                                <div class="collapse" id="GeneralOrina">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Aspecto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Aspecto, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Densidad, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Densidad, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Ph, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Ph, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Glucosa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Glucosa, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Proteinas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Proteinas, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Sangre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Sangre, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Cetonas, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Cetonas, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Nitritos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Nitritos, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Esterasa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Esterasa, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Leucocitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Leucocitos, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.GeneralOrina.Bacterias, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.GeneralOrina.Bacterias, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Hormonas" data-parent="#accordion3">
+                                    Hormonas
+                                </a>
+                                <div class="collapse" id="Hormonas">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.LH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.LH, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.FSH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.FSH, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.Prolactina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.Prolactina, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.Progesterona, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.Progesterona, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.Estrogenos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.Estrogenos, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.Hormonas.Cortisol, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.Hormonas.Cortisol, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#PerfilHepatico" data-parent="#accordion3">
+                                    Perfil Hepatico
+                                </a>
+                                <div class="collapse" id="PerfilHepatico">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaTotal, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaDirecta, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaDirecta, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaIndirecta, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.BilirrubinaIndirecta, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.FosfatasaAlcalina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.FosfatasaAlcalina, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.TGO, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.TGO, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.TGP, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.TGP, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilHepatico.GGT, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilHepatico.GGT, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#PerfilTiroideo" data-parent="#accordion3">
+                                    Perfil Tiroideo
+                                </a>
+                                <div class="collapse" id="PerfilTiroideo">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.TSH, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.TSH, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.T3Total, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.T3Total, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.T3Libre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.T3Libre, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.T4Total, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.T4Total, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.PerfilTiroideo.T4Libre, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.PerfilTiroideo.T4Libre, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#QuimicaSanguinea" data-parent="#accordion3">
+                                    Química Sanguinea
+                                </a>
+                                <div class="collapse" id="QuimicaSanguinea">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.Glucosa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.Glucosa, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.Creatinina, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.Creatinina, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.AcidoUrico, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.AcidoUrico, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.Colesterol, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.Colesterol, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.Trigliceridos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.Trigliceridos, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.HDL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.HDL, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.QuimicaSanguinea.LDL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.QuimicaSanguinea.LDL, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#OtrosLabs" data-parent="#accordion3">
+                                    Otros Laboratorios
+                                </a>
+                                <div class="collapse" id="OtrosLabs">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Date, new { htmlAttributes = new { @class = "form-control col-sm-10", @placeholder = "dd/mm/aa" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.VitaminaD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.VitaminaD, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Calcio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Calcio, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Fosforo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Fosforo, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Magnesio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Magnesio, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Sodio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Sodio, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Potasio, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Potasio, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.Cloro, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.Cloro, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.EvolutionNote.OtrosLabs.HemoglobinaGlugosilada, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.EvolutionNote.OtrosLabs.HemoglobinaGlugosilada, new { htmlAttributes = new { @class = "form-control col-sm-10", @readonly="readonly" } })
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End LabTest -->
+                            <!-- Start Others -->
+                            <div class="form-horizontal">
+                                <h4>Diagnostico y Tratamiento </h4>
+                                <hr />
+                                <a class="btn btn-primary accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Others" data-parent="#accordion3">
+                                    Diagnostico y Tratamiento
+                                </a>
+                                <div class="collapse" id="Others">
+                                    <div class="card card-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                @Html.LabelFor(model => model.EvolutionNote.Others.Reason, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.TextAreaFor(model => model.EvolutionNote.Others.Reason, new { @class = "form-control", @rows = "3", @readonly = "readonly" })
+                                                @Html.ValidationMessageFor(model => model.EvolutionNote.Others.Reason, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                @Html.LabelFor(model => model.EvolutionNote.Others.Diagnosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.TextAreaFor(model => model.EvolutionNote.Others.Diagnosis, new { @class = "form-control", @rows = "3", @readonly = "readonly" })
+                                                @Html.ValidationMessageFor(model => model.EvolutionNote.Others.Diagnosis, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                @Html.LabelFor(model => model.EvolutionNote.Others.Prognosis, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                @Html.TextAreaFor(model => model.EvolutionNote.Others.Prognosis, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                                                @Html.ValidationMessageFor(model => model.EvolutionNote.Others.Prognosis, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Others -->
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    @Html.ActionLink("Crear Receta", "Create", "EvolNotePrescription", new { doctorId = Model.Doctor.Id, patientId=Model.Patient.Id, evolutionNoteId=Model.EvolutionNote.Id },null )
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -52,15 +52,16 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: Patients/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            var doctor = db.Doctors.SingleOrDefault(d => d.Id == id);
             var historyRecord = new HistoryRecordViewModel
             {
-
+                Doctor=doctor,
                 BloodTypes = db.BloodTypes.ToList(),
                 Estados = db.Estadoes.ToList(),
                 Municipios = db.Municipios.ToList(),
-                MedicalRecord = new MedicalRecord(),
+                MedicalRecord = new MedicalRecord {Doctor=doctor},
                 OtherFamilyRecord = new OtherFamilyRecord(),
                 OtherPathologicRecord = new OtherPathologicRecord(),
                 Symptom = new Symptom(),
@@ -78,12 +79,12 @@ namespace ExpedienteIDON.Controllers
         public ActionResult Create
             ([Bind(Include = "Id,Name,LastName,Birthday,PatientGender,Phone,Cellphone,Email,Photo,Ocupation,PatientStudies,PatientCivilStatus,Address")]
              OtherFamilyRecord otherFamilyRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord
-            , Symptom symptom, LabsTest labsTest)
+            , Symptom symptom, LabsTest labsTest,Doctor doctor, string Type)
             
         {
             var historyRecord = new HistoryRecordViewModel
             {
-
+                Doctor=doctor,
                 BloodTypes = db.BloodTypes.ToList(),
                 Municipios = db.Municipios.ToList(),
                 Estados = db.Estadoes.ToList(),
@@ -97,11 +98,22 @@ namespace ExpedienteIDON.Controllers
             if (ModelState.IsValid)
             {
                 medicalRecord.Created = DateTime.Now;
+                medicalRecord.DoctorId = doctor.Id;
                 if (medicalRecord.Patient.PatientGender == Gender.Masculino)
                     medicalRecord.GynecoRecord = null;
                 db.MedicalRecords.Add(medicalRecord);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Type == "Sin Receta")
+                {
+
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Create", "MedicalRecordPrescription", new { doctorId = medicalRecord.DoctorId, patientId = medicalRecord.PatientId, medicalRecordId = medicalRecord.Id });
+                }
+                
             }
 
             return View(historyRecord);

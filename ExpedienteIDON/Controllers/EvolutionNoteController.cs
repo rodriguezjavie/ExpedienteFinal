@@ -102,10 +102,8 @@ namespace ExpedienteIDON.Controllers
                 else
                 {
                     return RedirectToAction("Create", "EvolNotePrescription",new { doctorId =evolutionNote.DoctorId, patientId =evolutionNote.PatientId, evolutionNoteId =evolutionNote.Id});
-                    //return RedirectToAction("Create", "EvolNotePrescription", new { doctorId = evolutionNote.Doctor.Id, patientId = evolutionNote.Patient.Id, evolutionNoteId = evolutionNote.Id });
                 }
                 
-                //return RedirectToAction("Details", "EvolutionNote", new { id = evolutionNote.Id });
             }
             catch
             {

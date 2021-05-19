@@ -179,8 +179,8 @@
     <Compile Include="Controllers\HormonasController.cs" />
     <Compile Include="Controllers\LabsTestsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MedicalRecordPrescriptionController.cs" />
     <Compile Include="Controllers\MedicalTestsController.cs" />
-    <Compile Include="Controllers\MultipleButtonAttribute.cs" />
     <Compile Include="Controllers\OthersController.cs" />
     <Compile Include="Controllers\OtrosLabsController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
@@ -350,6 +350,10 @@
     <Compile Include="Migrations\202105181518284_addCreatedDateInEvolutionNoteTable.cs" />
     <Compile Include="Migrations\202105181518284_addCreatedDateInEvolutionNoteTable.Designer.cs">
       <DependentUpon>202105181518284_addCreatedDateInEvolutionNoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105191558268_addDoctorIdToMedicalRecordsTable.cs" />
+    <Compile Include="Migrations\202105191558268_addDoctorIdToMedicalRecordsTable.Designer.cs">
+      <DependentUpon>202105191558268_addDoctorIdToMedicalRecordsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1662,6 +1666,7 @@
     <Content Include="Views\Prescription\Create.cshtml" />
     <Content Include="Views\EvolNotePrescription\Create.cshtml" />
     <Content Include="Views\EvolutionNote\Details.cshtml" />
+    <Content Include="Views\MedicalRecordPrescription\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1788,6 +1793,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105181518284_addCreatedDateInEvolutionNoteTable.resx">
       <DependentUpon>202105181518284_addCreatedDateInEvolutionNoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105191558268_addDoctorIdToMedicalRecordsTable.resx">
+      <DependentUpon>202105191558268_addDoctorIdToMedicalRecordsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

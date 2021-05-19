@@ -1,0 +1,144 @@
+﻿@model ExpedienteIDON.ViewModels.PrescriptionViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Datos paciente</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Patients")">Pacientes</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Datos paciente</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-body ">
+
+                        <h2>Datos del Paciente</h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Name, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.LastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Phone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Phone, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Cellphone, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Cellphone, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <h2>Datos del Medico</h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Doctor.Name, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Doctor.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Doctor.LastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Doctor.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Doctor.Cedula, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Doctor.Cedula, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        @using (Html.BeginForm())
+                        {
+                            <div class="form-horizontal">
+                                <h4>Datos de la Receta</h4>
+                                <hr />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.Medicine, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.Medicine, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.UnitOfMeasure, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.UnitOfMeasure, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.UnitOfMeasure, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.Dose, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.Dose, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.Dose, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.Frequency, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.Frequency, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.Frequency, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.Administration, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.Administration, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.Administration, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.StartDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.StartDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.StartDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.EndDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.EndDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.EndDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.MedicinesPrescription.Indications, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    @Html.EditorFor(model => model.MedicinesPrescription.Indications, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                    @Html.ValidationMessageFor(model => model.MedicinesPrescription.Indications, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="offset-md-3 col-md-9">
+                                    <button type="submit" class="btn btn-info">Guardar</button>
+                                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

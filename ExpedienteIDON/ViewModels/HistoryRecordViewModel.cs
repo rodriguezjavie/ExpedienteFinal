@@ -8,6 +8,7 @@ namespace ExpedienteIDON.ViewModels
 {
     public class HistoryRecordViewModel
     {
+        public Doctor Doctor { get; set; }
         public OtherFamilyRecord OtherFamilyRecord { get; set; }
         public OtherPathologicRecord OtherPathologicRecord { get; set; }
         public MedicalRecord MedicalRecord { get; set; }

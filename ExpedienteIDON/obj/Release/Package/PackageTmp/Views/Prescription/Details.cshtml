@@ -1,0 +1,149 @@
+﻿@model ExpedienteIDON.ViewModels.PrescriptionViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = ViewBag.Layout;
+}
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Detalles Receta para Paciente</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Patients")">Lista de Pacientes</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("../Patients/Details", new { id = Model.Patient.Id })">Paciente</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("../Prescription/PatientPrescriptions", new { id = Model.Prescription.PatientId })">Lista de Recetas</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Detalles Receta para Paciente</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row" id="printableArea">
+            <div class="col-md-12">
+                <div class="white-box">
+                    <h3><b>Receta</b> <span class="pull-right">#@Model.Prescription.Id</span></h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-left">
+                                <address>
+                                    <img src="@Url.Content("/Scripts/theme/img/invoice_logo.png")" alt="logo" class="logo-default" />
+                                    <p class="text-muted m-l-5">
+                                        Good Data Systems<br> Herradura de Plata #102, <br>
+                                        Col. Lomas de la Selva, <br> Cuernavaca, Morelos - 62270
+                                    </p>
+                                </address>
+                            </div>
+                            <div class="pull-right text-right">
+                                <address>
+                                    <p class="addr-font-h3">Paciente: @Html.DisplayFor(model => model.Patient.Name) @Html.DisplayFor(model => model.Patient.LastName)</p>
+                                    <p class="addr-font-h3">Médico: @Html.DisplayFor(model => model.UserDataViewModel.Name) @Html.DisplayFor(model => model.UserDataViewModel.LastName)</p>
+                                    <p class="text-muted m-l-30">
+                                        Cédula Profesional: @Html.DisplayFor(model => model.UserDataViewModel.Cedula) <br>
+                                        Teléfono: @Html.DisplayFor(model => model.UserDataViewModel.Phone)<br>
+                                    </p>
+                                    <p class="m-t-30">
+                                        <b>Fecha: :</b> <i class="fa fa-calendar"></i> @Convert.ToDateTime(Model.Prescription.CratedDate).ToString("dd/MM/yyyy")
+                                    </p>
+                                </address>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="table-responsive m-t-40">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Medicamento</th>
+                                            <th>Presentación</th>
+                                            <th>Dosis</th>
+                                            <th>Frecuencia</th>
+                                            <th>Vía de Administración</th>
+                                            <th>Duración</th>
+                                            <th>Indicaciones adicionales</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int i = 0;
+                                            foreach (var prescription in Model.MedicinesPrescriptions)
+                                            {
+                                                <tr>
+                                                    <td>@(i+1)</td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].Medicine, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].UnitOfMeasure, new { htmlAttributes = new { @class = "col-md-10" } })  </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].Dose, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].Frequency, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].Administration, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].TreatmentDuration, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                    <td>@Html.DisplayFor(m => m.MedicinesPrescriptions[i].Indications, new { htmlAttributes = new { @class = "col-md-10" } }) </td>
+                                                </tr>
+                                                i++;
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix"></div>
+                <hr>
+                <div class="form-group">
+                    <div class="offset-md-3 col-md-9">
+                        <button onclick="printDiv('printableArea')" class="btn btn-primary btn-outline" type="button"> <span><i class="fa fa-print"></i> Imprimir</span> </button>
+                        @Html.ActionLink("Editar Receta", "Edit", "Prescription",
+                                                       new { id = Model.Prescription.Id },
+                                                       new { @class = "btn btn-default" })
+
+                        @if (Model.Prescription.EvolutionNoteId != null)
+                        {
+                            @Html.ActionLink("Ver la nota de evolución", "Details", "EvolutionNote",
+                                           new { id = Model.Prescription.EvolutionNoteId },
+                                           new { @class = "btn btn-default" })
+                        }
+                        @if (Model.Prescription.MedicalRecordId != null)
+                        {
+                            @Html.ActionLink("Ver el Historial Clínico", "DetailsMedicalRecord", "Patients",
+                                                               new { id = Model.Prescription.PatientId },
+                                                               new { @class = "btn btn-default" })
+                        }
+                        @Html.ActionLink("Regresar la lista", "PatientPrescriptions", "Prescription",
+                                            new { id = Model.Prescription.PatientId },
+                                            new { @class = "btn btn-default" })
+
+                        @Html.ActionLink("Regresar al perfil", "Details", "Patients",
+                                            new { id = Model.Prescription.PatientId },
+                                            new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+}

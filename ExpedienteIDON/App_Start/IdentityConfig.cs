@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ExpedienteIDON.Models;
+using SendGrid.Helpers.Mail;
+using System.Configuration;
 
 namespace ExpedienteIDON
 {
@@ -19,7 +21,23 @@ namespace ExpedienteIDON
         public Task SendAsync(IdentityMessage message)
         {
             // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
-            return Task.FromResult(0);
+            return configSendGridasync(message);
+        }
+        private Task configSendGridasync(IdentityMessage message)
+        {
+            var cliente = new SendGrid.SendGridClient(ConfigurationManager.AppSettings["SendGridKey"]);
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new EmailAddress("j.rodriguez@gooddata.com.mx", "Javier Rodriguez.");
+            myMessage.Subject = message.Subject;
+            myMessage.PlainTextContent = message.Body;
+            myMessage.HtmlContent = message.Body;
+            myMessage.SetClickTracking(false, false);
+
+            return cliente.SendEmailAsync(myMessage);
+
+            
+
         }
     }
 
@@ -82,7 +100,10 @@ namespace ExpedienteIDON
             if (dataProtectionProvider != null)
             {
                 manager.UserTokenProvider = 
-                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"))
+                    {
+                        TokenLifespan = TimeSpan.FromHours(3)
+                    };
             }
             return manager;
         }

@@ -1,0 +1,83 @@
+﻿@model ExpedienteIDON.ViewModels.PatientPrescriptionViewModel
+@{
+    ViewBag.Title = "PatientPrescriptions";
+    Layout = ViewBag.Layout;
+}
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Lista de Recetas de @Model.Patient</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("../Patients/Details", new { id = Model.Id })">Paciente</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Lista de Recetas</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabbable-line">
+                    <div class="tab-content">
+                        <div class="tab-pane active fontawesome-demo" id="tab1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card  card-box">
+                                        <div class="card-head">
+                                            <header></header>
+                                            <div class="tools">
+                                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-scrollable">
+                                                <table id="tableExport" class="table table-striped custom-table table-hover" style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th> Doctor</th>
+                                                            <th> Fecha </th>
+                                                            <th> Acciones </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in Model.Prescriptions)
+                                                        {
+                                                            <tr class="odd gradeX">
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.ApplicationUser.Name) @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)
+                                                                </td>
+                                                                <td>
+                                                                    @Convert.ToDateTime(item.CratedDate).ToString("dd/MM/yyyy")
+                                                                </td>
+                                                                <td class="right">
+                                                                    <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-success btn-xs" title="Ver Perfil">
+                                                                        <i class="fa fa-user-circle"></i>
+                                                                    </a>
+                                                                    <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary btn-xs" title="Editar">
+                                                                        <i class="fa fa-pencil"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+﻿@model ExpedienteIDON.ViewModels.PrescriptionViewModel
+@{
+    ViewBag.Title = "Editar Receta de Historial Clínico";
+    Layout = ViewBag.Layout;
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Editar Receta De Historial Clínico</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Patients")">Lista de Pacientes</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("../Patients/Details", new { id = Model.Patient.Id })">Paciente</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("../Patients/DetailsMedicalRecord", new { id = Model.Prescription.PatientId })">Historial Clínico</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Editar Receta de Historial Clínico</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-body ">
+                        <h4>Datos del Paciente</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.Name, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.LastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Patient.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Patient.PatientGender, htmlAttributes: new { @class = "form-control", @readonly = "readonly" })
+                            </div>
+                        </div>
+                        <h4>Datos del Medico</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.UserDataViewModel.Name, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.UserDataViewModel.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.UserDataViewModel.LastName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.UserDataViewModel.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.UserDataViewModel.Cedula, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.UserDataViewModel.Cedula, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        @using (Html.BeginForm())
+                        {
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card-box">
+                                        <div class="card-head">
+                                            <header>Receta</header>
+                                        </div>
+                                        <div class="card-body ">
+                                            <div class="table-responsive">
+                                                <table class="table display table-striped custom-table table-hover" id="tableMed" style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Medicamento</th>
+                                                            <th>Presentación</th>
+                                                            <th>Dosis</th>
+                                                            <th>Frecuencia</th>
+                                                            <th>Vía de Administración</th>
+                                                            <th>Duración</th>
+                                                            <th>Indicaciones adicionales</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @{
+                                                            int i = 0;
+                                                            foreach (var prescription in Model.MedicinesPrescriptions)
+                                                            {
+                                                                <tr>
+                                                                    <td hidden>@Html.HiddenFor(m => m.MedicinesPrescriptions[i].Id)</td>
+                                                                    <td hidden>@Html.HiddenFor(m => m.MedicinesPrescriptions[i].PrescriptionId)</td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Medicine, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].UnitOfMeasure, new { htmlAttributes = new { @class = "form-control col-md-10" } })  </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Dose, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Frequency, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Administration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].TreatmentDuration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Indications, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>
+                                                                </tr>
+                                                                i++;
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td><input class="btn btn-info" type="button" id="btnAdd" value="Agregar" /></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.Prescription.Id)
+                            @Html.HiddenFor(m => m.MedicinesPrescription.Id)
+                            @Html.HiddenFor(m => m.MedicinesPrescription.PrescriptionId)
+                            @Html.HiddenFor(m => m.Prescription.MedicalRecordId)
+                            @Html.HiddenFor(d => d.Prescription.DoctorId)
+                            @Html.HiddenFor(p => p.Prescription.PatientId)
+                            @Html.HiddenFor(p => p.Prescription.ApplicationUserId)
+                            <input type="hidden" id="idPatient" name="idPatient" value="@Html.ValueFor(model => model.Patient.Id)">
+                            <div class="form-group">
+                                <div class="offset-md-3 col-md-9">
+                                    <button type="submit" class="btn btn-info">Guardar</button>
+                                    @Html.ActionLink("Cancelar", "Details", "Patients",
+                                                        new { id = Model.Prescription.PatientId },
+                                                        new { @class = "btn btn-default" })
+                                    @Html.ActionLink("Regresar a la receta", "Details", "MedicalRecordPrescription",
+                                                        new { id = Model.Prescription.MedicalRecordId },
+                                                        new { @class = "btn btn-default" })
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript">
+        var counter = $('#tableMed tr').length - 2;
+        $("body").on("click", "#btnAdd", function () {
+            $('<tr> ' +
+                '<td hidden><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + 'PrescriptionId" name="MedicinesPrescriptions[' + counter + '].PrescriptionId" type="text" value="'+@Html.ValueFor(model => model.Prescription.Id)+'" /.> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Medicine" name="MedicinesPrescriptions[' + counter + '].Medicine" type="text" value="" /> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__UnitOfMeasure" name="MedicinesPrescriptions[' + counter + '].UnitOfMeasure" type="text" value="" />  </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Dose" name="MedicinesPrescriptions[' + counter + '].Dose" type="text" value="" /> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Frequency" name="MedicinesPrescriptions[' + counter + '].Frequency" type="text" value="" /> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Administration" name="MedicinesPrescriptions[' + counter + '].Administration" type="text" value="" /> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__TreatmentDuration" name="MedicinesPrescriptions[' + counter + '].TreatmentDuration" type="text" value="" /> </td>' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Indications" name="MedicinesPrescriptions[' + counter + '].Indications" type="text" value="" /> </td>' +
+                '<td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>' +
+                '</tr>').appendTo('#tableMed');
+            counter++;
+            return false;
+
+        });
+
+        function Remove(button) {
+            var row = $(button).closest("TR");
+            var name = $("TD", row).eq(0).html();
+            if (confirm("¿Desea borrar esta línea?")) {
+                var table = $("#tableMed")[0];
+                table.deleteRow(row[0].rowIndex);
+            }
+        };
+
+    </script>
+}

@@ -1,0 +1,177 @@
+﻿@model IEnumerable<ExpedienteIDON.Models.PhysicalExploration>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Habitus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cabeza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CuelloBocio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoploCarotideo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CuelloAcantosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcanosisAfectacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CuelloComments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToraxComments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AbdomenComments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosSimetricos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosSensibilidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosFuerza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosSinovitis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosROT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToracicosComments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoSimetrico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoFuerza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoSensibilidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoVarices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoROTAquileo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoOnicomicosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoPulsos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoEdema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PelvicoOtros)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genitales)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cabeza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuelloBocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoploCarotideo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuelloAcantosis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcanosisAfectacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuelloComments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToraxComments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbdomenComments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosSimetricos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosSensibilidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosFuerza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosSinovitis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosROT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToracicosComments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoSimetrico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoFuerza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoSensibilidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoVarices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoROTAquileo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoOnicomicosis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoPulsos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoEdema)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PelvicoOtros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genitales)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

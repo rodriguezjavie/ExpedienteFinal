@@ -10,7 +10,7 @@ using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrador,Doctor")]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -54,6 +54,16 @@ namespace ExpedienteIDON.Controllers
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Su contraseña se ha cambiado."
                 : message == ManageMessageId.SetPasswordSuccess ? "Su contraseña se ha establecido."
@@ -226,6 +236,16 @@ namespace ExpedienteIDON.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (!ModelState.IsValid)
             {
                 return View(model);

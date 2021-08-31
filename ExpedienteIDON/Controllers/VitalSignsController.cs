@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class VitalSignsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: VitalSigns
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.VitalSigns.ToList());
+            return View(await db.VitalSigns.ToListAsync());
         }
 
         // GET: VitalSigns/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VitalSigns vitalSigns = db.VitalSigns.Find(id);
+            VitalSigns vitalSigns = await db.VitalSigns.FindAsync(id);
             if (vitalSigns == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Size,Weight,IMC,TABD,TABI,FC,FR,Waist,Hip,OxygenSaturation")] VitalSigns vitalSigns)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Size,Weight,IMC,TABD,TABI,FC,FR,Waist,Hip,OxygenSaturation")] VitalSigns vitalSigns)
         {
             if (ModelState.IsValid)
             {
                 db.VitalSigns.Add(vitalSigns);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: VitalSigns/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VitalSigns vitalSigns = db.VitalSigns.Find(id);
+            VitalSigns vitalSigns = await db.VitalSigns.FindAsync(id);
             if (vitalSigns == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Size,Weight,IMC,TABD,TABI,FC,FR,Waist,Hip,OxygenSaturation")] VitalSigns vitalSigns)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Size,Weight,IMC,TABD,TABI,FC,FR,Waist,Hip,OxygenSaturation")] VitalSigns vitalSigns)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(vitalSigns).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(vitalSigns);
         }
 
         // GET: VitalSigns/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VitalSigns vitalSigns = db.VitalSigns.Find(id);
+            VitalSigns vitalSigns = await db.VitalSigns.FindAsync(id);
             if (vitalSigns == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: VitalSigns/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            VitalSigns vitalSigns = db.VitalSigns.Find(id);
+            VitalSigns vitalSigns = await db.VitalSigns.FindAsync(id);
             db.VitalSigns.Remove(vitalSigns);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

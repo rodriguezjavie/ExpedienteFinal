@@ -4,31 +4,33 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class SymptomsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Symptoms
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var symptoms = db.Symptoms.Include(s => s.MedicalRecord);
-            return View(symptoms.ToList());
+            var symptoms = await db.Symptoms.Include(s => s.MedicalRecord).ToListAsync();
+            return View(symptoms);
         }
 
         // GET: Symptoms/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Symptom symptom = db.Symptoms.Find(id);
+            Symptom symptom = await db.Symptoms.FindAsync(id);
             if (symptom == null)
             {
                 return HttpNotFound();
@@ -48,12 +50,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Severity,StartDate,EndDate,MedicalRecordId")] Symptom symptom)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Severity,StartDate,EndDate,MedicalRecordId")] Symptom symptom)
         {
             if (ModelState.IsValid)
             {
                 db.Symptoms.Add(symptom);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -62,13 +64,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: Symptoms/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Symptom symptom = db.Symptoms.Find(id);
+            Symptom symptom = await db.Symptoms.FindAsync(id);
             if (symptom == null)
             {
                 return HttpNotFound();
@@ -82,12 +84,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Severity,StartDate,EndDate,MedicalRecordId")] Symptom symptom)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Severity,StartDate,EndDate,MedicalRecordId")] Symptom symptom)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(symptom).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             ViewBag.MedicalRecordId = new SelectList(db.MedicalRecords, "Id", "Id", symptom.MedicalRecordId);
@@ -95,13 +97,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: Symptoms/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Symptom symptom = db.Symptoms.Find(id);
+            Symptom symptom = await db.Symptoms.FindAsync(id);
             if (symptom == null)
             {
                 return HttpNotFound();
@@ -112,11 +114,11 @@ namespace ExpedienteIDON.Controllers
         // POST: Symptoms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Symptom symptom = db.Symptoms.Find(id);
             db.Symptoms.Remove(symptom);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

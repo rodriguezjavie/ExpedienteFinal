@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class MedicalTestsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: MedicalTests
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.MedicalTests.ToList());
+            return View(await db.MedicalTests.ToListAsync());
         }
 
         // GET: MedicalTests/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalTest medicalTest = db.MedicalTests.Find(id);
+            MedicalTest medicalTest = await db.MedicalTests.FindAsync(id);
             if (medicalTest == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RadiographTorax,RadiographToraxDate,RadiographToraxNormal,Ultrasound,UltrasoundDate,UltrasoundType,Observations,Electrocardiography,ElectrocardiographyDate,ElectrocardiographyNormal,ElectrocardiographyObservations,Others")] MedicalTest medicalTest)
+        public async Task<ActionResult> Create([Bind(Include = "Id,RadiographTorax,RadiographToraxDate,RadiographToraxNormal,Ultrasound,UltrasoundDate,UltrasoundType,Observations,Electrocardiography,ElectrocardiographyDate,ElectrocardiographyNormal,ElectrocardiographyObservations,Others")] MedicalTest medicalTest)
         {
             if (ModelState.IsValid)
             {
                 db.MedicalTests.Add(medicalTest);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: MedicalTests/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalTest medicalTest = db.MedicalTests.Find(id);
+            MedicalTest medicalTest = await db.MedicalTests.FindAsync(id);
             if (medicalTest == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RadiographTorax,RadiographToraxDate,RadiographToraxNormal,Ultrasound,UltrasoundDate,UltrasoundType,Observations,Electrocardiography,ElectrocardiographyDate,ElectrocardiographyNormal,ElectrocardiographyObservations,Others")] MedicalTest medicalTest)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,RadiographTorax,RadiographToraxDate,RadiographToraxNormal,Ultrasound,UltrasoundDate,UltrasoundType,Observations,Electrocardiography,ElectrocardiographyDate,ElectrocardiographyNormal,ElectrocardiographyObservations,Others")] MedicalTest medicalTest)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(medicalTest).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(medicalTest);
         }
 
         // GET: MedicalTests/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MedicalTest medicalTest = db.MedicalTests.Find(id);
+            MedicalTest medicalTest = await db.MedicalTests.FindAsync(id);
             if (medicalTest == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: MedicalTests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            MedicalTest medicalTest = db.MedicalTests.Find(id);
+            MedicalTest medicalTest = await db.MedicalTests.FindAsync(id);
             db.MedicalTests.Remove(medicalTest);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

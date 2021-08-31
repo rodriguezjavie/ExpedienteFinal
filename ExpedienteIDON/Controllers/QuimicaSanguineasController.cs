@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class QuimicaSanguineasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: QuimicaSanguineas
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.QuimicaSanguineas.ToList());
+            return View(await db.QuimicaSanguineas.ToListAsync());
         }
 
         // GET: QuimicaSanguineas/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuimicaSanguinea quimicaSanguinea = db.QuimicaSanguineas.Find(id);
+            QuimicaSanguinea quimicaSanguinea = await db.QuimicaSanguineas.FindAsync(id);
             if (quimicaSanguinea == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Date,Glucosa,Creatinina,AcidoUrico,Colesterol,Trigliceridos,HDL,LDL")] QuimicaSanguinea quimicaSanguinea)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Date,Glucosa,Creatinina,AcidoUrico,Colesterol,Trigliceridos,HDL,LDL")] QuimicaSanguinea quimicaSanguinea)
         {
             if (ModelState.IsValid)
             {
                 db.QuimicaSanguineas.Add(quimicaSanguinea);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: QuimicaSanguineas/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuimicaSanguinea quimicaSanguinea = db.QuimicaSanguineas.Find(id);
+            QuimicaSanguinea quimicaSanguinea = await db.QuimicaSanguineas.FindAsync(id);
             if (quimicaSanguinea == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Date,Glucosa,Creatinina,AcidoUrico,Colesterol,Trigliceridos,HDL,LDL")] QuimicaSanguinea quimicaSanguinea)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,Glucosa,Creatinina,AcidoUrico,Colesterol,Trigliceridos,HDL,LDL")] QuimicaSanguinea quimicaSanguinea)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(quimicaSanguinea).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(quimicaSanguinea);
         }
 
         // GET: QuimicaSanguineas/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuimicaSanguinea quimicaSanguinea = db.QuimicaSanguineas.Find(id);
+            QuimicaSanguinea quimicaSanguinea = await db.QuimicaSanguineas.FindAsync(id);
             if (quimicaSanguinea == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: QuimicaSanguineas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            QuimicaSanguinea quimicaSanguinea = db.QuimicaSanguineas.Find(id);
+            QuimicaSanguinea quimicaSanguinea = await db.QuimicaSanguineas.FindAsync(id);
             db.QuimicaSanguineas.Remove(quimicaSanguinea);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

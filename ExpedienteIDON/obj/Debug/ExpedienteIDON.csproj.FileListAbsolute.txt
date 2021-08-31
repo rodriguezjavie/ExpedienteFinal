@@ -1,0 +1,888 @@
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csprojAssemblyReference.cache
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.InitialModel.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNewClassesToTables.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNullableToSymptomTable.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModificarDataAnnotationPaciente.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRequieredFieldsPatient.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRequieredFieldsPatientNew.resources
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\Javier Rodriguez\source\ProyectosMedicos\Presentacion290421\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddEvolutionNotesTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.InitialModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNewClassesToTables.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNullableToSymptomTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModificarDataAnnotationPaciente.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRequieredFieldsPatient.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRequieredFieldsPatientNew.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddEvolutionNotesTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addNullableToGynecoFieldInMedicalRecordTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addCedulaFieldDoctorsTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRadiographToraxObservationFielInMedicalTestTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddPrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.NullableAndCreateDateToPrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeNavigationFieldsPrescriptionModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removePrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addPrescriptionsTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addDoctorIdToEvolutionNote.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeAddressFieldInPatients.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.modifyAddressFieldInPatients.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNullableMunicipioIdAndEstadoId.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMunicipioAndEstadoTables.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNullableMunicipiosAndEstadosTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMunicipioAndEstadoTables1.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addMunicipioAndEstadoTables1.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRoleTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addRoles.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeRoleViewModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removePrescriptionsTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addNewPrescriptionsTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.updateModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addMedicinesTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addPatientAndDoctorToPrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addPatientAndDoctorIdToPrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addDoctorAndPatientNavigationPropEnPrescription.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.changeNamesMedicineAndPrescriptionModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMedicineAndPrescriptionModel.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addMedicineAndPrescriptionsTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addEvolutionNoteIdAndMedicalRecordIdToPrescriptionTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addCreatedDateInEvolutionNoteTable.resources
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csprojAssemblyReference.cache
+C:\Users\Javier Rodriguez\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addDoctorIdToMedicalRecordsTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.Initial.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csprojAssemblyReference.cache
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.AssemblyReference.cache
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.Initial.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\StarkbankEcdsa.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.pdb
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.SeedUsers.resources
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.AssemblyReference.cache
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.Initial.resources
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.SeedUsers.resources
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\StarkbankEcdsa.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.pdb
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Javier\source\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\Elmah.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddPatientStatus.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddFieldsToApplicationUser.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.RemoveRequiredToCedulaToApplicationUser.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNotesFieldToOthersTable.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyDatesFieldMedicinesPrescriptionTable.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddGlucoseFieldVitalSignsTable.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.MakeNullableGlucoseFieldVitalSignsTable.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyVitalSignsTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Elmah.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\StarkbankEcdsa.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.pdb
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.SeedUsers.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddPatientStatus.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddFieldsToApplicationUser.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.RemoveRequiredToCedulaToApplicationUser.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNotesFieldToOthersTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyDatesFieldMedicinesPrescriptionTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddGlucoseFieldVitalSignsTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.MakeNullableGlucoseFieldVitalSignsTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyVitalSignsTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll.config
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\ExpedienteIDON.pdb
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.exe.config
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csc.rsp
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.exe.config
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\csi.rsp
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.AppContext.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Console.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Http.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.ValueTuple.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.exe.config
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\vbc.rsp
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Elmah.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Owin.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\StarkbankEcdsa.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\WebGrease.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\EntityFramework.SqlServer.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.pdb
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\SendGrid.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Helpers.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Mvc.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Optimization.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.Razor.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\System.Web.WebPages.Razor.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Newtonsoft.Json.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Antlr3.Runtime.pdb
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.Razor.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.Initial.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.populateBloodTypesTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.SeedUsers.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddPatientStatus.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddFieldsToApplicationUser.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.RemoveRequiredToCedulaToApplicationUser.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddNotesFieldToOthersTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyDatesFieldMedicinesPrescriptionTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.AddGlucoseFieldVitalSignsTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.MakeNullableGlucoseFieldVitalSignsTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.ModifyVitalSignsTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMunicipioPatientTable.resources
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.GenerateResource.cache
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CoreCompileInputs.cache
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.CopyComplete
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.dll
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.pdb
+C:\Users\Javier\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.csproj.AssemblyReference.cache
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.dll
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.xml
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMunicipioPatientTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.dll
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\bin\AutoMapper.xml
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.removeMunicipioPatientTable.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.UsersInMedicalRecord.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addUserinPrescription.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addUserinEvolutionNote.resources
+C:\Users\cruss\Desktop\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.requiredMedicamentoName.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.UsersInMedicalRecord.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addUserinPrescription.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.addUserinEvolutionNote.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Debug\ExpedienteIDON.Migrations.requiredMedicamentoName.resources

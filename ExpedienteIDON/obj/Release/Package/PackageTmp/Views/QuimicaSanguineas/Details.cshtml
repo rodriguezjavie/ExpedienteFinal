@@ -1,0 +1,82 @@
+﻿@model ExpedienteIDON.Models.QuimicaSanguinea
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuimicaSanguinea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Glucosa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Glucosa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Creatinina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Creatinina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcidoUrico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcidoUrico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colesterol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colesterol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trigliceridos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trigliceridos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HDL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HDL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LDL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LDL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -13,6 +13,8 @@ namespace ExpedienteIDON.Models
         public Patient Patient { get; set; }
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
+        public String ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         public int VitalSignsId { get; set; }
         public VitalSigns VitalSigns { get; set; }
         public int? BiometriaHematicaId { get; set; }

@@ -40,6 +40,8 @@ namespace ExpedienteIDON
                         "~/Scripts/theme/plugins/jquery-tags-input/jquery-tags-input.css",
                         "~/Scripts/theme/plugins/select2/css/select2.css",
                         "~/Scripts/theme/plugins/select2/css/select2-bootstrap.min.css"));
+            bundles.Add(new ScriptBundle("~/bundles/button").Include(
+                        "~/Scripts/button-colorchange.js"));
         }
     }
 }

@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class PhysicalExplorationsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PhysicalExplorations
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.PhysicalExplorations.ToList());
+            return View(await db.PhysicalExplorations.ToListAsync());
         }
 
         // GET: PhysicalExplorations/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhysicalExploration physicalExploration = db.PhysicalExplorations.Find(id);
+            PhysicalExploration physicalExploration = await db.PhysicalExplorations.FindAsync(id);
             if (physicalExploration == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Habitus,Cabeza,CuelloBocio,SoploCarotideo,CuelloAcantosis,AcanosisAfectacion,CuelloComments,ToraxComments,AbdomenComments,ToracicosSimetricos,ToracicosSensibilidad,ToracicosFuerza,ToracicosSinovitis,ToracicosROT,ToracicosComments,PelvicoSimetrico,PelvicoFuerza,PelvicoSensibilidad,PelvicoVarices,PelvicoROTAquileo,PelvicoOnicomicosis,PelvicoPulsos,PelvicoEdema,PelvicoOtros,Genitales")] PhysicalExploration physicalExploration)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Habitus,Cabeza,CuelloBocio,SoploCarotideo,CuelloAcantosis,AcanosisAfectacion,CuelloComments,ToraxComments,AbdomenComments,ToracicosSimetricos,ToracicosSensibilidad,ToracicosFuerza,ToracicosSinovitis,ToracicosROT,ToracicosComments,PelvicoSimetrico,PelvicoFuerza,PelvicoSensibilidad,PelvicoVarices,PelvicoROTAquileo,PelvicoOnicomicosis,PelvicoPulsos,PelvicoEdema,PelvicoOtros,Genitales")] PhysicalExploration physicalExploration)
         {
             if (ModelState.IsValid)
             {
                 db.PhysicalExplorations.Add(physicalExploration);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: PhysicalExplorations/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhysicalExploration physicalExploration = db.PhysicalExplorations.Find(id);
+            PhysicalExploration physicalExploration = await db.PhysicalExplorations.FindAsync(id);
             if (physicalExploration == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Habitus,Cabeza,CuelloBocio,SoploCarotideo,CuelloAcantosis,AcanosisAfectacion,CuelloComments,ToraxComments,AbdomenComments,ToracicosSimetricos,ToracicosSensibilidad,ToracicosFuerza,ToracicosSinovitis,ToracicosROT,ToracicosComments,PelvicoSimetrico,PelvicoFuerza,PelvicoSensibilidad,PelvicoVarices,PelvicoROTAquileo,PelvicoOnicomicosis,PelvicoPulsos,PelvicoEdema,PelvicoOtros,Genitales")] PhysicalExploration physicalExploration)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Habitus,Cabeza,CuelloBocio,SoploCarotideo,CuelloAcantosis,AcanosisAfectacion,CuelloComments,ToraxComments,AbdomenComments,ToracicosSimetricos,ToracicosSensibilidad,ToracicosFuerza,ToracicosSinovitis,ToracicosROT,ToracicosComments,PelvicoSimetrico,PelvicoFuerza,PelvicoSensibilidad,PelvicoVarices,PelvicoROTAquileo,PelvicoOnicomicosis,PelvicoPulsos,PelvicoEdema,PelvicoOtros,Genitales")] PhysicalExploration physicalExploration)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(physicalExploration).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(physicalExploration);
         }
 
         // GET: PhysicalExplorations/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhysicalExploration physicalExploration = db.PhysicalExplorations.Find(id);
+            PhysicalExploration physicalExploration = await db.PhysicalExplorations.FindAsync(id);
             if (physicalExploration == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: PhysicalExplorations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            PhysicalExploration physicalExploration = db.PhysicalExplorations.Find(id);
+            PhysicalExploration physicalExploration = await db.PhysicalExplorations.FindAsync(id);
             db.PhysicalExplorations.Remove(physicalExploration);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

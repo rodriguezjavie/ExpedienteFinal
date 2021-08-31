@@ -10,6 +10,7 @@ using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class GeneralOrinasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

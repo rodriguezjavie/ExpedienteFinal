@@ -10,12 +10,16 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ExpedienteIDON.Models;
 using System.Collections.Generic;
+using System.Web.Security;
+using ExpedienteIDON.ViewModels;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ExpedienteIDON.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
@@ -86,7 +90,17 @@ namespace ExpedienteIDON.Controllers
             {
                 return View(model);
             }
-
+            // Require the user to have a confirmed email before they can log on.
+            var user = await UserManager.FindByNameAsync(model.Email);
+            if (user != null)
+            {
+                if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+                {
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirma tu cuenta/reenviar");
+                    ViewBag.errorMessage = "Debes haber confirmado tu correo para poder ingresar";
+                    return View("Error");
+                }
+            }
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -150,9 +164,19 @@ namespace ExpedienteIDON.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Administrador")]
         public ActionResult Register()
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             var list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)
                 list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
@@ -163,34 +187,109 @@ namespace ExpedienteIDON.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrador")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser 
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name=model.Name,
+                    LastName=model.LastName,
+                    Phone=model.Phone,
+                    Cedula=model.Cedula
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo
-                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirma tu cuenta/reenviar");
+                    //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    //await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+                    // Uncomment to debug locally 
+                    // TempData["ViewBagLink"] = callbackUrl;
 
-                    return RedirectToAction("Index", "Home");
+                    ViewBag.Message = "El usuario debe revisar su correo y confirmar su cuenta, ya que esta debe esta confirmada "
+                                    + "antes de que pueda ingresar al sitio.";
+
+                    return View("Info");
+                    //return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            var list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
+            return View(model);
+        }
+        //GET-Edit
+        [Authorize(Roles = "Administrador")]
+        public ActionResult Edit(string id)
+        {
+            var user = db.Users.SingleOrDefault(u => u.Id == id);
+            var list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
+            var model = new UserRoleVM
+            {
+                Email = user.Email,
+                Cedula = user.Cedula,
+                LastName = user.LastName,
+                Name = user.Name,
+                Phone = user.Phone
+            };
 
-            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
             return View(model);
         }
 
+        [HttpPost]
+        [Authorize(Roles = "Administrador")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(UserRoleVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userInDb = db.Users.SingleOrDefault(u=>u.Email==model.Email);
+                var rol = (from ur in db.Set<IdentityUserRole>()
+                            where ur.UserId.Equals(userInDb.Id)
+                            select ur.RoleId).ToList<string>();
+                var roleId = rol[0];
+                var roleName = db.Roles.SingleOrDefault(r => r.Id == roleId).Name;
+                userInDb.Name = model.Name;
+                userInDb.LastName = model.LastName;
+                userInDb.Phone = model.Phone;
+                userInDb.Cedula = model.Cedula;
+                db.SaveChanges();
+                var result = UserManager.RemoveFromRole(userInDb.Id, roleName);
+                result = UserManager.AddToRole(userInDb.Id, model.RoleName);
+                return RedirectToAction("Index", "UserRole");
+            }
+            var list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
+            return View(model);
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -230,10 +329,10 @@ namespace ExpedienteIDON.Controllers
 
                 // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                 // Enviar correo electrónico con este vínculo
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Restablecer contraseña", "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
@@ -443,6 +542,16 @@ namespace ExpedienteIDON.Controllers
         }
 
         #region Aplicaciones auxiliares
+        private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account",
+               new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            await UserManager.SendEmailAsync(userID, subject,
+               "Para restablecer la contraseña, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+
+            return callbackUrl;
+        }
         // Se usa para la protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";
 

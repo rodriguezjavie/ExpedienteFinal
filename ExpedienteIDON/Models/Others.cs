@@ -17,6 +17,8 @@ namespace ExpedienteIDON.Models
         public string Diagnosis { get; set; }
         [Display(Name = "Pronostico")]
         public Prognosis Prognosis { get; set; }
+        [Display(Name ="Notas y comentarios")]
+        public string Notes { get; set; }
 
     }
 }

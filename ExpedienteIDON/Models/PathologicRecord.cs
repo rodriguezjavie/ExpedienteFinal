@@ -8,12 +8,7 @@ namespace ExpedienteIDON.Models
 {
     public class PathologicRecord
     {
-        public PathologicRecord()
-        {
-            MedicalRecords = new HashSet<MedicalRecord>();
-            OtherPathologicRecords = new HashSet<OtherPathologicRecord>();
-
-        }
+       
         public int Id { get; set; }
         [Display(Name = "Diabetes tipo 1")]
         public bool DiabetesType1 { get; set; }
@@ -154,10 +149,5 @@ namespace ExpedienteIDON.Models
         [Display(Name = "Comentarios")]
         public string SurgeryComment { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OtherPathologicRecord> OtherPathologicRecords { get; set; }
     }
 }

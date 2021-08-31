@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class PerfilHepaticoesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PerfilHepaticoes
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.PerfilHepaticos.ToList());
+            return View(await db.PerfilHepaticos.ToListAsync());
         }
 
         // GET: PerfilHepaticoes/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilHepatico perfilHepatico = db.PerfilHepaticos.Find(id);
+            PerfilHepatico perfilHepatico = await db.PerfilHepaticos.FindAsync(id);
             if (perfilHepatico == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Date,BilirrubinaTotal,BilirrubinaDirecta,BilirrubinaIndirecta,FosfatasaAlcalina,TGO,TGP,GGT")] PerfilHepatico perfilHepatico)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Date,BilirrubinaTotal,BilirrubinaDirecta,BilirrubinaIndirecta,FosfatasaAlcalina,TGO,TGP,GGT")] PerfilHepatico perfilHepatico)
         {
             if (ModelState.IsValid)
             {
                 db.PerfilHepaticos.Add(perfilHepatico);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: PerfilHepaticoes/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilHepatico perfilHepatico = db.PerfilHepaticos.Find(id);
+            PerfilHepatico perfilHepatico = await db.PerfilHepaticos.FindAsync(id);
             if (perfilHepatico == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Date,BilirrubinaTotal,BilirrubinaDirecta,BilirrubinaIndirecta,FosfatasaAlcalina,TGO,TGP,GGT")] PerfilHepatico perfilHepatico)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,BilirrubinaTotal,BilirrubinaDirecta,BilirrubinaIndirecta,FosfatasaAlcalina,TGO,TGP,GGT")] PerfilHepatico perfilHepatico)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(perfilHepatico).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(perfilHepatico);
         }
 
         // GET: PerfilHepaticoes/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilHepatico perfilHepatico = db.PerfilHepaticos.Find(id);
+            PerfilHepatico perfilHepatico = await db.PerfilHepaticos.FindAsync(id);
             if (perfilHepatico == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: PerfilHepaticoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            PerfilHepatico perfilHepatico = db.PerfilHepaticos.Find(id);
+            PerfilHepatico perfilHepatico = await db.PerfilHepaticos.FindAsync(id);
             db.PerfilHepaticos.Remove(perfilHepatico);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

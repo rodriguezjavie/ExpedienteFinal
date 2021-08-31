@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class PerfilTiroideosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PerfilTiroideos
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.PerfilTiroideos.ToList());
+            return View(await db.PerfilTiroideos.ToListAsync());
         }
 
         // GET: PerfilTiroideos/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilTiroideo perfilTiroideo = db.PerfilTiroideos.Find(id);
+            PerfilTiroideo perfilTiroideo = await db.PerfilTiroideos.FindAsync(id);
             if (perfilTiroideo == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Date,TSH,T3Total,T3Libre,T4Total,T4Libre")] PerfilTiroideo perfilTiroideo)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Date,TSH,T3Total,T3Libre,T4Total,T4Libre")] PerfilTiroideo perfilTiroideo)
         {
             if (ModelState.IsValid)
             {
                 db.PerfilTiroideos.Add(perfilTiroideo);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: PerfilTiroideos/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilTiroideo perfilTiroideo = db.PerfilTiroideos.Find(id);
+            PerfilTiroideo perfilTiroideo = await db.PerfilTiroideos.FindAsync(id);
             if (perfilTiroideo == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Date,TSH,T3Total,T3Libre,T4Total,T4Libre")] PerfilTiroideo perfilTiroideo)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,TSH,T3Total,T3Libre,T4Total,T4Libre")] PerfilTiroideo perfilTiroideo)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(perfilTiroideo).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(perfilTiroideo);
         }
 
         // GET: PerfilTiroideos/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PerfilTiroideo perfilTiroideo = db.PerfilTiroideos.Find(id);
+            PerfilTiroideo perfilTiroideo = await db.PerfilTiroideos.FindAsync(id);
             if (perfilTiroideo == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: PerfilTiroideos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            PerfilTiroideo perfilTiroideo = db.PerfilTiroideos.Find(id);
+            PerfilTiroideo perfilTiroideo = await db.PerfilTiroideos.FindAsync(id);
             db.PerfilTiroideos.Remove(perfilTiroideo);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

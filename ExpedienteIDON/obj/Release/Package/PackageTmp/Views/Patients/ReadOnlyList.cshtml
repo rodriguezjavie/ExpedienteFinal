@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ExpedienteIDON.ViewModels.PatientRecordProfile>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = ViewBag.Layout;
+}
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Lista de Pacientes</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Lista de Pacientes</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabbable-line">
+                    <div class="tab-content">
+                        <div class="tab-pane active fontawesome-demo" id="tab1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card  card-box">
+                                        <div class="card-head">
+                                            <header></header>
+                                            <div class="tools">
+                                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-scrollable">
+                                                <table id="tableExport" class="display table table-hover table-checkable order-column m-t-20" style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th> Nombre </th>
+                                                            <th> @Html.DisplayNameFor(model => model.Patient.Name) </th>
+                                                            <th> Dirección </th>
+                                                            <th> @Html.DisplayNameFor(model => model.Patient.Phone) </th>
+                                                            <th> @Html.DisplayNameFor(model => model.Patient.Email) </th>
+                                                            <th> Fecha Nacimiento</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in Model)
+                                                        {
+                                                            <tr class="odd gradeX">
+                                                                <td class="patient-img">
+                                                                    
+                                                                        <img src="@Url.Content("~/Content/UploadedFiles/"+item.Patient.Photo)" class="img-responsive" alt="">
+                                                                    
+                                                                </td>
+                                                                <td>
+                                                                   
+                                                                        @Html.DisplayFor(modelItem => item.Patient.Name) @Html.DisplayFor(modelItem => item.Patient.LastName)
+                                                                    
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.Patient.PatientGender)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(modelItem => item.Patient.StreetAndNumber) 
+                                                                    @Html.DisplayFor(modelItem => item.Patient.Suburb) 
+                                                                    @Html.DisplayFor(modelItem => item.Patient.City)
+                                                                </td>
+                                                                <td class="center">
+                                                                    <a href="tel:@Html.DisplayFor(modelItem => item.Patient.Phone)">
+                                                                        @Html.DisplayFor(modelItem => item.Patient.Phone)
+                                                                    </a>
+                                                                </td>
+                                                                <td class="center">
+                                                                    @Html.DisplayFor(modelItem => item.Patient.Email)
+                                                                </td>
+                                                                <td class="center">
+                                                                    @Convert.ToDateTime(item.Patient.Birthday).ToString("dd/MM/yyyy")
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page content -->

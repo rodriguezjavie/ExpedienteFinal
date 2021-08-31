@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ExpedienteIDON.Models.UserRoleInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = ViewBag.Layout;
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Lista de Usuarios</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Lista de Usuarios</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabbable-line">
+                    <div class="tab-content">
+                        <div class="tab-pane active fontawesome-demo" id="tab1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card  card-box">
+                                        <div class="card-head">
+                                            <header></header>
+                                            <div class="tools">
+                                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-scrollable">
+                                                <table id="tableExport" class="table table-striped custom-table table-hover" style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nombre</th>
+                                                            <th>Rol/Roles </th>
+                                                            <th>Editar</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var user in Model)
+                                                        {
+                                                            var appUser = user.User;
+                                                            var roles = user.Roles;
+
+                                                            <tr>
+                                                                <td>
+                                                                    @appUser.Email
+                                                                </td>
+                                                                <td>
+                                                                    @string.Join(",", roles)
+                                                                </td>
+                                                                <td>
+                                                                    <a href="@Url.Action("Edit","Account", new { id = user.User.Id })" class="btn btn-primary btn-xs">
+                                                                        <i class="fa fa-pencil"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,8 @@ namespace ExpedienteIDON.Models
         public int Id { get; set; }
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
+        public String ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
         public Patient Patient { get; set; }

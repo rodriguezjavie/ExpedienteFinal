@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class RoleController : Controller
     {
         private ApplicationRoleManager _roleManager;
@@ -35,6 +36,16 @@ namespace ExpedienteIDON.Controllers
         // GET: Role
         public ActionResult Index()
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             List<RoleViewModel> list = new List<RoleViewModel>();
             foreach (var role in RoleManager.Roles)
             {
@@ -45,7 +56,16 @@ namespace ExpedienteIDON.Controllers
 
         public ActionResult Create()
         {
-
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             return View();
         }
 
@@ -59,6 +79,16 @@ namespace ExpedienteIDON.Controllers
         }
         public async Task<ActionResult> Edit(string id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             var role = await RoleManager.FindByIdAsync(id);
 
             return View(new RoleViewModel(role));
@@ -74,12 +104,32 @@ namespace ExpedienteIDON.Controllers
         }
         public async Task<ActionResult> Details(string id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             var role = await RoleManager.FindByIdAsync(id);
 
             return View(new RoleViewModel(role));
         }
         public async Task<ActionResult> Delete(string id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             var role = await RoleManager.FindByIdAsync(id);
 
             return View(new RoleViewModel(role));

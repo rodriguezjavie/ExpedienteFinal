@@ -4,25 +4,51 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor,Asistente")]
     public class DoctorsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Doctors
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.Doctors.ToList());
+            var result = await db.Doctors.ToListAsync();
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                return View("ReadOnlyList", result);
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            return View(result);
         }
 
         // GET: Doctors/Details/5
+        [Authorize(Roles = "Administrador,Doctor")]
         public ActionResult Details(int? id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,7 +72,7 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,LastName,Email,Cellphone,Phone,Address,DoctorGender")] Doctor doctor)
+        public ActionResult Create([Bind(Include = "Id,Name,LastName,Email,Cellphone,Phone,Address,DoctorGender,Cedula")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +104,7 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,LastName,Email,Cellphone,Phone,Address,DoctorGender")] Doctor doctor)
+        public ActionResult Edit([Bind(Include = "Id,Name,LastName,Email,Cellphone,Phone,Address,DoctorGender,Cedula")] Doctor doctor)
         {
             if (ModelState.IsValid)
             {

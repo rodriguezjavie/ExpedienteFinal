@@ -16,6 +16,7 @@ namespace ExpedienteIDON.Models
         [Display(Name = "Apellido(s)")]
         public string LastName { get; set; }
         [Display(Name = "Fecha de Nacimiento")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? Birthday { get; set; }
 
         [Display(Name = "Género")]
@@ -33,6 +34,7 @@ namespace ExpedienteIDON.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Display(Name = "Subir Imagen")]
         public string Photo { get; set; }
         [Display(Name = "Ocupación")]
         public string Ocupation { get; set; }
@@ -46,10 +48,10 @@ namespace ExpedienteIDON.Models
         public string Suburb { get; set; }
         [Display(Name = "Ciudad")]
         public string City { get; set; }
-        public int MunicipioId { get; set; }
-        public Municipio Municipio { get; set; }
         [Display(Name = "Codigo Postal")]
         public string ZipCode { get; set; }
+        [Display(Name="Estado del Paciente")]
+        public ObjectStatus Status { get; set; }
 
     }
 }

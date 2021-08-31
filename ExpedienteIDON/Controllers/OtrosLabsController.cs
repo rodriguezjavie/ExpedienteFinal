@@ -4,30 +4,32 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class OtrosLabsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: OtrosLabs
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.OtrosLabs.ToList());
+            return View(await db.OtrosLabs.ToListAsync());
         }
 
         // GET: OtrosLabs/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OtrosLabs otrosLabs = db.OtrosLabs.Find(id);
+            OtrosLabs otrosLabs = await db.OtrosLabs.FindAsync(id);
             if (otrosLabs == null)
             {
                 return HttpNotFound();
@@ -46,12 +48,12 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Date,VitaminaD,Calcio,Fosforo,Magnesio,Sodio,Potasio,Cloro,HemoglobinaGlugosilada")] OtrosLabs otrosLabs)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Date,VitaminaD,Calcio,Fosforo,Magnesio,Sodio,Potasio,Cloro,HemoglobinaGlugosilada")] OtrosLabs otrosLabs)
         {
             if (ModelState.IsValid)
             {
                 db.OtrosLabs.Add(otrosLabs);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +61,13 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: OtrosLabs/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OtrosLabs otrosLabs = db.OtrosLabs.Find(id);
+            OtrosLabs otrosLabs = await db.OtrosLabs.FindAsync(id);
             if (otrosLabs == null)
             {
                 return HttpNotFound();
@@ -78,25 +80,25 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Date,VitaminaD,Calcio,Fosforo,Magnesio,Sodio,Potasio,Cloro,HemoglobinaGlugosilada")] OtrosLabs otrosLabs)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,VitaminaD,Calcio,Fosforo,Magnesio,Sodio,Potasio,Cloro,HemoglobinaGlugosilada")] OtrosLabs otrosLabs)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(otrosLabs).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(otrosLabs);
         }
 
         // GET: OtrosLabs/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OtrosLabs otrosLabs = db.OtrosLabs.Find(id);
+            OtrosLabs otrosLabs = await db.OtrosLabs.FindAsync(id);
             if (otrosLabs == null)
             {
                 return HttpNotFound();
@@ -107,11 +109,11 @@ namespace ExpedienteIDON.Controllers
         // POST: OtrosLabs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            OtrosLabs otrosLabs = db.OtrosLabs.Find(id);
+            OtrosLabs otrosLabs = await db.OtrosLabs.FindAsync(id);
             db.OtrosLabs.Remove(otrosLabs);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

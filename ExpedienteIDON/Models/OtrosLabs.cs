@@ -10,6 +10,7 @@ namespace ExpedienteIDON.Models
     {
         public int Id { get; set; }
         [Display(Name ="Fecha")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? Date { get; set; }
         [Display(Name = "Vitamina D")]
         public double? VitaminaD { get; set; }
@@ -25,7 +26,7 @@ namespace ExpedienteIDON.Models
         public double? Potasio { get; set; }
         [Display(Name = "Cloro")]
         public double? Cloro { get; set; }
-        [Display(Name = "Hemoglobina Glugosilada")]
+        [Display(Name = "Hemoglobina Glucosilada")]
         public double? HemoglobinaGlugosilada { get; set; }
 
     }

@@ -1,0 +1,74 @@
+﻿@model ExpedienteIDON.Models.UserRoleInfo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<h2>Edit</h2>
+<h2>@ViewBag.Title.</h2>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Editar Usuario</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="@Url.Action("Index","Home")">Inicio</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Editar Usuario</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-body ">
+
+                        @using (Html.BeginForm()
+                        {
+                            @Html.AntiForgeryToken()
+                            <h4>Cree una cuenta nueva.</h4>
+                            <hr />
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.RoleName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(m => m.RoleName, new SelectList(ViewBag.Roles, "Value", "Text"), new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-default" value="Registrarse" />
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

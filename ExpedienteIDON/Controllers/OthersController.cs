@@ -4,30 +4,52 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ExpedienteIDON.Models;
 
 namespace ExpedienteIDON.Controllers
 {
+    [Authorize(Roles = "Administrador,Doctor")]
     public class OthersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Others
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.Others.ToList());
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            return View(await db.Others.ToListAsync());
         }
 
         // GET: Others/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Others others = db.Others.Find(id);
+            Others others = await db.Others.FindAsync(id);
             if (others == null)
             {
                 return HttpNotFound();
@@ -38,6 +60,16 @@ namespace ExpedienteIDON.Controllers
         // GET: Others/Create
         public ActionResult Create()
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             return View();
         }
 
@@ -46,12 +78,22 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Reason,Diagnosis,Prognosis")] Others others)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Reason,Diagnosis,Prognosis,Notes")] Others others)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (ModelState.IsValid)
             {
                 db.Others.Add(others);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +101,23 @@ namespace ExpedienteIDON.Controllers
         }
 
         // GET: Others/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Others others = db.Others.Find(id);
+            Others others = await db.Others.FindAsync(id);
             if (others == null)
             {
                 return HttpNotFound();
@@ -78,25 +130,45 @@ namespace ExpedienteIDON.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Reason,Diagnosis,Prognosis")] Others others)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Reason,Diagnosis,Prognosis")] Others others)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (ModelState.IsValid)
             {
                 db.Entry(others).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(others);
         }
 
         // GET: Others/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Others others = db.Others.Find(id);
+            Others others = await db.Others.FindAsync(id);
             if (others == null)
             {
                 return HttpNotFound();
@@ -107,11 +179,21 @@ namespace ExpedienteIDON.Controllers
         // POST: Others/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Others others = db.Others.Find(id);
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            Others others = await db.Others.FindAsync(id);
             db.Others.Remove(others);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

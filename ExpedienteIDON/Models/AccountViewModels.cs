@@ -65,6 +65,18 @@ namespace ExpedienteIDON.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name="Nombre(s)")]
+        public string Name { get; set; }
+        [Required]
+        [Display(Name ="Apellidos")]
+        public string LastName { get; set; }
+        [Display(Name ="CEDULA")]
+        public string Cedula { get; set; }
+        [Required]
+        [Display(Name ="Telefono")]
+        public string Phone { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }

@@ -10,6 +10,7 @@ namespace ExpedienteIDON.Models
     {
         public int Id { get; set; }
         [Display(Name = "Fecha")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? Date { get; set; }
         [Display(Name = "Eritrocitos")]
         public double? Eritrocitos { get; set; }

@@ -1,0 +1,96 @@
+﻿@model ExpedienteIDON.Models.OtrosLabs
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OtrosLabs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VitaminaD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VitaminaD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calcio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calcio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fosforo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fosforo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Magnesio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Magnesio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sodio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sodio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Potasio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Potasio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cloro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cloro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HemoglobinaGlugosilada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HemoglobinaGlugosilada)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

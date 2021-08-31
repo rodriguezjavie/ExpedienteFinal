@@ -15,7 +15,6 @@ namespace ExpedienteIDON.ViewModels
             Name = role.Name;
         }
 
-
         public string Id { get; set; }
         public string Name { get; set; }
 

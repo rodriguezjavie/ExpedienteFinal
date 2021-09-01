@@ -45,7 +45,7 @@
                         @using (Html.BeginForm("Create", "Patients", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.ValidationSummary()
 
                             <hr />
                             <h4>Agregar Datos del Paciente</h4>
@@ -178,7 +178,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#hipertension"  id="Accord-hipertension">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#hipertension" id="Accord-hipertension">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusHypertension)
                                 </a>
                                 <div id="hipertension" class="collapse">
@@ -205,7 +205,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#Thyroid"  id="Accord-Thyroid">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#Thyroid" id="Accord-Thyroid">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusThyroid)
                                 </a>
                                 <div class="collapse" id="Thyroid">
@@ -232,7 +232,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Hipertrigliceridemia" data-parent="#accordion3"  id="Accord-Hipertrigliceridemia">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Hipertrigliceridemia" data-parent="#accordion3" id="Accord-Hipertrigliceridemia">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusHypertriglyceridemia)
                                 </a>
                                 <div class="collapse" id="Hipertrigliceridemia">
@@ -256,7 +256,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Hipercolesterolemia" data-parent="#accordion3" id="Accord-Hipercolesterolemia" >
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Hipercolesterolemia" data-parent="#accordion3" id="Accord-Hipercolesterolemia">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusHypercholesterolemia)
                                 </a>
                                 <div class="collapse" id="Hipercolesterolemia">
@@ -280,7 +280,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Ataque" data-parent="#accordion3"  id="Accord-Ataque">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Ataque" data-parent="#accordion3" id="Accord-Ataque">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusHeartAttack)
                                 </a>
                                 <div class="collapse" id="Ataque">
@@ -304,7 +304,7 @@
                                     </div>
                                 </div>
 
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Ataque2" data-parent="#accordion3"  id="Accord-Ataque2">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Ataque2" data-parent="#accordion3" id="Accord-Ataque2">
                                     @Html.DisplayNameFor(model => model.MedicalRecord.FamilyRecord.StatusHeartAttackTwo)
                                 </a>
                                 <div class="collapse" id="Ataque2">
@@ -425,7 +425,7 @@
                             <div class="form-horizontal" id="GinecologDiv" style="display: none;">
                                 <h4>Gineco Antecedentes</h4>
                                 <hr />
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Gineco" data-parent="#accordion3" id="Accord-Gineco" >
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#Gineco" data-parent="#accordion3" id="Accord-Gineco">
                                     Antecedentes Ginec-obsteticos
                                 </a>
                                 <div class="collapse" id="Gineco">
@@ -1043,12 +1043,12 @@
                                                 </div>
                                             </div>
                                             @*<div class="form-group col-md-6">
-                                <div class="form-group row">
-                                    @Html.LabelFor(model => model.MedicalRecord.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    @Html.EditorFor(model => model.MedicalRecord.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                    @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.IMC, "", new { @class = "text-danger" })
-                                </div>
-                            </div>*@
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.IMC, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>*@
                                             <div class="form-group col-md-6">
                                                 <div class="form-group row">
                                                     @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TASistBD, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -1660,7 +1660,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#QuimicaSanguinea" data-parent="#accordion3"  id="Accord-QuimicaSanguinea">
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#QuimicaSanguinea" data-parent="#accordion3" id="Accord-QuimicaSanguinea">
                                     Química Sanguinea
                                 </a>
                                 <div class="collapse" id="QuimicaSanguinea">
@@ -1834,6 +1834,7 @@
 @section Scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     @Scripts.Render("~/Scripts/button-colorchange.js")
+    @Scripts.Render("~/bundles/jqueryval");
     <script>
         $(function () {
             $("#Symptoms_0__StartDate").mask("99/99/9999");

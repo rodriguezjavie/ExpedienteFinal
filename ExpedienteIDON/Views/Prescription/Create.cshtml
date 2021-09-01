@@ -64,6 +64,7 @@
                                         <div class="card-head">
                                             <header>Receta</header>
                                         </div>
+                                        @Html.ValidationSummary()
                                         <div class="card-body ">
                                             <div class="table-responsive">
                                                 <table class="table display table-striped custom-table table-hover" id="tableMed" style="width: 100%">
@@ -84,7 +85,10 @@
                                                             foreach (var prescription in Model.MedicinesPrescriptions)
                                                             {
                                                                 <tr>
-                                                                    <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Medicine, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
+                                                                    <td>
+                                                                        @Html.EditorFor(m => m.MedicinesPrescriptions[i].Medicine, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                                                        @Html.ValidationMessageFor(model => model.MedicinesPrescription.Medicine[i])
+                                                                    </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].UnitOfMeasure, new { htmlAttributes = new { @class = "form-control col-md-10" } })  </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Dose, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Frequency, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
@@ -125,6 +129,7 @@
     </div>
 </div>
 @section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
     <script type="text/javascript">

@@ -12,7 +12,7 @@ namespace ExpedienteIDON.Models
         
         public int PrescriptionId { get; set; }
         public Prescription Prescription { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Se requiere al menos el un medicamento")]
         [Display(Name = "Medicamento")]
         public string Medicine { get; set; }
         [Display(Name = "Presentación")]

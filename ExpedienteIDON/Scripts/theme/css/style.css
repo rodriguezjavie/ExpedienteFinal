@@ -8645,3 +8645,10 @@ span.notificationtime {
     bottom: 10px;
     left: 10px;
 }
+.validation-summary-errors{
+    color:red;
+}
+.input-validation-error {
+    border: 2px solid;
+    color:red;
+}

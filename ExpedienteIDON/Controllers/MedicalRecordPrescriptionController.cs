@@ -195,7 +195,7 @@ namespace ExpedienteIDON.Controllers
             {
                 foreach (var item in medicinesPrescriptions)
                 {
-                    if (item.Medicine != null || item.Medicine.Length > 0)
+                    if (item.Medicine != null)
                     {
                         if (item.Id != 0)
                         {

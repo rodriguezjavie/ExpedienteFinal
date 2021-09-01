@@ -96,6 +96,7 @@
                             <div class="form-horizontal">
                                 <h4>Motivo de Consulta </h4>
                                 <hr />
+                                @Html.ValidationSummary()
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         @Html.LabelFor(model => model.EvolutionNote.Others.Reason, htmlAttributes: new { @class = "control-label col-md-6" })
@@ -716,6 +717,7 @@
     </div>
 </div>
 @section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
     @Scripts.Render("~/Scripts/button-colorchange.js")
 }
 

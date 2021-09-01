@@ -64,6 +64,7 @@
                         {
                             @Html.AntiForgeryToken()
                             <div class="form-horizontal">
+                                @Html.ValidationSummary()
                                 <h4>Motivo de Consulta </h4>
                                 <hr />
                                 <div class="form-row">
@@ -656,5 +657,6 @@
     </div>
 </div>
 @section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
     @Scripts.Render("~/Scripts/button-colorchange.js")
 }

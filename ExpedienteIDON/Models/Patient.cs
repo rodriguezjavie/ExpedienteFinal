@@ -52,6 +52,6 @@ namespace ExpedienteIDON.Models
         public string ZipCode { get; set; }
         [Display(Name="Estado del Paciente")]
         public ObjectStatus Status { get; set; }
-
+        public DateTime Created { get; set; }
     }
 }

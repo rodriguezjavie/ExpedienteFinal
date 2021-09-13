@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ExpedienteIDON.ViewModels.PatientRecordProfile>
+@{
     ViewBag.Title = "Inicio";
     Layout = ViewBag.Layout;
 }
@@ -19,14 +20,13 @@
                 </ol>
             </div>
         </div>
-        <!-- start new patient list -->
+        <!-- start admited patient list -->
         <div class="row">
-            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                <div class="card card-box">
+            <div class="col-md-12 col-sm-12">
+                <div class="card  card-box">
                     <div class="card-head">
-                        <header>Lista de nuevos pacientes</header>
+                        <header>Últimos 8 Pacientes</header>
                         <div class="tools">
-                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                             <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
                             <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
                         </div>
@@ -37,160 +37,77 @@
                                 <table class="table display product-overview mb-30" id="support_table">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
+                                            <th></th>
                                             <th>Nombre</th>
+                                            <th>Sexo</th>
+                                            <th>Teléfono</th>
                                             <th>Doctor</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Jens Brincker</td>
-                                            <td>Dr.Kenny Josh</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Mark Hay</td>
-                                            <td>Dr. Mark</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>David Perry</td>
-                                            <td>Dr.Felix </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Anthony Davie</td>
-                                            <td>Dr.Beryl</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Mark Hay</td>
-                                            <td>Dr.Jayesh</td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>Sue Woodger</td>
-                                            <td>Dr.Sharma</td>
-                                        </tr>
+                                        @{
+                                            foreach (var item in Model)
+                                            {
+                                                <tr class="odd gradeX">
+                                                    <td class="patient-img">
+                                                        <a href="@Url.Action("../Patients/Details", new { id = item.Patient.Id })">
+                                                            <img src="@Url.Content("~/Content/UploadedFiles/"+item.Patient.Photo)" class="img-responsive" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="@Url.Action("../Patients/Details", new { id = item.Patient.Id })">
+                                                            @Html.DisplayFor(modelItem => item.Patient.Name) @Html.DisplayFor(modelItem => item.Patient.LastName)
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Patient.PatientGender)
+                                                    </td>
+                                                    <td class="center">
+                                                        <a href="tel:@Html.DisplayFor(modelItem => item.Patient.Phone)">
+                                                            @Html.DisplayFor(modelItem => item.Patient.Phone)
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.UserDataViewModel.Name)
+                                                        @Html.DisplayFor(modelItem => item.UserDataViewModel.LastName)
+                                                    </td>
+                                                    <td class="right">
+                                                        <a href="@Url.Action("../Patients/Details", new { id = item.Patient.Id })" class="btn btn-success btn-xs" title="Ver Perfil">
+                                                            <i class="fa fa-user-circle"></i>
+                                                        </a>
+                                                        <a href="@Url.Action("../Patients/Edit", new { id = item.Patient.Id })" class="btn btn-primary btn-xs" title="Editar">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </a>
+                                                        @if (item.Record)
+                                                        {
+                                                            <a href="@Url.Action("../Patients/DetailsMedicalRecord", new { id = item.Patient.Id })" class="btn btn-warning btn-xs" title="Ver Historial">
+                                                                <i class="fa fa-address-book"></i>
+                                                            </a>
+                                                            <a href="@Url.Action("../EvolutionNote/Create/"+item.Patient.Id)" class="btn btn-danger btn-xs" title="Crear Nota de Evolución">
+                                                                <i class="fa fa-vcard-o"></i>
+                                                            </a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="@Url.Action("CreateRecordAlone","Patients", new { patientId = item.Patient.Id })" class="btn btn-warning btn-xs" title="Crear Historial">
+                                                                <i class="fa fa-address-book"></i>
+                                                            </a>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="text-center full-width">
-                                <a href="#">Todos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-                <div class="card card-box">
-                    <div class="card-head">
-                        <header>Lista de Doctores</header>
-                    </div>
-                    <div class="card-body ">
-                        <div class="row">
-                            <ul id="homeDoctorList" class="docListWindow small-slimscroll-style">
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc1.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Rajesh</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc2.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Sarah Smith</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc3.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.John Deo</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Jay Soni</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Jacob Ryan</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Megha Trivedi</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Rajesh</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.Sarah Smith</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="@Url.Content("../Scripts/theme/img/doc/doc4.jpg")" alt="" width="40" height="40">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Dr.John Deo</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="text-center full-width">
-                                <a href="#">Todos</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- end new patient list -->
+        <!-- end admited patient list -->
     </div>
 </div>
 <!-- end page content -->

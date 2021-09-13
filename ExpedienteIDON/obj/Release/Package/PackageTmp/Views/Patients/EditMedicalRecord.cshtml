@@ -940,8 +940,13 @@
                                                                 <td>@Html.EditorFor(m => m.Symptoms[i].Name, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                 <td>@Html.EnumDropDownListFor(m => m.Symptoms[i].Severity, htmlAttributes: new { @class = "form-control col-md-10" })  </td>
                                                                 <td>@Html.EditorFor(m => m.Symptoms[i].StartDate, new { htmlAttributes = new { @class = "form-control col-md-10", placeholder = "dd/mm/aaaa" } })</td>
-                                                                <td>@Html.EditorFor(m => m.Symptoms[i].EndDate, new { htmlAttributes = new { @class = "form-control col-md-10", placeholder = "dd/mm/aaaa" } })</td>
-                                                                <td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>
+                                                                <td>@Html.EditorFor(m => m.Symptoms[i].EndDate, new { htmlAttributes = new { @class = "form-control col-md-10", placeholder = "dd/mm/aaaa" } }) @Html.HiddenFor(m => m.Symptoms[i].Id)@Html.HiddenFor(m => m.Symptoms[i].MedicalRecordId)</td>
+                                                                <td>
+                                                                    @if (i != 0)
+                                                                    {
+                                                                        <input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" />
+                                                                    }
+                                                                </td>
                                                             </tr>
                                                             i++;
                                                         }
@@ -1864,10 +1869,8 @@
         function Remove(button) {
             var row = $(button).closest("TR");
             var name = $("TD", row).eq(0).html();
-            if (confirm("¿Desea borrar esta línea?")) {
-                var table = $("#tableMed")[0];
-                table.deleteRow(row[0].rowIndex);
-            }
+            var table = $("#tableMed")[0];
+            table.deleteRow(row[0].rowIndex);
         };
     </script>
 }

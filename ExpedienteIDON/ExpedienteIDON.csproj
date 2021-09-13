@@ -184,29 +184,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BiometriaHematicasController.cs" />
-    <Compile Include="Controllers\DoctorsController.cs" />
     <Compile Include="Controllers\EvolNotePrescriptionController.cs" />
     <Compile Include="Controllers\EvolutionNoteController.cs" />
-    <Compile Include="Controllers\GeneralOrinasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HormonasController.cs" />
-    <Compile Include="Controllers\LabsTestsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MedicalRecordPrescriptionController.cs" />
-    <Compile Include="Controllers\MedicalTestsController.cs" />
-    <Compile Include="Controllers\OthersController.cs" />
-    <Compile Include="Controllers\OtrosLabsController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
-    <Compile Include="Controllers\PerfilHepaticoesController.cs" />
-    <Compile Include="Controllers\PerfilTiroideosController.cs" />
-    <Compile Include="Controllers\PhysicalExplorationsController.cs" />
     <Compile Include="Controllers\PrescriptionController.cs" />
-    <Compile Include="Controllers\QuimicaSanguineasController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\SymptomsController.cs" />
     <Compile Include="Controllers\UserRoleController.cs" />
-    <Compile Include="Controllers\VitalSignsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +259,10 @@
     <Compile Include="Migrations\202108201212240_requiredMedicamentoName.cs" />
     <Compile Include="Migrations\202108201212240_requiredMedicamentoName.Designer.cs">
       <DependentUpon>202108201212240_requiredMedicamentoName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109082044528_addCreatedinPatient.cs" />
+    <Compile Include="Migrations\202109082044528_addCreatedinPatient.Designer.cs">
+      <DependentUpon>202109082044528_addCreatedinPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -344,6 +334,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\button-colorchange.js" />
@@ -355,6 +346,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\font-awesome.min.css" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -370,6 +362,11 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\ExpedienteIDON - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ExpedienteIDON20210626113924 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -450,6 +447,7 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\symptoms.js" />
     <Content Include="Scripts\theme\css\bootstrap-Clinic.css" />
     <Content Include="Scripts\theme\css\material_style.css" />
     <Content Include="Scripts\theme\css\pages\animate_page.css" />
@@ -1381,8 +1379,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -1404,13 +1400,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Doctors\Create.cshtml" />
-    <Content Include="Views\Doctors\Delete.cshtml" />
-    <Content Include="Views\Doctors\Details.cshtml" />
-    <Content Include="Views\Doctors\Edit.cshtml" />
-    <Content Include="Views\Doctors\Index.cshtml" />
     <Content Include="Views\Patients\Create.cshtml" />
-    <Content Include="Views\Patients\Delete.cshtml" />
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
@@ -1424,71 +1414,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Symptoms\Create.cshtml" />
-    <Content Include="Views\Symptoms\Delete.cshtml" />
-    <Content Include="Views\Symptoms\Details.cshtml" />
-    <Content Include="Views\Symptoms\Edit.cshtml" />
-    <Content Include="Views\Symptoms\Index.cshtml" />
-    <Content Include="Views\VitalSigns\Create.cshtml" />
-    <Content Include="Views\VitalSigns\Delete.cshtml" />
-    <Content Include="Views\VitalSigns\Details.cshtml" />
-    <Content Include="Views\VitalSigns\Edit.cshtml" />
-    <Content Include="Views\VitalSigns\Index.cshtml" />
-    <Content Include="Views\PhysicalExplorations\Create.cshtml" />
-    <Content Include="Views\PhysicalExplorations\Delete.cshtml" />
-    <Content Include="Views\PhysicalExplorations\Details.cshtml" />
-    <Content Include="Views\PhysicalExplorations\Edit.cshtml" />
-    <Content Include="Views\PhysicalExplorations\Index.cshtml" />
-    <Content Include="Views\MedicalTests\Create.cshtml" />
-    <Content Include="Views\MedicalTests\Delete.cshtml" />
-    <Content Include="Views\MedicalTests\Details.cshtml" />
-    <Content Include="Views\MedicalTests\Edit.cshtml" />
-    <Content Include="Views\MedicalTests\Index.cshtml" />
-    <Content Include="Views\Others\Create.cshtml" />
-    <Content Include="Views\Others\Delete.cshtml" />
-    <Content Include="Views\Others\Details.cshtml" />
-    <Content Include="Views\Others\Edit.cshtml" />
-    <Content Include="Views\Others\Index.cshtml" />
-    <Content Include="Views\LabsTests\Create.cshtml" />
-    <Content Include="Views\LabsTests\Delete.cshtml" />
-    <Content Include="Views\LabsTests\Details.cshtml" />
-    <Content Include="Views\LabsTests\Edit.cshtml" />
-    <Content Include="Views\LabsTests\Index.cshtml" />
-    <Content Include="Views\BiometriaHematicas\Create.cshtml" />
-    <Content Include="Views\BiometriaHematicas\Delete.cshtml" />
-    <Content Include="Views\BiometriaHematicas\Details.cshtml" />
-    <Content Include="Views\BiometriaHematicas\Edit.cshtml" />
-    <Content Include="Views\BiometriaHematicas\Index.cshtml" />
-    <Content Include="Views\PerfilHepaticoes\Create.cshtml" />
-    <Content Include="Views\PerfilHepaticoes\Delete.cshtml" />
-    <Content Include="Views\PerfilHepaticoes\Details.cshtml" />
-    <Content Include="Views\PerfilHepaticoes\Edit.cshtml" />
-    <Content Include="Views\PerfilHepaticoes\Index.cshtml" />
-    <Content Include="Views\QuimicaSanguineas\Create.cshtml" />
-    <Content Include="Views\QuimicaSanguineas\Delete.cshtml" />
-    <Content Include="Views\QuimicaSanguineas\Details.cshtml" />
-    <Content Include="Views\QuimicaSanguineas\Edit.cshtml" />
-    <Content Include="Views\QuimicaSanguineas\Index.cshtml" />
-    <Content Include="Views\PerfilTiroideos\Create.cshtml" />
-    <Content Include="Views\PerfilTiroideos\Delete.cshtml" />
-    <Content Include="Views\PerfilTiroideos\Details.cshtml" />
-    <Content Include="Views\PerfilTiroideos\Edit.cshtml" />
-    <Content Include="Views\PerfilTiroideos\Index.cshtml" />
-    <Content Include="Views\Hormonas\Create.cshtml" />
-    <Content Include="Views\Hormonas\Delete.cshtml" />
-    <Content Include="Views\Hormonas\Details.cshtml" />
-    <Content Include="Views\Hormonas\Edit.cshtml" />
-    <Content Include="Views\Hormonas\Index.cshtml" />
-    <Content Include="Views\GeneralOrinas\Create.cshtml" />
-    <Content Include="Views\GeneralOrinas\Delete.cshtml" />
-    <Content Include="Views\GeneralOrinas\Details.cshtml" />
-    <Content Include="Views\GeneralOrinas\Edit.cshtml" />
-    <Content Include="Views\GeneralOrinas\Index.cshtml" />
-    <Content Include="Views\OtrosLabs\Create.cshtml" />
-    <Content Include="Views\OtrosLabs\Delete.cshtml" />
-    <Content Include="Views\OtrosLabs\Details.cshtml" />
-    <Content Include="Views\OtrosLabs\Edit.cshtml" />
-    <Content Include="Views\OtrosLabs\Index.cshtml" />
     <Content Include="Scripts\theme\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Scripts\theme\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Scripts\theme\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -1614,7 +1539,6 @@
     <Content Include="Views\Shared\_LayoutAdministrador.cshtml" />
     <Content Include="Views\Shared\_Layout - Copia.cshtml" />
     <Content Include="Views\Patients\ReadOnlyList.cshtml" />
-    <Content Include="Views\Doctors\ReadOnlyList.cshtml" />
     <Content Include="Views\EvolNotePrescription\Edit.cshtml" />
     <Content Include="Views\EvolutionNote\Edit.cshtml" />
     <Content Include="Views\Patients\EditMedicalRecord.cshtml" />
@@ -1687,6 +1611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108201212240_requiredMedicamentoName.resx">
       <DependentUpon>202108201212240_requiredMedicamentoName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109082044528_addCreatedinPatient.resx">
+      <DependentUpon>202109082044528_addCreatedinPatient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

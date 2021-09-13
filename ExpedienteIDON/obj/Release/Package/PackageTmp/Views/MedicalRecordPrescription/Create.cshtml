@@ -70,6 +70,7 @@
                                         <div class="card-head">
                                             <header>Receta</header>
                                         </div>
+                                        @Html.ValidationSummary()
                                         <div class="card-body ">
                                             <div class="table-responsive">
                                                 <table class="table display table-striped custom-table table-hover" id="tableMed" style="width: 100%">
@@ -97,7 +98,12 @@
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Administration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].TreatmentDuration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Indications, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
-                                                                    <td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>
+                                                                    <td>
+                                                                        @if (i != 0)
+                                                                        {
+                                                                            <input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" />
+                                                                        }
+                                                                    </td>
                                                                 </tr>
                                                                 i++;
                                                             }
@@ -131,11 +137,12 @@
     </div>
 </div>
 @section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
     <script type="text/javascript">
         var counter = 1;
         $("body").on("click", "#btnAdd", function () {
-            $('<tr> '+
-                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Medicine" name="MedicinesPrescriptions[' + counter + '].Medicine" type="text" value="" /> </td>'+
+            $('<tr> ' +
+                '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Medicine" name="MedicinesPrescriptions[' + counter + '].Medicine" type="text" value="" /> </td>' +
                 '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__UnitOfMeasure" name="MedicinesPrescriptions[' + counter + '].UnitOfMeasure" type="text" value="" />  </td>' +
                 '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Dose" name="MedicinesPrescriptions[' + counter + '].Dose" type="text" value="" /> </td>' +
                 '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Frequency" name="MedicinesPrescriptions[' + counter + '].Frequency" type="text" value="" /> </td>' +
@@ -143,7 +150,7 @@
                 '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__TreatmentDuration" name="MedicinesPrescriptions[' + counter + '].TreatmentDuration" type="text" value="" /> </td>' +
                 '<td><input class="form-control col-md-10 text-box single-line" id="MedicinesPrescriptions_' + counter + '__Indications" name="MedicinesPrescriptions[' + counter + '].Indications" type="text" value="" /> </td>' +
                 '<td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>' +
-            '</tr>').appendTo('#tableMed');
+                '</tr>').appendTo('#tableMed');
             counter++;
             return false;
 
@@ -158,5 +165,10 @@
             }
         };
 
+    </script>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
     </script>
 }

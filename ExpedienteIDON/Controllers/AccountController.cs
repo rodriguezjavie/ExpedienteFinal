@@ -219,10 +219,20 @@ namespace ExpedienteIDON.Controllers
 
                     ViewBag.Message = "El usuario debe revisar su correo y confirmar su cuenta, ya que esta debe esta confirmada "
                                     + "antes de que pueda ingresar al sitio.";
-
+                    if (User.IsInRole("Administrador"))
+                    {
+                        ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                    }
+                    else if (User.IsInRole("Asistente"))
+                    {
+                        ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                    }
+                    else
+                        ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
                     return View("Info");
                     //return RedirectToAction("Index", "Home");
                 }
+
                 AddErrors(result);
             }
             if (User.IsInRole("Administrador"))

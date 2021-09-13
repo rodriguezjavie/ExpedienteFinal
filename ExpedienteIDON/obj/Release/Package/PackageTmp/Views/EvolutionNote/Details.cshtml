@@ -33,16 +33,16 @@
                         <h4>Datos del medico</h4>
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                @Html.LabelFor(model => model.Doctor.Name, htmlAttributes: new { @class = "control-label" })
-                                @Html.EditorFor(model => model.Doctor.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                <label>Nombre(s)</label>
+                                @Html.EditorFor(model => model.UserDataViewModel.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                             </div>
                             <div class="form-group col-md-4">
-                                @Html.LabelFor(model => model.Doctor.LastName, htmlAttributes: new { @class = "control-label" })
-                                @Html.EditorFor(model => model.Doctor.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                <label>Apellido(s)</label>
+                                @Html.EditorFor(model => model.UserDataViewModel.LastName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                             </div>
                             <div class="form-group col-md-4">
-                                @Html.LabelFor(model => model.Doctor.Cedula, htmlAttributes: new { @class = "control-label" })
-                                @Html.EditorFor(model => model.Doctor.Cedula, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.LabelFor(model => model.UserDataViewModel.Cedula, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.UserDataViewModel.Cedula, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                             </div>
                         </div>
                         <h4>Datos del Paciente</h4>
@@ -660,7 +660,7 @@
                         <br>
                         <div class="form-group">
                             <div class="offset-md-3 col-md-9">
-                                <button onclick="javascript:window.print();" class="btn btn-primary btn-outline" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                                <button onclick="javascript:window.print();" class="btn btn-primary btn-outline" type="button"> <span><i class="fa fa-print"></i> Imprimir</span> </button>
                                 @Html.ActionLink("Editar Nota", "Edit", "EvolutionNote",
                                                      new { id = Model.EvolutionNote.Id },
                                                      new { @class = "btn btn-default" })

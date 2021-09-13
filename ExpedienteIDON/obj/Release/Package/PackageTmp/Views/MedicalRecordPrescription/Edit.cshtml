@@ -70,6 +70,7 @@
                                         <div class="card-head">
                                             <header>Receta</header>
                                         </div>
+                                        @Html.ValidationSummary()
                                         <div class="card-body ">
                                             <div class="table-responsive">
                                                 <table class="table display table-striped custom-table table-hover" id="tableMed" style="width: 100%">
@@ -99,7 +100,13 @@
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Administration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].TreatmentDuration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Indications, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
-                                                                    <td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>
+                                                                    <td>
+                                                                        @if (i != 0)
+                                                                        {
+                                                                            <input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" />
+                                                                        }
+
+                                                                    </td>
                                                                 </tr>
                                                                 i++;
                                                             }
@@ -143,6 +150,8 @@
     </div>
 </div>
 @section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
     <script type="text/javascript">

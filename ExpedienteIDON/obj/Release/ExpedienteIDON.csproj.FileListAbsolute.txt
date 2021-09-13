@@ -149,3 +149,4 @@ C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Release\Expedient
 C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Release\ExpedienteIDON.Migrations.addUserinPrescription.resources
 C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Release\ExpedienteIDON.Migrations.addUserinEvolutionNote.resources
 C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Release\ExpedienteIDON.Migrations.requiredMedicamentoName.resources
+C:\Users\Javier\source\repos\ExpedienteIDON\ExpedienteIDON\obj\Release\ExpedienteIDON.Migrations.addCreatedinPatient.resources

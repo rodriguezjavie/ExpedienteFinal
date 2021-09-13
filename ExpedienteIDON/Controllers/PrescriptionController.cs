@@ -262,28 +262,5 @@ namespace ExpedienteIDON.Controllers
             };
             return View(patientPrescriptionViewModel);
         }
-    
-
-        // GET: Prescription/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Prescription/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

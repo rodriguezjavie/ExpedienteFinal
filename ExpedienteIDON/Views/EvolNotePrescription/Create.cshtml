@@ -113,7 +113,7 @@
                                                                         {
                                                                             <input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" />
                                                                         }
-                                                                                                                                    </td>
+                                                                    </td>
                                                                 </tr>
                                                                 i++;
                                                             }
@@ -149,8 +149,8 @@
 
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval");
-
-    <script type="text/javascript">
+    @Scripts.Render("~/bundles/button");
+    <script>
         var counter = 1;
         $("body").on("click", "#btnAdd", function () {
             $('<tr> ' +
@@ -176,6 +176,10 @@
                 table.deleteRow(row[0].rowIndex);
             }
         };
-
+    </script>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
     </script>
 }

@@ -61,6 +61,8 @@ namespace ExpedienteIDON.Controllers
             var patient = await db.Patients.SingleAsync(p => p.Id == evolutionNote.PatientId);
             var doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == evolutionNote.DoctorId);
             var prescription = await db.Prescriptions.SingleOrDefaultAsync(p => p.EvolutionNoteId == evolutionNote.Id);
+            var user = await db.Users.SingleOrDefaultAsync(u => u.Id == evolutionNote.ApplicationUserId);
+
             if (prescription == null)
             {
                 var evolucionNoteVM = new EvolutionNoteVM
@@ -68,6 +70,13 @@ namespace ExpedienteIDON.Controllers
                     EvolutionNote = evolutionNote,
                     Patient = patient,
                     Doctor = doctor,
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    }
                     //Prescription = await db.Prescriptions.SingleAsync(p => p.EvolutionNoteId == evolutionNote.Id),
                 };
                 return View(evolucionNoteVM);
@@ -154,7 +163,7 @@ namespace ExpedienteIDON.Controllers
                 evolutionNote.DoctorId = 1;
                 evolutionNote.PatientId = int.Parse(idPatient);
                 evolutionNote.ApplicationUserId = User.Identity.GetUserId();
-                var imc = (evolutionNote.VitalSigns.Weight / (evolutionNote.VitalSigns.Size * evolutionNote.VitalSigns.Size) / 10000);
+                var imc = (evolutionNote.VitalSigns.Weight / (evolutionNote.VitalSigns.Size * evolutionNote.VitalSigns.Size)) * 10000;
                 evolutionNote.VitalSigns.IMC = imc;
                 db.EvolutionNotes.Add(evolutionNote);
                 db.SaveChanges();
@@ -222,6 +231,8 @@ namespace ExpedienteIDON.Controllers
             var patient = await db.Patients.SingleAsync(p => p.Id == evolutionNote.PatientId);
             var doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == evolutionNote.DoctorId);
             var prescription = await db.Prescriptions.SingleOrDefaultAsync(p => p.EvolutionNoteId == evolutionNote.Id);
+            var user = await db.Users.SingleOrDefaultAsync(u => u.Id == evolutionNote.ApplicationUserId);
+
             if (prescription == null)
             {
                 var evolucionNoteVM = new EvolutionNoteVM
@@ -229,6 +240,13 @@ namespace ExpedienteIDON.Controllers
                     EvolutionNote = evolutionNote,
                     Patient = patient,
                     Doctor = doctor,
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    }
                     //Prescription = await db.Prescriptions.SingleAsync(p => p.EvolutionNoteId == evolutionNote.Id),
                 };
                 return View(evolucionNoteVM);
@@ -307,13 +325,20 @@ namespace ExpedienteIDON.Controllers
 
             }
             var errors = ModelState.Values.SelectMany(v => v.Errors);
-
+            var user = db.Users.SingleOrDefault(u => u.Id == evolutionNote.ApplicationUserId);
 
             var evolucionNoteVM = new EvolutionNoteVM
             {
                 EvolutionNote = evolutionNote,
                 Patient = patient,
                 Doctor = doctor,
+                UserDataViewModel = new UserDataViewModel
+                {
+                    Name = user.Name,
+                    LastName = user.LastName,
+                    Phone = user.Phone,
+                    Cedula = user.Cedula
+                }
             };
             if (User.IsInRole("Administrador"))
             {

@@ -16,7 +16,6 @@ using Microsoft.AspNet.Identity;
 namespace ExpedienteIDON.Controllers
 {
     [Authorize(Roles = "Administrador,Doctor,Asistente")]
-
     public class PatientsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -80,7 +79,7 @@ namespace ExpedienteIDON.Controllers
                 ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
 
             var patient = await db.Patients.FindAsync(id);
-            var evolutionNote = await db.EvolutionNotes.Include(m => m.Others).Where(a => a.PatientId == id).ToListAsync();
+            var evolutionNote = await db.EvolutionNotes.OrderByDescending(e => e.CreatedDate).Include(m => m.Others).Where(a => a.PatientId == id).ToListAsync();
             var record = await db.MedicalRecords.Where(a => a.PatientId == id).FirstOrDefaultAsync();
             var prescriptions = await db.Prescriptions.Where(p => p.PatientId == id).ToListAsync();
             
@@ -89,7 +88,7 @@ namespace ExpedienteIDON.Controllers
                 return HttpNotFound();
             }
             List<EvolutionNote> evolutionNotes = new List<EvolutionNote>();
-            evolutionNotes = await db.EvolutionNotes.Where(e => e.PatientId == id).Include(v => v.VitalSigns).Take(5).ToListAsync();
+            evolutionNotes = await db.EvolutionNotes.OrderByDescending(e => e.CreatedDate).Where(e => e.PatientId == id).Include(v => v.VitalSigns).Take(5).ToListAsync();
             List<String> dates = new List<String>();
             List<String> weight = new List<String>();
             List<String> glucose = new List<String>();
@@ -403,11 +402,11 @@ namespace ExpedienteIDON.Controllers
             if (ModelState.IsValid)
             {
                 medicalRecord.Created = DateTime.Now;
+                medicalRecord.Patient.Created = DateTime.Now;
                 medicalRecord.DoctorId = 1;
                 medicalRecord.ApplicationUserId = User.Identity.GetUserId();
                 var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
                 medicalRecord.VitalSigns.IMC = imc;
-
                 if (file == null)
                 {
                     medicalRecord.Patient.Photo = "patient1.jpg";
@@ -524,6 +523,7 @@ namespace ExpedienteIDON.Controllers
                     string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                 }
+                patient.Created = DateTime.Now;
                 db.Patients.Add(patient);
                 await db.SaveChangesAsync();
                 int lastId = patient.Id;
@@ -676,6 +676,7 @@ namespace ExpedienteIDON.Controllers
             OtherPathologicRecord otherPathologicRecord, OtherFamilyRecord otherFamilyRecord
             )
         {
+            
             var pat = await db.Patients.SingleOrDefaultAsync(p => p.Id == medicalRecord.PatientId);
             var doc = await db.Doctors.SingleOrDefaultAsync(d => d.Id == medicalRecord.DoctorId);
             var UserApp = await db.MedicalRecords.SingleOrDefaultAsync(m=>m.Id== medicalRecord.Id);
@@ -769,15 +770,17 @@ namespace ExpedienteIDON.Controllers
                         if (item.Id != 0)
                         {
                             var sympthomInDb = await db.Symptoms.Include(s => s.MedicalRecord).SingleOrDefaultAsync(s => s.Id == item.Id);
+                            item.MedicalRecordId = medicalRecord.Id;
                             item.MedicalRecord = medicalRecord;
                             Mapper.Map(item, sympthomInDb);
+                            await db.SaveChangesAsync();
                         }
                         else
                         {
                             item.MedicalRecordId = medicalRecord.Id;
                             db.Symptoms.Add(item);
                         }
-                        await db.SaveChangesAsync();
+                        
                     }
                 }
                 otherPathologicRecord.PathologicRecord = medicalRecord.PathologicRecord;
@@ -787,6 +790,17 @@ namespace ExpedienteIDON.Controllers
                 db.SaveChanges();
                 return RedirectToAction("DetailsMedicalRecord", new { id = medicalRecord.PatientId });
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+            if (User.IsInRole("Administrador"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+            }
+            else if (User.IsInRole("Asistente"))
+            {
+                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+            }
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             return View();
         }
 

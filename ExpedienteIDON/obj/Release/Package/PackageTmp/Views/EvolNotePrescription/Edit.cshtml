@@ -101,7 +101,12 @@
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Administration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].TreatmentDuration, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
                                                                     <td>@Html.EditorFor(m => m.MedicinesPrescriptions[i].Indications, new { htmlAttributes = new { @class = "form-control col-md-10" } }) </td>
-                                                                    <td><input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" /></td>
+                                                                    <td>
+                                                                        @if (i != 0)
+                                                                        {
+                                                                            <input type="button" class="btn btn-warning" value="Quitar" onclick="Remove(this)" />
+                                                                        }
+                                                                    </td>
                                                                 </tr>
                                                                 i++;
                                                             }

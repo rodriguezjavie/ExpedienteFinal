@@ -10,6 +10,7 @@ namespace ExpedienteIDON.ViewModels
     {
         public Patient Patient { get; set; }
 
+        public UserDataViewModel UserDataViewModel { get; set; }
         public Boolean Record { get; set; }
     }
 }

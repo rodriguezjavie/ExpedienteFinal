@@ -23,7 +23,8 @@ namespace ExpedienteIDON
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                        "~/Scripts/theme/plugins/bootstrap/css/bootstrap.min.css",
+                        "~/Content/bootstrap.css",
+                        "~/Content/bootstrap.min.css",
                         "~/Scripts/theme/css/style.css",
                         "~/Scripts/theme/css/plugins.min.css",
                         "~/Scripts/theme/css/responsive.css",

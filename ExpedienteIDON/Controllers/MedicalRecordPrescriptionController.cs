@@ -64,6 +64,11 @@ namespace ExpedienteIDON.Controllers
             else
                 ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
 
+            //Valida que no exista una receta ligada al historial
+            var record = db.Prescriptions.SingleOrDefault(r => r.MedicalRecordId == medicalRecordId);
+            if (record != null)
+                return RedirectToAction("Details", "MedicalRecordPrescription", new { id = medicalRecordId });
+
             string currentUserId = User.Identity.GetUserId();
             var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
             var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == patientId);

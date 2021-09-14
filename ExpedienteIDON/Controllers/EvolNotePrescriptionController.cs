@@ -68,6 +68,11 @@ namespace ExpedienteIDON.Controllers
             else
                 ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
 
+            //Valida que no exista una receta ligada a la nota de evaluacion
+            var record = db.Prescriptions.SingleOrDefault(r => r.EvolutionNoteId == evolutionNoteId);
+            if (record != null)
+                return RedirectToAction("Details", "EvolNotePrescription", new { id = evolutionNoteId });
+
             var doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == 1);
             var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == patientId);
             string currentUserId = User.Identity.GetUserId();

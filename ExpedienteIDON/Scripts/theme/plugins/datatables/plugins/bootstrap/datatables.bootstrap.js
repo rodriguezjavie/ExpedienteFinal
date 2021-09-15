@@ -11,8 +11,8 @@ $.extend(true, $.fn.dataTable.defaults, {
             "pageOf": "of"
         }
     },
-    "pagingType": "bootstrap_number"
 });
+
 
 /* Default class modification */
 $.extend($.fn.dataTableExt.oStdClasses, {

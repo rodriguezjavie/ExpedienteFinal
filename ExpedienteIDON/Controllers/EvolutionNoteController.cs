@@ -88,7 +88,15 @@ namespace ExpedienteIDON.Controllers
                     EvolutionNote = evolutionNote,
                     Patient = patient,
                     Doctor = doctor,
-                    Prescription = prescription
+                    Prescription = prescription,
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    }
+
                 };
                 return View(evolucionNoteVM);
             }
@@ -258,7 +266,14 @@ namespace ExpedienteIDON.Controllers
                     EvolutionNote = evolutionNote,
                     Patient = patient,
                     Doctor = doctor,
-                    Prescription = prescription
+                    Prescription = prescription,
+                     UserDataViewModel = new UserDataViewModel
+                     {
+                         Name = user.Name,
+                         LastName = user.LastName,
+                         Phone = user.Phone,
+                         Cedula = user.Cedula
+                     }
                 };
                 return View(evolucionNoteVM);
             }

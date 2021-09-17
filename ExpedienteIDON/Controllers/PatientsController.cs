@@ -12,6 +12,7 @@ using System.Web.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
+using System.Web.Helpers;
 
 namespace ExpedienteIDON.Controllers
 {
@@ -413,9 +414,13 @@ namespace ExpedienteIDON.Controllers
                 }
                 else
                 {
-                    medicalRecord.Patient.Photo = file.FileName;
+                    WebImage img = new WebImage(file.InputStream);
+                    if (img.Width > 300)
+                        img.Resize(300, 300, true);
                     string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
-                    file.SaveAs(path);
+                    img.Save(path);
+                    medicalRecord.Patient.Photo = file.FileName;
+                    
                 }
 
                 db.MedicalRecords.Add(medicalRecord);
@@ -519,9 +524,12 @@ namespace ExpedienteIDON.Controllers
                 }
                 else
                 {
-                    patient.Photo = file.FileName;
+                    WebImage img = new WebImage(file.InputStream);
+                    if (img.Width > 300)
+                        img.Resize(300, 300, true);
                     string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
-                    file.SaveAs(path);
+                    img.Save(path);
+                    patient.Photo = file.FileName;
                 }
                 patient.Created = DateTime.Now;
                 db.Patients.Add(patient);
@@ -585,9 +593,13 @@ namespace ExpedienteIDON.Controllers
                 var patientInDb = db.Patients.SingleOrDefault(p => p.Id == patient.Id);
                 if (file != null)
                 {
-                    patient.Photo = file.FileName;
+                    WebImage img = new WebImage(file.InputStream);
+                    if (img.Width > 300)
+                        img.Resize(300, 300, true);
                     string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
-                    file.SaveAs(path);
+                    img.Save(path);
+                    patient.Photo = file.FileName;
+                    
                 }
                 else
                     patient.Photo = patientInDb.Photo;

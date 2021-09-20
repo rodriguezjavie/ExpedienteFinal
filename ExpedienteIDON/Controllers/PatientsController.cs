@@ -403,95 +403,100 @@ namespace ExpedienteIDON.Controllers
              List<Symptom> symptoms, LabsTest labsTest, string Type, HttpPostedFileBase file)
 
         {
-            if (ModelState.IsValid)
+            try
             {
-                medicalRecord.Created = DateTime.Now;
-                medicalRecord.Patient.Created = DateTime.Now;
-                medicalRecord.DoctorId = 1;
-                medicalRecord.ApplicationUserId = User.Identity.GetUserId();
-                var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
-                medicalRecord.VitalSigns.IMC = imc;
-                if (file == null)
+                if (ModelState.IsValid)
                 {
-                    medicalRecord.Patient.Photo = "patient1.jpg";
-                }
-                else
-                {
-                    WebImage img = new WebImage(file.InputStream);
-                    if (img.Width > 300)
-                        img.Resize(300, 300, true);
-                    string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
-                    img.Save(path);
-                    medicalRecord.Patient.Photo = file.FileName;
-                    
-                }
-
-                db.MedicalRecords.Add(medicalRecord);
-                db.SaveChanges();
-                var idMD = medicalRecord.Id;
-                var idFR = medicalRecord.FamilyRecordId;
-                var idPR = medicalRecord.PathologicRecordId;
-                otherFamilyRecord.FamilyRecordId = idFR;
-                otherPathologicRecord.PathologicRecordId = idPR;
-                labsTest.MedicalRecordId = idMD;
-                foreach (var item in symptoms)
-                {
-                    item.MedicalRecordId = idMD;
-                    db.Symptoms.Add(item);
-                }
-                db.OtherFamilyRecords.Add(otherFamilyRecord);
-                db.OtherPathologicRecords.Add(otherPathologicRecord);
-                //db.LabsTests.Add(labsTest);
-                db.SaveChanges();
-
-                //db.Symptoms.Add(symptom);
-                //db.LabsTests.Add(labsTest);
-
-                if (Type == "Guardar sin Receta")
-                {
-                    return RedirectToAction("DetailsMedicalRecord", "Patients", new { id = medicalRecord.PatientId });
-                }
-                else
-                {
-                    return RedirectToAction("Create", "MedicalRecordPrescription", new { patientId = medicalRecord.PatientId, medicalRecordId = medicalRecord.Id });
-                }
-
-            }
-            else
-            {
-                string currentUserId = User.Identity.GetUserId();
-                var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-                var historyRecord = new HistoryRecordViewModel
-                {
-                    UserDataViewModel = new UserDataViewModel
+                    medicalRecord.Created = DateTime.Now;
+                    medicalRecord.Patient.Created = DateTime.Now;
+                    medicalRecord.DoctorId = 1;
+                    medicalRecord.ApplicationUserId = User.Identity.GetUserId();
+                    var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
+                    medicalRecord.VitalSigns.IMC = imc;
+                    if (file == null)
                     {
-                        Name = user.Name,
-                        LastName = user.LastName,
-                        Phone = user.Phone,
-                        Cedula = user.Cedula
-                    },
-                    BloodTypes = await db.BloodTypes.ToListAsync(),
-                    Municipios = await db.Municipios.ToListAsync(),
-                    Estados = await db.Estadoes.ToListAsync(),
-                    MedicalRecord = medicalRecord,
-                    OtherFamilyRecord = otherFamilyRecord,
-                    OtherPathologicRecord = otherPathologicRecord,
-                    Symptoms = symptoms,
-                    LabsTest = labsTest,
+                        medicalRecord.Patient.Photo = "patient1.jpg";
+                    }
+                    else
+                    {
+                        WebImage img = new WebImage(file.InputStream);
+                        if (img.Width > 300)
+                            img.Resize(300, 300, true);
+                        string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
+                        img.Save(path);
+                        medicalRecord.Patient.Photo = file.FileName;
 
-                };
-                if (User.IsInRole("Administrador"))
-                {
-                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-                }
-                else if (User.IsInRole("Asistente"))
-                {
-                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                    }
+
+                    db.MedicalRecords.Add(medicalRecord);
+                    db.SaveChanges();
+                    var idMD = medicalRecord.Id;
+                    var idFR = medicalRecord.FamilyRecordId;
+                    var idPR = medicalRecord.PathologicRecordId;
+                    otherFamilyRecord.FamilyRecordId = idFR;
+                    otherPathologicRecord.PathologicRecordId = idPR;
+                    labsTest.MedicalRecordId = idMD;
+                    foreach (var item in symptoms)
+                    {
+                        item.MedicalRecordId = idMD;
+                        db.Symptoms.Add(item);
+                    }
+                    db.OtherFamilyRecords.Add(otherFamilyRecord);
+                    db.OtherPathologicRecords.Add(otherPathologicRecord);
+                    db.SaveChanges();
+
+                    if (Type == "Guardar sin Receta")
+                    {
+                        return RedirectToAction("DetailsMedicalRecord", "Patients", new { id = medicalRecord.PatientId });
+                    }
+                    else
+                    {
+                        return RedirectToAction("Create", "MedicalRecordPrescription", new { patientId = medicalRecord.PatientId, medicalRecordId = medicalRecord.Id });
+                    }
+
                 }
                 else
-                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-                return View(historyRecord);
+                {
+                    string currentUserId = User.Identity.GetUserId();
+                    var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                    var historyRecord = new HistoryRecordViewModel
+                    {
+                        UserDataViewModel = new UserDataViewModel
+                        {
+                            Name = user.Name,
+                            LastName = user.LastName,
+                            Phone = user.Phone,
+                            Cedula = user.Cedula
+                        },
+                        BloodTypes = await db.BloodTypes.ToListAsync(),
+                        Municipios = await db.Municipios.ToListAsync(),
+                        Estados = await db.Estadoes.ToListAsync(),
+                        MedicalRecord = medicalRecord,
+                        OtherFamilyRecord = otherFamilyRecord,
+                        OtherPathologicRecord = otherPathologicRecord,
+                        Symptoms = symptoms,
+                        LabsTest = labsTest,
+
+                    };
+                    if (User.IsInRole("Administrador"))
+                    {
+                        ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                    }
+                    else if (User.IsInRole("Asistente"))
+                    {
+                        ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                    }
+                    else
+                        ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+                    return View(historyRecord);
+                }
             }
+            catch (Exception)
+            {
+
+                return HttpNotFound();
+            }
+            
         }
 
         // GET: Patients/CreateNoRecord
@@ -590,98 +595,115 @@ namespace ExpedienteIDON.Controllers
                 HttpPostedFileBase file,
                 string photoFile)
         {
-            
-            if (ModelState.IsValid)
+            try
             {
-                var patientInDb = db.Patients.SingleOrDefault(p => p.Id == patient.Id);
-                if (file != null)
+                if (ModelState.IsValid)
                 {
-                    WebImage img = new WebImage(file.InputStream);
-                    if (img.Width > 300)
-                        img.Resize(300, 300, true);
-                    string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
-                    img.Save(path);
-                    patient.Photo = file.FileName;
-                    
+                    var patientInDb = db.Patients.SingleOrDefault(p => p.Id == patient.Id);
+                    if (file != null)
+                    {
+                        WebImage img = new WebImage(file.InputStream);
+                        if (img.Width > 300)
+                            img.Resize(300, 300, true);
+                        string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles"), Path.GetFileName(file.FileName));
+                        img.Save(path);
+                        patient.Photo = file.FileName;
+
+                    }
+                    else
+                        patient.Photo = patientInDb.Photo;
+
+                    Mapper.Map(patient, patientInDb);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Details", "Patients", new { id = patient.Id });
+                }
+                if (User.IsInRole("Administrador"))
+                {
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                }
+                else if (User.IsInRole("Asistente"))
+                {
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
                 }
                 else
-                    patient.Photo = patientInDb.Photo;
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+                return View(patient);
+            }
+            catch (Exception)
+            {
 
-                Mapper.Map(patient, patientInDb);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Details", "Patients", new { id = patient.Id });
+                return HttpNotFound();
             }
-            if (User.IsInRole("Administrador"))
-            {
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            }
-            else if (User.IsInRole("Asistente"))
-            {
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            }
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-            return View(patient);
+            
         }
         [Authorize(Roles = "Administrador,Doctor")]
         // GET: Patients/EditMedicalRecord/5
         public async Task<ActionResult> EditMedicalRecord(int? id)
         {
-            if (User.IsInRole("Administrador"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            else if (User.IsInRole("Asistente"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            try
+            {
+                if (User.IsInRole("Administrador"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                else if (User.IsInRole("Asistente"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
 
-            MedicalRecord record = await db.MedicalRecords.Include(p => p.Patient)
-                                                    .Include(m => m.FamilyRecord)
-                                                    .Include(m => m.ApplicationUser)
-                                                    .Include(m => m.BiometriaHematica)
-                                                    .Include(m => m.GeneralOrina)
-                                                    .Include(m => m.GynecoRecord)
-                                                    .Include(m => m.Hormonas)
-                                                    .Include(m => m.MedicalTest)
-                                                    .Include(m => m.NonPathologicalRecord)
-                                                    .Include(m => m.Others)
-                                                    .Include(m => m.OtrosLabs)
-                                                    .Include(m => m.PathologicRecord)
-                                                    .Include(m => m.PerfilHepatico)
-                                                    .Include(m => m.PerfilTiroideo)
-                                                    .Include(m => m.PhysicalExploration)
-                                                    .Include(m => m.QuimicaSanguinea)
-                                                    .Include(m => m.VitalSigns)
-                                                    .Where(a => a.PatientId == id)
-                                                    .SingleAsync();
-            var user = record.ApplicationUser;
-            var historyRecordViewModel = new HistoryRecordViewModelWithPatient
-            {
-                UserDataViewModel = new UserDataViewModel
+                MedicalRecord record = await db.MedicalRecords.Include(p => p.Patient)
+                                                        .Include(m => m.FamilyRecord)
+                                                        .Include(m => m.ApplicationUser)
+                                                        .Include(m => m.BiometriaHematica)
+                                                        .Include(m => m.GeneralOrina)
+                                                        .Include(m => m.GynecoRecord)
+                                                        .Include(m => m.Hormonas)
+                                                        .Include(m => m.MedicalTest)
+                                                        .Include(m => m.NonPathologicalRecord)
+                                                        .Include(m => m.Others)
+                                                        .Include(m => m.OtrosLabs)
+                                                        .Include(m => m.PathologicRecord)
+                                                        .Include(m => m.PerfilHepatico)
+                                                        .Include(m => m.PerfilTiroideo)
+                                                        .Include(m => m.PhysicalExploration)
+                                                        .Include(m => m.QuimicaSanguinea)
+                                                        .Include(m => m.VitalSigns)
+                                                        .Where(a => a.PatientId == id)
+                                                        .SingleAsync();
+                if (record == null)
                 {
-                    Name = user.Name,
-                    LastName = user.LastName,
-                    Phone = user.Phone,
-                    Cedula = user.Cedula
-                },
-                Doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == record.DoctorId),
-                Patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == record.PatientId),
-                OtherFamilyRecord = await db.OtherFamilyRecords.Include(o => o.FamilyRecord).SingleOrDefaultAsync(o => o.FamilyRecordId == record.FamilyRecordId),
-                OtherPathologicRecord = await db.OtherPathologicRecords.Include(o => o.PathologicRecord).SingleOrDefaultAsync(o => o.PathologicRecordId == record.PathologicRecordId),
-                MedicalRecord = record,
-                Symptoms = await db.Symptoms.Include(s => s.MedicalRecord).Where(s => s.MedicalRecordId == record.Id).ToListAsync(),
-                LabsTest = await db.LabsTests.SingleOrDefaultAsync(l => l.MedicalRecordId == record.Id),
-                BloodTypes = await db.BloodTypes.ToListAsync(),
-            };
-            if (record == null)
+                    return HttpNotFound();
+                }
+                var user = record.ApplicationUser;
+                var historyRecordViewModel = new HistoryRecordViewModelWithPatient
+                {
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    },
+                    Doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == record.DoctorId),
+                    Patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == record.PatientId),
+                    OtherFamilyRecord = await db.OtherFamilyRecords.Include(o => o.FamilyRecord).SingleOrDefaultAsync(o => o.FamilyRecordId == record.FamilyRecordId),
+                    OtherPathologicRecord = await db.OtherPathologicRecords.Include(o => o.PathologicRecord).SingleOrDefaultAsync(o => o.PathologicRecordId == record.PathologicRecordId),
+                    MedicalRecord = record,
+                    Symptoms = await db.Symptoms.Include(s => s.MedicalRecord).Where(s => s.MedicalRecordId == record.Id).ToListAsync(),
+                    LabsTest = await db.LabsTests.SingleOrDefaultAsync(l => l.MedicalRecordId == record.Id),
+                    BloodTypes = await db.BloodTypes.ToListAsync(),
+                };
+               
+                return View(historyRecordViewModel);
+            }
+            catch (Exception)
             {
+
                 return HttpNotFound();
             }
-            return View(historyRecordViewModel);
+            
         }
         [Authorize(Roles = "Administrador,Doctor")]
         [HttpPost]
@@ -691,132 +713,178 @@ namespace ExpedienteIDON.Controllers
             OtherPathologicRecord otherPathologicRecord, OtherFamilyRecord otherFamilyRecord
             )
         {
-            
-            var pat = await db.Patients.SingleOrDefaultAsync(p => p.Id == medicalRecord.PatientId);
-            var doc = await db.Doctors.SingleOrDefaultAsync(d => d.Id == medicalRecord.DoctorId);
-            var UserApp = await db.MedicalRecords.SingleOrDefaultAsync(m=>m.Id== medicalRecord.Id);
-            var user = await db.Users.SingleOrDefaultAsync(d => d.Id == UserApp.ApplicationUserId);
-
-            medicalRecord.Patient = pat;
-            medicalRecord.Doctor = doc;
-            medicalRecord.ApplicationUser = user;
-            medicalRecord.ApplicationUserId = user.Id;
-            var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
-            medicalRecord.VitalSigns.IMC = imc;
-
-            if (ModelState.IsValid)
+            try
             {
-                var medicalInDb = db.MedicalRecords
-                        .Include(d=>d.Doctor)
-                        .Include(p=>p.Patient)
-                        .Include(u=>u.ApplicationUser)
-                        .Include(v => v.VitalSigns)
-                        .Include(b => b.BiometriaHematica)
-                        .Include(g => g.GeneralOrina)
-                        .Include(h => h.Hormonas)
-                        .Include(ph => ph.PerfilHepatico)
-                        .Include(pt => pt.PerfilTiroideo)
-                        .Include(q => q.QuimicaSanguinea)
-                        .Include(ol => ol.OtrosLabs)
-                        .Include(q => q.Patient)
-                        .Include(q => q.Doctor)
-                        .Include(q => q.FamilyRecord)
-                        .Include(q => q.GynecoRecord)
-                        .Include(q => q.MedicalTest)
-                        .Include(q => q.NonPathologicalRecord)
-                        .Include(q => q.Others)
-                        .Include(q => q.PathologicRecord)
-                        .Include(q => q.PhysicalExploration)
-                        .SingleOrDefault(m => m.Id == medicalRecord.Id);
+                var pat = await db.Patients.SingleOrDefaultAsync(p => p.Id == medicalRecord.PatientId);
+                var doc = await db.Doctors.SingleOrDefaultAsync(d => d.Id == medicalRecord.DoctorId);
+                var UserApp = await db.MedicalRecords.SingleOrDefaultAsync(m => m.Id == medicalRecord.Id);
+                var user = await db.Users.SingleOrDefaultAsync(d => d.Id == UserApp.ApplicationUserId);
 
-                var otherpathInDb = await db.OtherPathologicRecords.Include(o => o.PathologicRecord).SingleOrDefaultAsync(o => o.PathologicRecordId == medicalRecord.PathologicRecordId);
-                var otherFamInDb = db.OtherFamilyRecords.Include(o => o.FamilyRecord).SingleOrDefault(o => o.FamilyRecordId == medicalRecord.FamilyRecordId);
-                var familyRecInDb = await db.FamilyRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.FamilyRecordId);
-                var nonPathRecordInDb = await db.NonPathologicalRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.NonPathologicalRecordId);
-                var gynecoRecordInDb = await db.GynecoRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.GynecoRecordId);
-                var pathRecordInDb = await db.PathologicRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.PathologicRecordId);
-                var medicalTestInDb = await db.MedicalTests.SingleOrDefaultAsync(f => f.Id == medicalRecord.MedicalTestId);
-                var physicalExplorationInDb = await db.PhysicalExplorations.SingleOrDefaultAsync(f => f.Id == medicalRecord.PhysicalExplorationId);
-                var othersInDb = await db.Others.SingleOrDefaultAsync(o => o.Id == medicalRecord.OthersId);
-                var vitalSignsInDb = await db.VitalSigns.SingleOrDefaultAsync(v => v.Id == medicalRecord.VitalSignsId);
-                var biomInDb = await db.BiometriaHematicas.SingleOrDefaultAsync(b => b.Id == medicalRecord.BiometriaHematicaId);
-                var hormInDb = await db.Hormonas.SingleOrDefaultAsync(b => b.Id == medicalRecord.HormonasId);
-                var quimInDb = await db.QuimicaSanguineas.SingleOrDefaultAsync(b => b.Id == medicalRecord.QuimicaSanguineaId);
-                var perfHepInDb = await db.PerfilHepaticos.SingleOrDefaultAsync(b => b.Id == medicalRecord.PerfilHepaticoId);
-                var perfTirInDb = await db.PerfilTiroideos.SingleOrDefaultAsync(b => b.Id == medicalRecord.PerfilTiroideoId);
-                var genOrInDb = await db.GeneralOrinas.SingleOrDefaultAsync(b => b.Id == medicalRecord.GeneralOrinaId);
-                var otroslabInDb = await db.OtrosLabs.SingleOrDefaultAsync(b => b.Id == medicalRecord.OtrosLabsId);
+                medicalRecord.Patient = pat;
+                medicalRecord.Doctor = doc;
+                medicalRecord.ApplicationUser = user;
+                medicalRecord.ApplicationUserId = user.Id;
+                var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
+                medicalRecord.VitalSigns.IMC = imc;
 
-                var nonPathRecord = medicalRecord.NonPathologicalRecord;
-                var gynecoRecord = medicalRecord.GynecoRecord;
-                var pathRecord = medicalRecord.PathologicRecord;
-                var medicalTest = medicalRecord.MedicalTest;
-                var physicalExploration = medicalRecord.PhysicalExploration;
-                var others = medicalRecord.Others;
-                var vitalSigns = medicalRecord.VitalSigns;
-                var biom = medicalRecord.BiometriaHematica;
-                var horm = medicalRecord.Hormonas;
-                var quim = medicalRecord.QuimicaSanguinea;
-                var perfHep = medicalRecord.PerfilHepatico;
-                var perfTir = medicalRecord.PerfilTiroideo;
-                var genOr = medicalRecord.GeneralOrina;
-                var otroslab = medicalRecord.OtrosLabs;
-                var familyRecord = medicalRecord.FamilyRecord;
-               
-                Mapper.Map(familyRecord, familyRecInDb);
-                Mapper.Map(nonPathRecord, nonPathRecordInDb);
-                Mapper.Map(gynecoRecord, gynecoRecordInDb);
-                Mapper.Map(pathRecord, pathRecordInDb);
-                Mapper.Map(medicalTest, medicalTestInDb);
-                Mapper.Map(physicalExploration, physicalExplorationInDb);
-                Mapper.Map(others, othersInDb);
-                Mapper.Map(vitalSigns, vitalSignsInDb);
-                Mapper.Map(biom, biomInDb);
-                Mapper.Map(genOr, genOrInDb);
-                Mapper.Map(horm, hormInDb);
-                Mapper.Map(quim, quimInDb);
-                Mapper.Map(perfHep, perfHepInDb);
-                Mapper.Map(perfTir, perfTirInDb);
-                Mapper.Map(otroslab, otroslabInDb);
-                foreach (var item in symptoms)
+                if (ModelState.IsValid)
                 {
-                    if (item != null)
+                    var medicalInDb = db.MedicalRecords
+                            .Include(d => d.Doctor)
+                            .Include(p => p.Patient)
+                            .Include(u => u.ApplicationUser)
+                            .Include(v => v.VitalSigns)
+                            .Include(b => b.BiometriaHematica)
+                            .Include(g => g.GeneralOrina)
+                            .Include(h => h.Hormonas)
+                            .Include(ph => ph.PerfilHepatico)
+                            .Include(pt => pt.PerfilTiroideo)
+                            .Include(q => q.QuimicaSanguinea)
+                            .Include(ol => ol.OtrosLabs)
+                            .Include(q => q.Patient)
+                            .Include(q => q.Doctor)
+                            .Include(q => q.FamilyRecord)
+                            .Include(q => q.GynecoRecord)
+                            .Include(q => q.MedicalTest)
+                            .Include(q => q.NonPathologicalRecord)
+                            .Include(q => q.Others)
+                            .Include(q => q.PathologicRecord)
+                            .Include(q => q.PhysicalExploration)
+                            .SingleOrDefault(m => m.Id == medicalRecord.Id);
+
+                    var otherpathInDb = await db.OtherPathologicRecords.Include(o => o.PathologicRecord).SingleOrDefaultAsync(o => o.PathologicRecordId == medicalRecord.PathologicRecordId);
+                    var otherFamInDb = db.OtherFamilyRecords.Include(o => o.FamilyRecord).SingleOrDefault(o => o.FamilyRecordId == medicalRecord.FamilyRecordId);
+                    var familyRecInDb = await db.FamilyRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.FamilyRecordId);
+                    var nonPathRecordInDb = await db.NonPathologicalRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.NonPathologicalRecordId);
+                    var gynecoRecordInDb = await db.GynecoRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.GynecoRecordId);
+                    var pathRecordInDb = await db.PathologicRecords.SingleOrDefaultAsync(f => f.Id == medicalRecord.PathologicRecordId);
+                    var medicalTestInDb = await db.MedicalTests.SingleOrDefaultAsync(f => f.Id == medicalRecord.MedicalTestId);
+                    var physicalExplorationInDb = await db.PhysicalExplorations.SingleOrDefaultAsync(f => f.Id == medicalRecord.PhysicalExplorationId);
+                    var othersInDb = await db.Others.SingleOrDefaultAsync(o => o.Id == medicalRecord.OthersId);
+                    var vitalSignsInDb = await db.VitalSigns.SingleOrDefaultAsync(v => v.Id == medicalRecord.VitalSignsId);
+                    var biomInDb = await db.BiometriaHematicas.SingleOrDefaultAsync(b => b.Id == medicalRecord.BiometriaHematicaId);
+                    var hormInDb = await db.Hormonas.SingleOrDefaultAsync(b => b.Id == medicalRecord.HormonasId);
+                    var quimInDb = await db.QuimicaSanguineas.SingleOrDefaultAsync(b => b.Id == medicalRecord.QuimicaSanguineaId);
+                    var perfHepInDb = await db.PerfilHepaticos.SingleOrDefaultAsync(b => b.Id == medicalRecord.PerfilHepaticoId);
+                    var perfTirInDb = await db.PerfilTiroideos.SingleOrDefaultAsync(b => b.Id == medicalRecord.PerfilTiroideoId);
+                    var genOrInDb = await db.GeneralOrinas.SingleOrDefaultAsync(b => b.Id == medicalRecord.GeneralOrinaId);
+                    var otroslabInDb = await db.OtrosLabs.SingleOrDefaultAsync(b => b.Id == medicalRecord.OtrosLabsId);
+
+                    var nonPathRecord = medicalRecord.NonPathologicalRecord;
+                    var gynecoRecord = medicalRecord.GynecoRecord;
+                    var pathRecord = medicalRecord.PathologicRecord;
+                    var medicalTest = medicalRecord.MedicalTest;
+                    var physicalExploration = medicalRecord.PhysicalExploration;
+                    var others = medicalRecord.Others;
+                    var vitalSigns = medicalRecord.VitalSigns;
+                    var biom = medicalRecord.BiometriaHematica;
+                    var horm = medicalRecord.Hormonas;
+                    var quim = medicalRecord.QuimicaSanguinea;
+                    var perfHep = medicalRecord.PerfilHepatico;
+                    var perfTir = medicalRecord.PerfilTiroideo;
+                    var genOr = medicalRecord.GeneralOrina;
+                    var otroslab = medicalRecord.OtrosLabs;
+                    var familyRecord = medicalRecord.FamilyRecord;
+
+                    Mapper.Map(familyRecord, familyRecInDb);
+                    Mapper.Map(nonPathRecord, nonPathRecordInDb);
+                    Mapper.Map(gynecoRecord, gynecoRecordInDb);
+                    Mapper.Map(pathRecord, pathRecordInDb);
+                    Mapper.Map(medicalTest, medicalTestInDb);
+                    Mapper.Map(physicalExploration, physicalExplorationInDb);
+                    Mapper.Map(others, othersInDb);
+                    Mapper.Map(vitalSigns, vitalSignsInDb);
+                    Mapper.Map(biom, biomInDb);
+                    Mapper.Map(genOr, genOrInDb);
+                    Mapper.Map(horm, hormInDb);
+                    Mapper.Map(quim, quimInDb);
+                    Mapper.Map(perfHep, perfHepInDb);
+                    Mapper.Map(perfTir, perfTirInDb);
+                    Mapper.Map(otroslab, otroslabInDb);
+                    foreach (var item in symptoms)
                     {
-                        if (item.Id != 0)
+                        if (item != null)
                         {
-                            var sympthomInDb = await db.Symptoms.Include(s => s.MedicalRecord).SingleOrDefaultAsync(s => s.Id == item.Id);
-                            item.MedicalRecordId = medicalRecord.Id;
-                            item.MedicalRecord = medicalRecord;
-                            Mapper.Map(item, sympthomInDb);
-                            await db.SaveChangesAsync();
+                            if (item.Id != 0)
+                            {
+                                var sympthomInDb = await db.Symptoms.Include(s => s.MedicalRecord).SingleOrDefaultAsync(s => s.Id == item.Id);
+                                item.MedicalRecordId = medicalRecord.Id;
+                                item.MedicalRecord = medicalRecord;
+                                Mapper.Map(item, sympthomInDb);
+                                await db.SaveChangesAsync();
+                            }
+                            else
+                            {
+                                item.MedicalRecordId = medicalRecord.Id;
+                                db.Symptoms.Add(item);
+                            }
+
                         }
-                        else
-                        {
-                            item.MedicalRecordId = medicalRecord.Id;
-                            db.Symptoms.Add(item);
-                        }
-                        
                     }
+                    otherPathologicRecord.PathologicRecord = medicalRecord.PathologicRecord;
+                    Mapper.Map(otherPathologicRecord, otherpathInDb);
+                    otherFamilyRecord.FamilyRecord = medicalRecord.FamilyRecord;
+                    Mapper.Map(otherFamilyRecord, otherFamInDb);
+                    db.SaveChanges();
+                    return RedirectToAction("DetailsMedicalRecord", new { id = medicalRecord.PatientId });
                 }
-                otherPathologicRecord.PathologicRecord = medicalRecord.PathologicRecord;
-                Mapper.Map(otherPathologicRecord, otherpathInDb);
-                otherFamilyRecord.FamilyRecord = medicalRecord.FamilyRecord;
-                Mapper.Map(otherFamilyRecord, otherFamInDb);
-                db.SaveChanges();
-                return RedirectToAction("DetailsMedicalRecord", new { id = medicalRecord.PatientId });
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                if (User.IsInRole("Administrador"))
+                {
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                }
+                else if (User.IsInRole("Asistente"))
+                {
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                }
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+                MedicalRecord record = await db.MedicalRecords.Include(p => p.Patient)
+                                                        .Include(m => m.FamilyRecord)
+                                                        .Include(m => m.ApplicationUser)
+                                                        .Include(m => m.BiometriaHematica)
+                                                        .Include(m => m.GeneralOrina)
+                                                        .Include(m => m.GynecoRecord)
+                                                        .Include(m => m.Hormonas)
+                                                        .Include(m => m.MedicalTest)
+                                                        .Include(m => m.NonPathologicalRecord)
+                                                        .Include(m => m.Others)
+                                                        .Include(m => m.OtrosLabs)
+                                                        .Include(m => m.PathologicRecord)
+                                                        .Include(m => m.PerfilHepatico)
+                                                        .Include(m => m.PerfilTiroideo)
+                                                        .Include(m => m.PhysicalExploration)
+                                                        .Include(m => m.QuimicaSanguinea)
+                                                        .Include(m => m.VitalSigns)
+                                                        .Where(a => a.PatientId == pat.Id)
+                                                        .SingleAsync();
+
+                var historyRecordViewModel = new HistoryRecordViewModelWithPatient
+                {
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = record.ApplicationUser.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    },
+                    Doctor = await db.Doctors.SingleOrDefaultAsync(d => d.Id == record.DoctorId),
+                    Patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == record.PatientId),
+                    OtherFamilyRecord = await db.OtherFamilyRecords.Include(o => o.FamilyRecord).SingleOrDefaultAsync(o => o.FamilyRecordId == record.FamilyRecordId),
+                    OtherPathologicRecord = await db.OtherPathologicRecords.Include(o => o.PathologicRecord).SingleOrDefaultAsync(o => o.PathologicRecordId == record.PathologicRecordId),
+                    MedicalRecord = record,
+                    Symptoms = await db.Symptoms.Include(s => s.MedicalRecord).Where(s => s.MedicalRecordId == record.Id).ToListAsync(),
+                    LabsTest = await db.LabsTests.SingleOrDefaultAsync(l => l.MedicalRecordId == record.Id),
+                    BloodTypes = await db.BloodTypes.ToListAsync()
+                };
+                return View(historyRecordViewModel);
             }
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            if (User.IsInRole("Administrador"))
+            catch (Exception)
             {
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+
+                return HttpNotFound();
             }
-            else if (User.IsInRole("Asistente"))
-            {
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            }
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-            return View();
+           
         }
 
         public ActionResult GetMunicipios(int estadoId)

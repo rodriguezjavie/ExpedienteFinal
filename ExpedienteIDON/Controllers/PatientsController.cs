@@ -266,7 +266,7 @@ namespace ExpedienteIDON.Controllers
              OtherFamilyRecord otherFamilyRecord, OtherPathologicRecord otherPathologicRecord, MedicalRecord medicalRecord, 
              List<Symptom> symptoms, LabsTest labsTest, string Type,  String idPatient)
         {
-            if (ModelState.IsValid)
+            try
             {
                 medicalRecord.Created = DateTime.Now;
                 medicalRecord.DoctorId = 1;
@@ -295,7 +295,7 @@ namespace ExpedienteIDON.Controllers
                     return RedirectToAction("Create", "MedicalRecordPrescription", new { patientId = medicalRecord.PatientId, medicalRecordId = medicalRecord.Id });
 
             }
-            else
+            catch
             {
                 string currentUserId = User.Identity.GetUserId();
                 var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
@@ -405,8 +405,7 @@ namespace ExpedienteIDON.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+                
                     medicalRecord.Created = DateTime.Now;
                     medicalRecord.Patient.Created = DateTime.Now;
                     medicalRecord.DoctorId = 1;
@@ -455,7 +454,7 @@ namespace ExpedienteIDON.Controllers
                     }
 
                 }
-                else
+                catch
                 {
                     string currentUserId = User.Identity.GetUserId();
                     var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
@@ -491,13 +490,9 @@ namespace ExpedienteIDON.Controllers
                     return View(historyRecord);
                 }
             }
-            catch (Exception)
-            {
-
-                return HttpNotFound();
-            }
+           
             
-        }
+        
 
         // GET: Patients/CreateNoRecord
         public ActionResult CreateNoRecord()
@@ -727,8 +722,7 @@ namespace ExpedienteIDON.Controllers
                 var imc = (medicalRecord.VitalSigns.Weight / (medicalRecord.VitalSigns.Size * medicalRecord.VitalSigns.Size)) * 10000;
                 medicalRecord.VitalSigns.IMC = imc;
 
-                if (ModelState.IsValid)
-                {
+                
                     var medicalInDb = db.MedicalRecords
                             .Include(d => d.Doctor)
                             .Include(p => p.Patient)
@@ -827,7 +821,11 @@ namespace ExpedienteIDON.Controllers
                     Mapper.Map(otherFamilyRecord, otherFamInDb);
                     db.SaveChanges();
                     return RedirectToAction("DetailsMedicalRecord", new { id = medicalRecord.PatientId });
-                }
+                
+            }
+            catch (Exception)
+            {
+
                 var errors = ModelState.Values.SelectMany(v => v.Errors);
                 if (User.IsInRole("Administrador"))
                 {
@@ -856,9 +854,9 @@ namespace ExpedienteIDON.Controllers
                                                         .Include(m => m.PhysicalExploration)
                                                         .Include(m => m.QuimicaSanguinea)
                                                         .Include(m => m.VitalSigns)
-                                                        .Where(a => a.PatientId == pat.Id)
+                                                        .Where(a => a.PatientId == medicalRecord.PatientId)
                                                         .SingleAsync();
-
+                var user = record.ApplicationUser;
                 var historyRecordViewModel = new HistoryRecordViewModelWithPatient
                 {
                     UserDataViewModel = new UserDataViewModel
@@ -878,11 +876,6 @@ namespace ExpedienteIDON.Controllers
                     BloodTypes = await db.BloodTypes.ToListAsync()
                 };
                 return View(historyRecordViewModel);
-            }
-            catch (Exception)
-            {
-
-                return HttpNotFound();
             }
            
         }

@@ -143,8 +143,7 @@ namespace ExpedienteIDON.Controllers
 
             try
             {
-                if (ModelState.IsValid)
-                {
+               
                     prescription.CratedDate = DateTime.Now;
                     prescription.DoctorId = 1;
                     prescription.PatientId = int.Parse(idPatient);
@@ -160,37 +159,33 @@ namespace ExpedienteIDON.Controllers
                     }
                     var errors = ModelState.Values.SelectMany(v => v.Errors);
                     return RedirectToAction("Details", "EvolNotePrescription", new { id = prescription.EvolutionNoteId });
-                }
-                else
-                {
-                    string currentUserId = User.Identity.GetUserId();
-                    var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-                    var patient = await db.Patients.SingleAsync(p => p.Id == prescription.PatientId);
-
-                    var prescriptVM = new PrescriptionViewModel
-                    {
-                        UserDataViewModel = new UserDataViewModel
-                        {
-                            Name = user.Name,
-                            LastName = user.LastName,
-                            Phone = user.Phone,
-                            Cedula = user.Cedula
-                        },
-                        Patient = patient,
-                        Prescription = prescription,
-                        MedicinesPrescription = medicinesPrescription,
-                        MedicinesPrescriptions = medicinesPrescriptions
-                    };
-                    return View(prescriptVM);
-
-                }
+                
+             
                
             }
             catch (Exception)
             {
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+        string currentUserId = User.Identity.GetUserId();
+        var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+        var patient = await db.Patients.SingleAsync(p => p.Id == prescription.PatientId);
 
-                return HttpNotFound();
-            }
+        var prescriptVM = new PrescriptionViewModel
+        {
+            UserDataViewModel = new UserDataViewModel
+            {
+                Name = user.Name,
+                LastName = user.LastName,
+                Phone = user.Phone,
+                Cedula = user.Cedula
+            },
+            Patient = patient,
+            Prescription = prescription,
+            MedicinesPrescription = medicinesPrescription,
+            MedicinesPrescriptions = medicinesPrescriptions
+        };
+                    return View(prescriptVM);
+    }
 
         }
 

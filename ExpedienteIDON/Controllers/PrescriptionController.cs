@@ -33,109 +33,62 @@ namespace ExpedienteIDON.Controllers
         // GET: Prescription/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            if (User.IsInRole("Administrador"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            else if (User.IsInRole("Asistente"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-
-            var prescription = await db.Prescriptions.SingleOrDefaultAsync(d => d.Id == id);
-            var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
-            var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
-            var listMedicinesPrescriptions = await db.MedicinesPrescriptions.Where(p => p.PrescriptionId == prescription.Id).ToListAsync();
-
-            var prescriptionViewModel = new PrescriptionViewModel
+            try
             {
-                Patient = prescription.Patient,
-                Prescription = prescription,
-                MedicinesPrescriptions = listMedicinesPrescriptions,
-                UserDataViewModel = new UserDataViewModel
+                if (User.IsInRole("Administrador"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                else if (User.IsInRole("Asistente"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+
+                var prescription = await db.Prescriptions.SingleOrDefaultAsync(d => d.Id == id);
+                if (prescription == null)
+                    return HttpNotFound();
+                var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
+                var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
+                var listMedicinesPrescriptions = await db.MedicinesPrescriptions.Where(p => p.PrescriptionId == prescription.Id).ToListAsync();
+
+                var prescriptionViewModel = new PrescriptionViewModel
                 {
-                    Name = user.Name,
-                    LastName = user.LastName,
-                    Cedula = user.Cedula
-                }
-            };
-            return View(prescriptionViewModel);
+                    Patient = prescription.Patient,
+                    Prescription = prescription,
+                    MedicinesPrescriptions = listMedicinesPrescriptions,
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Cedula = user.Cedula
+                    }
+                };
+                return View(prescriptionViewModel);
+            }
+            catch (Exception)
+            {
+
+                return HttpNotFound();
+            }
+           
         }
 
         // GET: Prescription/Create
         [Route("Prescription/Create/{patientId}")]
         public async Task<ActionResult> Create(int patientId)
         {
-            if (User.IsInRole("Administrador"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            else if (User.IsInRole("Asistente"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-
-            string currentUserId = User.Identity.GetUserId();
-            var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == patientId);
-
-            var prescriptVM = new PrescriptionViewModel
-            {
-                UserDataViewModel = new UserDataViewModel
-                {
-                    Name = user.Name,
-                    LastName = user.LastName,
-                    Phone = user.Phone,
-                    Cedula = user.Cedula
-                },
-                Patient = patient,
-                Prescription = new Prescription(),
-                MedicinesPrescription = new MedicinesPrescription
-                {
-                    Prescription = new Prescription
-                    {
-                        PatientId = patientId
-                    }
-                },
-                MedicinesPrescriptions = new List<MedicinesPrescription>()
-                {
-                    new MedicinesPrescription { }
-                }
-            };
-            return View(prescriptVM);
-        }
-
-        // POST: Prescription/Create
-        [HttpPost]
-        [Route("Prescription/Create/{patientId}")]
-        public async Task<ActionResult> Create(MedicinesPrescription medicinesPrescription, List<MedicinesPrescription> medicinesPrescriptions, Prescription prescription, String idPatient)
-        {
-            if (User.IsInRole("Administrador"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            else if (User.IsInRole("Asistente"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-
             try
             {
-                prescription.CratedDate = DateTime.Now;
-                prescription.PatientId = int.Parse(idPatient);
-                prescription.DoctorId = 1;
-                prescription.ApplicationUserId = User.Identity.GetUserId();
-                db.Prescriptions.Add(prescription);
-                await db.SaveChangesAsync();
-                int lastId = prescription.Id;
-                foreach (var item in medicinesPrescriptions)
-                {
-                    item.PrescriptionId = lastId;
-                    db.MedicinesPrescriptions.Add(item);
-                    await db.SaveChangesAsync();
-                }
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                return RedirectToAction("Details", new { id = prescription.Id });
-            }
-            catch
-            {
+                if (User.IsInRole("Administrador"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                else if (User.IsInRole("Asistente"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+
                 string currentUserId = User.Identity.GetUserId();
                 var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-                var patient = await db.Patients.SingleAsync(p => p.Id == prescription.PatientId);
+                var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == patientId);
+                if (patient == null)
+                    return HttpNotFound();
 
                 var prescriptVM = new PrescriptionViewModel
                 {
@@ -147,17 +100,35 @@ namespace ExpedienteIDON.Controllers
                         Cedula = user.Cedula
                     },
                     Patient = patient,
-                    Prescription = prescription,
-                    MedicinesPrescription = medicinesPrescription,
-                    MedicinesPrescriptions = medicinesPrescriptions
+                    Prescription = new Prescription(),
+                    MedicinesPrescription = new MedicinesPrescription
+                    {
+                        Prescription = new Prescription
+                        {
+                            PatientId = patientId
+                        }
+                    },
+                    MedicinesPrescriptions = new List<MedicinesPrescription>()
+                {
+                    new MedicinesPrescription { }
+                }
                 };
                 return View(prescriptVM);
             }
+            catch (Exception)
+            {
+
+                return HttpNotFound();
+            }
+            
         }
 
-        // GET: Prescription/Edit/5
-        public async Task<ActionResult> Edit(int id)
+        // POST: Prescription/Create
+        [HttpPost]
+        [Route("Prescription/Create/{patientId}")]
+        public async Task<ActionResult> Create(MedicinesPrescription medicinesPrescription, List<MedicinesPrescription> medicinesPrescriptions, Prescription prescription, String idPatient)
         {
+           
             if (User.IsInRole("Administrador"))
                 ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
             else if (User.IsInRole("Asistente"))
@@ -165,25 +136,96 @@ namespace ExpedienteIDON.Controllers
             else
                 ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
 
-            var prescription = await db.Prescriptions.SingleOrDefaultAsync(d => d.Id == id);
-            var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
-            var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
-            var listMedicinesPrescriptions = await db.MedicinesPrescriptions.Where(p => p.PrescriptionId == prescription.Id).ToListAsync();
-
-            var prescriptionViewModel = new PrescriptionViewModel
+            try
             {
-                MedicinesPrescriptions = listMedicinesPrescriptions,
-                UserDataViewModel = new UserDataViewModel
+                if (ModelState.IsValid)
                 {
-                    Name = user.Name,
-                    LastName = user.LastName,
-                    Phone = user.Phone,
-                    Cedula = user.Cedula
-                },
-                Patient = patient,
-                Prescription = prescription
-            };
-            return View(prescriptionViewModel);
+                    prescription.CratedDate = DateTime.Now;
+                    prescription.PatientId = int.Parse(idPatient);
+                    prescription.DoctorId = 1;
+                    prescription.ApplicationUserId = User.Identity.GetUserId();
+                    db.Prescriptions.Add(prescription);
+                    await db.SaveChangesAsync();
+                    int lastId = prescription.Id;
+                    foreach (var item in medicinesPrescriptions)
+                    {
+                        item.PrescriptionId = lastId;
+                        db.MedicinesPrescriptions.Add(item);
+                        await db.SaveChangesAsync();
+                    }
+                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    return RedirectToAction("Details", new { id = prescription.Id });
+                }
+                else
+                {
+                    string currentUserId = User.Identity.GetUserId();
+                    var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                    var patient = await db.Patients.SingleAsync(p => p.Id == prescription.PatientId);
+
+                    var prescriptVM = new PrescriptionViewModel
+                    {
+                        UserDataViewModel = new UserDataViewModel
+                        {
+                            Name = user.Name,
+                            LastName = user.LastName,
+                            Phone = user.Phone,
+                            Cedula = user.Cedula
+                        },
+                        Patient = patient,
+                        Prescription = prescription,
+                        MedicinesPrescription = medicinesPrescription,
+                        MedicinesPrescriptions = medicinesPrescriptions
+                    };
+                    return View(prescriptVM);
+                }
+                
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
+        }
+
+        // GET: Prescription/Edit/5
+        public async Task<ActionResult> Edit(int id)
+        {
+            try
+            {
+                if (User.IsInRole("Administrador"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                else if (User.IsInRole("Asistente"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+
+                var prescription = await db.Prescriptions.SingleOrDefaultAsync(d => d.Id == id);
+                if (prescription == null)
+                    return HttpNotFound();
+                var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
+                var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
+                var listMedicinesPrescriptions = await db.MedicinesPrescriptions.Where(p => p.PrescriptionId == prescription.Id).ToListAsync();
+
+                var prescriptionViewModel = new PrescriptionViewModel
+                {
+                    MedicinesPrescriptions = listMedicinesPrescriptions,
+                    UserDataViewModel = new UserDataViewModel
+                    {
+                        Name = user.Name,
+                        LastName = user.LastName,
+                        Phone = user.Phone,
+                        Cedula = user.Cedula
+                    },
+                    Patient = patient,
+                    Prescription = prescription
+                };
+                return View(prescriptionViewModel);
+            }
+            catch (Exception)
+            {
+
+                return HttpNotFound();
+            }
+            
         }
 
         // POST: Prescription/Edit/5
@@ -199,44 +241,56 @@ namespace ExpedienteIDON.Controllers
 
             try
             {
-                foreach (var item in medicinesPrescriptions)
+                if (ModelState.IsValid)
                 {
-                    if (item.Medicine != null)
+                    foreach (var item in medicinesPrescriptions)
                     {
-                        if (item.Id != 0)
+                        if (item.Medicine != null)
                         {
-                            var itemdb = db.MedicinesPrescriptions.SingleOrDefault(o => o.Id == item.Id);
-                            Mapper.Map(item, itemdb);
+                            if (item.Id != 0)
+                            {
+                                var itemdb = db.MedicinesPrescriptions.SingleOrDefault(o => o.Id == item.Id);
+                                Mapper.Map(item, itemdb);
+                            }
+                            else
+                            {
+                                db.MedicinesPrescriptions.Add(item);
+                            }
+                            await db.SaveChangesAsync();
                         }
-                        else
-                        {
-                            db.MedicinesPrescriptions.Add(item);
-                        }
-                        await db.SaveChangesAsync();
                     }
+                    var errors = ModelState.Values.SelectMany(v => v.Errors);
+                    return RedirectToAction("Details", new { id = prescription.Id });
                 }
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                return RedirectToAction("Details", new { id = prescription.Id });
+                else
+                {
+                    var pres = await db.Prescriptions.SingleOrDefaultAsync(d => d.Id == prescription.Id);
+                    if (prescription == null)
+                        return HttpNotFound();
+                    var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
+                    var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
+                    var listMedicinesPrescriptions = await db.MedicinesPrescriptions.Where(p => p.PrescriptionId == prescription.Id).ToListAsync();
+
+                    var prescriptionViewModel = new PrescriptionViewModel
+                    {
+                        MedicinesPrescriptions = listMedicinesPrescriptions,
+                        UserDataViewModel = new UserDataViewModel
+                        {
+                            Name = user.Name,
+                            LastName = user.LastName,
+                            Phone = user.Phone,
+                            Cedula = user.Cedula
+                        },
+                        Patient = patient,
+                        Prescription = prescription
+                    };
+                    return View(prescriptionViewModel);
+
+                }
             }
             catch
             {
-                var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == prescription.PatientId);
-                var user = db.Users.FirstOrDefault(x => x.Id == prescription.ApplicationUserId);
-                var prescriptionViewModel = new PrescriptionViewModel
-                {
-                    Patient = patient,
-                    Prescription = prescription,
-                    MedicinesPrescription = medicinesPrescription,
-                    UserDataViewModel = new UserDataViewModel
-                    {
-                        Name = user.Name,
-                        LastName = user.LastName,
-                        Phone = user.Phone,
-                        Cedula = user.Cedula
-                    },
-                    MedicinesPrescriptions = medicinesPrescriptions
-                };
-                return View(prescriptionViewModel);
+                return HttpNotFound();
             }
 
         }
@@ -244,23 +298,34 @@ namespace ExpedienteIDON.Controllers
         // GET: Prescription/PatientPrescriptions/5
         public async Task<ActionResult> PatientPrescriptions(int id)
         {
-            if (User.IsInRole("Administrador"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
-            else if (User.IsInRole("Asistente"))
-                ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
-            else
-                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
-
-            var list = await db.Prescriptions.Include(p=>p.ApplicationUser).Include(p=>p.Patient).Where(s => s.PatientId == id).ToListAsync();
-            var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == id);
-
-            var patientPrescriptionViewModel = new PatientPrescriptionViewModel
+            try
             {
-                Id = id,
-                Patient = patient.Name + " " + patient.LastName,
-                Prescriptions = list
-            };
-            return View(patientPrescriptionViewModel);
+                if (User.IsInRole("Administrador"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+                else if (User.IsInRole("Asistente"))
+                    ViewBag.Layout = "~/Views/Shared/_LayoutAsistente.cshtml";
+                else
+                    ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+
+                var list = await db.Prescriptions.Include(p => p.ApplicationUser).Include(p => p.Patient).Where(s => s.PatientId == id).ToListAsync();
+                var patient = await db.Patients.SingleOrDefaultAsync(p => p.Id == id);
+                if (patient == null)
+                    return HttpNotFound();
+
+                var patientPrescriptionViewModel = new PatientPrescriptionViewModel
+                {
+                    Id = id,
+                    Patient = patient.Name + " " + patient.LastName,
+                    Prescriptions = list
+                };
+                return View(patientPrescriptionViewModel);
+            }
+            catch (Exception)
+            {
+
+                return HttpNotFound();
+            }
+            
         }
     }
 }

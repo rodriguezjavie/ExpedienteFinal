@@ -91,6 +91,7 @@ namespace ExpedienteIDON.Models
         [Display(Name = "Confirmar contraseña")]
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
+        [Display(Name = "Rol")]
         public string RoleName { get; set; }
     }
 

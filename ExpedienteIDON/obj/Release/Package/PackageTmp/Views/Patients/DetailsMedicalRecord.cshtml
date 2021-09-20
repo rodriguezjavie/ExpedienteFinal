@@ -1014,13 +1014,13 @@
                                                                     <td>@Html.TextBoxFor(m => m.Symptoms[i].Severity, htmlAttributes: new { @class = "form-control col-md-10", @readonly = "readonly" })  </td>
                                                                     <td>@Html.EditorFor(m => m.Symptoms[i].StartDate, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly", placeholder = "dd/mm/aaaa" } })</td>
                                                                     <td>@Html.EditorFor(m => m.Symptoms[i].EndDate, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly", placeholder = "dd/mm/aaaa" } })</td>
-                                                                    
+
                                                                 </tr>
                                                                 i++;
                                                             }
                                                         }
                                                     </tbody>
-                                                    
+
                                                 </table>
                                             </div>
                                         </div>
@@ -1051,103 +1051,103 @@
                                                         @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Weight, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
-                                            <div class="form-group col-md-6">
-                                                <div class="form-group row">
-                                                    @Html.LabelFor(model => model.MedicalRecord.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                    @Html.EditorFor(model => model.MedicalRecord.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                    @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.IMC, "", new { @class = "text-danger" })
-                                                    @if (Model.MedicalRecord.VitalSigns.IMC < 18.5)
-                                                    {
-                                                        <p><strong style="color:deepskyblue">Bajo de Peso</strong></p>
-                                                    }
-                                                    else if (Model.MedicalRecord.VitalSigns.IMC > 18.5 && Model.MedicalRecord.VitalSigns.IMC < 24.9)
-                                                    {
-                                                        <p><strong style="color:lawngreen">Peso Normal</strong></p>
-                                                    }
-                                                    else
-                                                    {
-                                                        <p><strong style="color:red">Sobrepeso</strong></p>
-                                                    }
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.IMC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.IMC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.IMC, "", new { @class = "text-danger" })
+                                                        @if (Model.MedicalRecord.VitalSigns.IMC < 18.5)
+                                                        {
+                                                            <p><strong style="color:deepskyblue">Bajo de Peso</strong></p>
+                                                        }
+                                                        else if (Model.MedicalRecord.VitalSigns.IMC > 18.5 && Model.MedicalRecord.VitalSigns.IMC < 24.9)
+                                                        {
+                                                            <p><strong style="color:lawngreen">Peso Normal</strong></p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <p><strong style="color:red">Sobrepeso</strong></p>
+                                                        }
 
-                                                </div>
-                                            </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TASistBD, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TASistBD, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TASistBD, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TADiastBD, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TADiastBD, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TADiastBD, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TASistBI, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TASistBI, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TASistBI, "", new { @class = "text-danger" })
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TADiastBI, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TADiastBI, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TADiastBI, "", new { @class = "text-danger" })
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.FC, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.FC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.FC, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.FR, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.FR, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.FR, "", new { @class = "text-danger" })
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Waist, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Waist, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Waist, "", new { @class = "text-danger" })
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Hip, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Hip, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Hip, "", new { @class = "text-danger" })
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <div class="form-group row">
-                                                            @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Glucose, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                            @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Glucose, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
-                                                            @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Glucose, "", new { @class = "text-danger" })
-                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TASistBD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TASistBD, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TASistBD, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TADiastBD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TADiastBD, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TADiastBD, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TASistBI, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TASistBI, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TASistBI, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.TADiastBI, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.TADiastBI, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.TADiastBI, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.FC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.FC, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.FC, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.FR, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.FR, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.FR, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Waist, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Waist, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Waist, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Hip, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Hip, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Hip, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.OxygenSaturation, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <div class="form-group row">
+                                                        @Html.LabelFor(model => model.MedicalRecord.VitalSigns.Glucose, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                        @Html.EditorFor(model => model.MedicalRecord.VitalSigns.Glucose, new { htmlAttributes = new { @class = "form-control col-md-10", @readonly = "readonly" } })
+                                                        @Html.ValidationMessageFor(model => model.MedicalRecord.VitalSigns.Glucose, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- End VitalSigns -->
@@ -1831,4 +1831,33 @@
 </div>
 @section Scripts{
     @Scripts.Render("~/Scripts/button-colorchange.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".toggle-accordion").on("click", function () {
+                var accordionId = $(this).attr("accordion-id"),
+                    numPanelOpen = $(accordionId + ' .collapse.show').length;
+
+                $(this).toggleClass("active");
+
+                if (numPanelOpen == 0) {
+                    openAllPanels(accordionId);
+                } else {
+                    closeAllPanels(accordionId);
+                }
+            })
+
+            openAllPanels = function (aId) {
+                $(aId + ' .collapse:not(".in")').collapse('show');
+                const link = document.getElementById("PanelsLink");
+                link.text = 'Cerrar Paneles';
+            }
+            closeAllPanels = function (aId) {
+                $(aId + ' .collapse.show').collapse('hide');
+                const link = document.getElementById("PanelsLink");
+                link.text = 'Abrir Paneles';
+            }
+        });
+    </script>*@
 }

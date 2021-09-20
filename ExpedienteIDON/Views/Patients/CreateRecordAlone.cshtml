@@ -354,88 +354,88 @@
                             </div>
                             <!-- End NonPathologicalRecord -->
                             <!-- Start GynecoRecord -->
-                           
-                                <div class="form-horizontal" id="GinecologDiv">
-                                    <h4>Gineco Antecedentes</h4>
-                                    <hr />
-                                    <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#" data-parent="#accordion3" id="Accord-Gineco">
-                                        Antecedentes Ginec-obsteticos
-                                    </a>
-                                    <div class="collapse" id="Gineco">
-                                        <div class="card card-body">
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Menarca, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Menarca, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Gesta, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Gesta, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Para, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Para, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Cesarea, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Cesarea, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Aborto, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Aborto, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Obitos, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Obitos, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.SexualLifeStart, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.SexualLifeStart, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.RegularMenstrualCycle, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.RegularMenstrualCycle)
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.LastMenstruationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.LastMenstruationDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Amenorrea, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Amenorrea)
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "form-control col-md-10" })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "form-control col-md-10" })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertensionDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertensionDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "form-control col-md-10" })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetesDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetesDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "form-control col-md-10" })
-                                            </div>
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4KgDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                                            </div>
+
+                            <div class="form-horizontal" id="GinecologDiv">
+                                <h4>Gineco Antecedentes</h4>
+                                <hr />
+                                <a class="btn btn-default accordion-toggle accordion-toggle-styled" data-toggle="collapse" href="#" data-parent="#accordion3" id="Accord-Gineco">
+                                    Antecedentes Ginec-obsteticos
+                                </a>
+                                <div class="collapse" id="Gineco">
+                                    <div class="card card-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Menarca, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Menarca, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Gesta, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Gesta, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Para, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Para, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Cesarea, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Cesarea, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Aborto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Aborto, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Obitos, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Obitos, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.SexualLifeStart, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.SexualLifeStart, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.RegularMenstrualCycle, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.RegularMenstrualCycle)
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.LastMenstruationDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.LastMenstruationDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.Amenorrea, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.Amenorrea)
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.BirthControlMethod, htmlAttributes: new { @class = "form-control col-md-10" })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertension, htmlAttributes: new { @class = "form-control col-md-10" })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertensionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.PregnancyHypertensionDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetes, htmlAttributes: new { @class = "form-control col-md-10" })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetesDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.PregnancyDiabetesDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EnumDropDownListFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4Kg, htmlAttributes: new { @class = "form-control col-md-10" })
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4KgDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            @Html.EditorFor(model => model.MedicalRecord.GynecoRecord.ChildrenPlus4KgDate, new { htmlAttributes = new { @class = "form-control col-md-10" } })
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                      
+
 
                             <!-- End GynecoRecord -->
                             <!-- Start PathologicRecord -->
@@ -1777,12 +1777,14 @@
 @section Scripts{
     @Scripts.Render("~/Scripts/button-colorchange.js")
     @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/bootstrap")
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 
     <script>
         $(document).ready(function () {
             var a = document.getElementById("Patient_PatientGender")
-            if (a.value==="Femenino") {
+            if (a.value === "Femenino") {
                 document.getElementById("Accord-Gineco").href = "#Gineco";
             }
         });
@@ -1823,9 +1825,9 @@
             }
         };
     </script>
-    <script type = "text/javascript" >
-   function preventBack(){window.history.forward();}
-    setTimeout("preventBack()", 0);
-    window.onunload=function(){null};
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
     </script>
 }

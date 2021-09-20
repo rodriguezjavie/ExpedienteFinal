@@ -20,9 +20,11 @@ namespace ExpedienteIDON
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                                        "~/Scripts/theme/plugins/bootstrap/js/bootstrap.js",
+                                        "~/Scripts/bootstrapAcordion.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+
+                             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap.min.css",
                         "~/Scripts/theme/css/style.css",

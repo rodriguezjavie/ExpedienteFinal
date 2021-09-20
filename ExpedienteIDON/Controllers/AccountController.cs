@@ -279,20 +279,34 @@ namespace ExpedienteIDON.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userInDb = db.Users.SingleOrDefault(u=>u.Email==model.Email);
-                var rol = (from ur in db.Set<IdentityUserRole>()
-                            where ur.UserId.Equals(userInDb.Id)
-                            select ur.RoleId).ToList<string>();
-                var roleId = rol[0];
-                var roleName = db.Roles.SingleOrDefault(r => r.Id == roleId).Name;
-                userInDb.Name = model.Name;
-                userInDb.LastName = model.LastName;
-                userInDb.Phone = model.Phone;
-                userInDb.Cedula = model.Cedula;
-                db.SaveChanges();
-                var result = UserManager.RemoveFromRole(userInDb.Id, roleName);
-                result = UserManager.AddToRole(userInDb.Id, model.RoleName);
-                return RedirectToAction("Index", "UserRole");
+                try
+                {
+                    var userInDb = db.Users.SingleOrDefault(u => u.Email == model.Email);
+                    var rol = (from ur in db.Set<IdentityUserRole>()
+                               where ur.UserId.Equals(userInDb.Id)
+                               select ur.RoleId).ToList<string>();
+                    var roleId = rol[0];
+                    var roleName = db.Roles.SingleOrDefault(r => r.Id == roleId).Name;
+                    userInDb.Name = model.Name;
+                    userInDb.LastName = model.LastName;
+                    userInDb.Phone = model.Phone;
+                    userInDb.Cedula = model.Cedula;
+                    db.SaveChanges();
+                    var result = UserManager.RemoveFromRole(userInDb.Id, roleName);
+                    result = UserManager.AddToRole(userInDb.Id, model.RoleName);
+                    return RedirectToAction("Index", "UserRole");
+
+                }
+                catch (Exception)
+                {
+
+                    var list1 = new List<SelectListItem>();
+                    foreach (var role in RoleManager.Roles)
+                        list1.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+                    ViewBag.Roles = list1;
+                    return View(model);
+                }
+               
             }
             var list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)

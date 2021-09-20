@@ -659,7 +659,10 @@
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval");
     @Scripts.Render("~/Scripts/button-colorchange.js")
-<script type="text/javascript">function preventBack(){window.history.forward();}
-    setTimeout("preventBack()", 0);
-    window.onunload=function(){null};</script>
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script type="text/javascript">
+    function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };</script>
 }

@@ -192,8 +192,10 @@ namespace ExpedienteIDON.Controllers
         // GET: Patients/CreateRecordAlone
         [Authorize(Roles = "Administrador,Doctor")]
         [Route("Patients/CreateRecordAlone/{patientId}")]
-        public async Task<ActionResult> CreateRecordAlone(int patientId)
+        public async Task<ActionResult> CreateRecordAlone(int? patientId)
         {
+            if (patientId == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             if (User.IsInRole("Administrador"))
             {
                 ViewBag.Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
@@ -205,6 +207,8 @@ namespace ExpedienteIDON.Controllers
             else
                 ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
             var patient = await db.Patients.SingleAsync(p => p.Id == patientId);
+            if (patient == null)
+                return HttpNotFound();
             string currentUserId = User.Identity.GetUserId();
             var user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
 
@@ -284,7 +288,6 @@ namespace ExpedienteIDON.Controllers
                 }
                 db.OtherFamilyRecords.Add(otherFamilyRecord);
                 db.OtherPathologicRecords.Add(otherPathologicRecord);
-                //db.LabsTests.Add(labsTest);
                 db.SaveChanges();
                 if (Type == "Guardar sin Receta")
                     return RedirectToAction("DetailsMedicalRecord", "Patients", new { id = medicalRecord.PatientId });
